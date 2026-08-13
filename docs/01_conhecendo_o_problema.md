@@ -1,6 +1,6 @@
 # Entrega 1 — Conhecendo o projeto, o usuário e o problema
 
-**Data:** {{dd/mm/aaaa}}  
+**Data:** {{13/08/2026}}  
 **Status:** ⬜ não iniciada  
 **Responsabilidade:** 1 solução consolidada por equipe
 
@@ -59,27 +59,29 @@ Uma hipótese explicitada é melhor do que uma suposição escondida.
 
 | Nome completo | Matrícula | GitHub |
 |---|---:|---|
+| Renan Casemiro Hessel | 24.123.019-2 | RenanCasemiroHessel |
+| Gustavo Mendes Franco Lapin Atui | 24.123.072-1 | GustovoAtui |
 | {{...}} | {{...}} | {{...}} |
 
 ## 0.2 Título atual do TCC
 
-{{...}}
+Estimativa não invasiva do peso de bovinos leves utilizando Visão Computacional
 
 ## 0.3 Orientador(a)
 
-{{...}}
+Profa. Dra. Gabriela Oliveira Biondi
 
 ## 0.4 Qual é o resultado principal atualmente previsto no TCC?
 
 Marque e descreva:
 
-- [ ] sistema/aplicação interativa;
-- [ ] algoritmo;
+- [ X ] sistema/aplicação interativa;
+- [ X ] algoritmo;
 - [ ] modelo de IA/ML/LLM;
 - [ ] biblioteca/API/framework;
-- [ ] análise de dataset;
-- [ ] estudo/benchmark/avaliação experimental;
-- [ ] infraestrutura/backend;
+- [ X ] análise de dataset;
+- [ X ] estudo/benchmark/avaliação experimental;
+- [ X ] infraestrutura/backend;
 - [ ] componente embarcado/IoT;
 - [ ] outro: {{...}}.
 
@@ -87,13 +89,13 @@ Marque e descreva:
 
 ## 0.5 O TCC já previa desenvolvimento de interface com usuário?
 
-- [ ] Sim, a interface já faz parte do TCC.
+- [ X ] Sim, a interface já faz parte do TCC.
 - [ ] Parcialmente; existe alguma interação, mas ainda não está bem definida.
 - [ ] Não. O TCC é predominantemente técnico e não previa interface.
 
 **Explique o que está formalmente previsto no TCC:** {{...}}
 
-> Esta resposta serve para separar o compromisso do TCC do projeto da disciplina. Mesmo quando a opção for **não**, a equipe irá definir uma interface para exercitar IHC.
+> Um sistema de estimativa de peso de bovinos utilizando a visão computacional e machine learning.
 
 ---
 
@@ -101,17 +103,17 @@ Marque e descreva:
 
 ## 1.1 Explique o TCC em uma frase, sem citar linguagem de programação, framework ou banco de dados.
 
-{{...}}
+Desenvolver e validar um sistema capaz de estimar peso de bovinos a partir de fotos sem a necessidade de uma balança de curral.
 
 ## 1.2 Qual situação, atividade ou problema do mundo real motivou o TCC?
 
-{{[F/H/?] ...}}
+[F] : Os métodos atuais comumente utilizados no meio da pecuária geram estresse no animal. 
 
 ## 1.3 Qual é a **capacidade/contribuição central** produzida pelo TCC?
 
 Complete, se ajudar:
 
-> “Nosso TCC produz, melhora, analisa ou permite `{{capacidade}}`.”
+> “Nosso TCC produz, melhora, analisa ou permite `{{capacidade}}.”
 
 Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar modelos; identificar padrões; prever demanda; analisar desempenho; gerar resumos; recomendar configurações.
 
