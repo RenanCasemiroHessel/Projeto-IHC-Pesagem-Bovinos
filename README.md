@@ -18,26 +18,27 @@ Leia obrigatoriamente o [Guia para definir o escopo de IHC a partir do tema do T
 ## Identificação
 
 **Título do projeto de IHC:** {{TÍTULO DO PROJETO}}  
-**TCC/projeto de origem:** {{TÍTULO ORIGINAL DO TCC}}  
-**Orientador(a):** {{NOME}}  
+**TCC/projeto de origem:** {{Estimativa não invasiva do peso de bovinos leves utilizando Visão Computacional}}  
+**Orientador(a):** {{Profa. Dra. Gabriela Oliveira Biondi}}  
 **Disciplina:** Interação Humano-Computador  
-**Instituição:** {{INSTITUIÇÃO}}  
-**Semestre:** {{ANO/SEMESTRE}}
+**Instituição:** {{FEI}}  
+**Semestre:** {{2026/Oitavo}}
 
 ### Equipe
 
 | Nome completo | Matrícula | GitHub | Responsabilidade principal |
 |---|---:|---|---|
-| {{Nome 1}} | {{matrícula}} | {{@usuario}} | {{...}} |
-| {{Nome 2}} | {{matrícula}} | {{@usuario}} | {{...}} |
+| {{Renan Casemiro Hessel}} | {{24.123.019-2}} | {{@RenanCasemiroHessel}} | {{...}} |
+| {{Gustavo Mendes Franco Lapin Atui}} | {{24.123.072-1}} | {{@GustavoAtui}} | {{...}} |
+| {{Rafael Takahagi Mendes}} | {{...}} | {{...}} | {{...}} |
 
 ## Relação entre TCC e projeto de IHC
 
 | Item | Descrição |
 |---|---|
-| Tema central do TCC | {{...}} |
+| Tema central do TCC | {{Estimativa do peso de bovinos utilizando visão computacional}} |
 | Resultado técnico esperado do TCC | {{algoritmo, estudo, sistema, modelo, análise, API...}} |
-| O TCC já previa interface? | sim / não / parcialmente |
+| O TCC já previa interface? | sim |
 | Capacidade técnica que pode gerar valor para pessoas | {{...}} |
 | Usuário principal adotado em IHC | {{...}} |
 | Objetivo principal desse usuário | {{...}} |
