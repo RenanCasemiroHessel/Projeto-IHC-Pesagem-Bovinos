@@ -61,7 +61,7 @@ Uma hipótese explicitada é melhor do que uma suposição escondida.
 |---|---:|---|
 | Renan Casemiro Hessel | 24.123.019-2 | RenanCasemiroHessel |
 | Gustavo Mendes Franco Lapin Atui | 24.123.072-1 | GustovoAtui |
-| {{...}} | {{...}} | {{...}} |
+| Rafael Takahagi Mendes | 22.126.084-7 | rafamendes04 |
 
 ## 0.2 Título atual do TCC
 
@@ -95,7 +95,7 @@ Marque e descreva:
 
 **Explique o que está formalmente previsto no TCC:** {{...}}
 
-> Um sistema de estimativa de peso de bovinos utilizando a visão computacional e machine learning.
+> Um sistema de estimativa de peso de bovinos.
 
 ---
 
@@ -117,11 +117,12 @@ Complete, se ajudar:
 
 Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar modelos; identificar padrões; prever demanda; analisar desempenho; gerar resumos; recomendar configurações.
 
-{{...}}
+Nosso TCC produz um aplicativo móvel que estima o peso do bovino a partir de uma foto estática.
 
 ## 1.4 O que se espera que esteja diferente **para pessoas, organizações ou processos** se essa contribuição for bem-sucedida?
 
-{{[F/H/?] ...}}
+[H] Pecuaristas conseguiriam monitorar o peso do animal com maior frequência, utilizando apenas um smartphone.
+[F] O custo operacional de pesagens frequentes utilizando balanças de curral, é uma barreira real atualmente.
 
 ## 1.5 O que é mérito técnico/científico do TCC e o que seria uma possível aplicação prática?
 
@@ -137,7 +138,7 @@ Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar 
 
 Se não houver interface prevista no TCC, escreva `NÃO SE APLICA AO ESCOPO ORIGINAL` e prossiga para 2.2.
 
-{{[F/H/?] ...}}
+Pecuarista, Frigorificos
 
 ## 2.2 Quem poderia **usar, configurar, administrar, operar, interpretar ou tomar decisões** a partir da contribuição técnica?
 
