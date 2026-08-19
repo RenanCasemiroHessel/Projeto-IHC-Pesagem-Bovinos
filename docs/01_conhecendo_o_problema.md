@@ -128,7 +128,9 @@ Nosso TCC produz um aplicativo móvel que estima o peso do bovino a partir de um
 
 | Mérito/contribuição técnica | Possível aplicação/valor em uso |
 |---|---|
-| {{...}} | {{...}} |
+| Predição de peso bovino a partir de foto | Produtor sabe o peso do animal no campo sem balança |
+| Avaliação comparativa entre modelos para identificar o melhor | Base para aprofundamento no estudo da predição de peso de bovinos |
+| Modelo leve compativel com smartphone | App funciona no celular do produtor sem equipamento especial |
 
 ---
 
@@ -136,9 +138,7 @@ Nosso TCC produz um aplicativo móvel que estima o peso do bovino a partir de um
 
 ## 2.1 Quem interage diretamente com o produto, se já existe interface prevista?
 
-Se não houver interface prevista no TCC, escreva `NÃO SE APLICA AO ESCOPO ORIGINAL` e prossiga para 2.2.
-
-Pecuarista, Frigorificos
+De maneira geral: Pecuarista, Frigorificos.
 
 ## 2.2 Quem poderia **usar, configurar, administrar, operar, interpretar ou tomar decisões** a partir da contribuição técnica?
 
@@ -146,19 +146,25 @@ Considere perfis profissionais e stakeholders, não apenas consumidores finais.
 
 | Perfil | Relação com a contribuição | O que faria | Status/evidência |
 |---|---|---|---|
-| {{DBA / analista / gestor / técnico / pesquisador / usuário final...}} | {{...}} | {{...}} | F / H / ? |
+| Pecuarista | Usuário Direto  | Fotografa o animal e usa o peso predito para decisões de manejo | H |
+| Técnico agropecuário | Consultor de manejo  | Consulta o histórico de peso predito por animal para orientar tratamentos e nutrição | H |
+
 
 ## 2.3 Existem pessoas afetadas que não usariam a interface diretamente?
 
 | Stakeholder | Como é afetado | Usa interface? | Status/evidência |
 |---|---|---|---|
-| {{...}} | {{...}} | sim/não | {{...}} |
+| Frigorifero/Comprador | Recebe apenas o histórico de peso do animal | não | H |
+| Veterinário | Recebe o historico de peso e de imagem do animal | não | H | 
 
 ## 2.4 Que características desses perfis podem influenciar a interação?
 
 Considere conhecimento do domínio, experiência tecnológica, frequência de uso, necessidades de acessibilidade, responsabilidade profissional, familiaridade com métricas, linguagem técnica, urgência etc.
 
 {{[F/H/?] ...}}
+
+[H]  O produtor rural pode ter baixa familiaridade com aplicativos técnicos, preferindo poucos passos e resultado imediato na tela.
+[F] Smartphones são amplamente usados no meio rural brasileiro.
 
 ---
 
@@ -168,38 +174,37 @@ Considere conhecimento do domínio, experiência tecnológica, frequência de us
 
 Não responda “usar o algoritmo”, “clicar no sistema” ou “ver o dashboard”.
 
-{{[F/H/?] ...}}
-
+[H] O produtor não quer "usar visão computacional" ele quer uma resposta confiável em quilogramas e arrobas com o mínimo de esforço.
 ## 3.2 Quais são as atividades mais importantes?
 
 | ID | Atividade/objetivo | Quem realiza | Frequência/criticidade inicial | Status/evidência |
 |---|---|---|---|---|
-| A01 | {{...}} | {{...}} | {{...}} | {{...}} |
-| A02 | {{...}} | {{...}} | {{...}} | {{...}} |
-| A03 | {{...}} | {{...}} | {{...}} | {{...}} |
+| A01 | fotografar o animal e receber o peso predito | pecuarista | alta | [H] |
+| A02 | Identificar o animal antes de salvar o peso | pecuarista | alta | [H] |
+| A03 | consultar o historico de peso do bovino | pecuarista/comprador/veterinário | média | H |  
 
 ## 3.3 Qual atividade parece mais frequente? Por quê?
 
-{{[F/H/?] ...}}
+[F] A01 - fotografar o animal e receber o peso predito, é a principal funcionalidade do aplicativo e as outras atividades dependem dela. 
 
 ## 3.4 Qual parece mais crítica? Que consequência existe se for mal executada?
 
-{{[F/H/?] ...}}
-
+[H] A02 - identificar o animal antes de salvar o peso, caso o bovino identificado seja catalogado de maneira errada irá interferir em todas as outras pesagens do mesmo. 
 ---
 
 # 4. Entendendo o problema ou processo atual
 
 ## 4.1 Como essas atividades são realizadas hoje, antes da interface imaginada na disciplina?
 
-Pode existir software concorrente, linha de comando, planilha, notebook, script, painel técnico, processo manual, consulta a logs, análise visual, troca de mensagens, decisão por especialista etc.
+[F] Com balança. Conduzindo o animal ao curral, passá-lo pelo brete (tronco de contenção), registrar o peso e anotar manualmente. O equipamento custa entre R$ 30.000 e R$ 50.000.
 
-{{[F/H/?] ...}}
+[H] Muitos produtores pesam os animais apenas 2 a 4 vezes por ano pela dificuldade.  
 
 ## 4.2 O que é difícil, demorado, confuso, repetitivo, arriscado ou pouco transparente?
 
-{{[F/H/?] ...}}
-
+[F] Conduzir o rebanho até a balança, exige mão de obra e tempo.
+[F] O animal ficar preso gera estresse.
+[H] Como os registros são feitos manualmente muitas vezes são perdidos.
 ## 4.3 Que informações o profissional precisa interpretar para tomar decisão?
 
 {{[F/H/?] ...}}
