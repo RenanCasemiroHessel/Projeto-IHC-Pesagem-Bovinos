@@ -17,31 +17,31 @@ Leia obrigatoriamente o [Guia para definir o escopo de IHC a partir do tema do T
 
 ## Identificação
 
-**Título do projeto de IHC:** {{TÍTULO DO PROJETO}}  
-**TCC/projeto de origem:** {{Estimativa não invasiva do peso de bovinos leves utilizando Visão Computacional}}  
-**Orientador(a):** {{Profa. Dra. Gabriela Oliveira Biondi}}  
+**Título do projeto de IHC:** Estimativa não invasiva do peso de bovinos leves utilizando Visão Computacional
+**TCC/projeto de origem:** Estimativa não invasiva do peso de bovinos leves utilizando Visão Computacional  
+**Orientador(a):** Profa. Dra. Gabriela Oliveira Biondi  
 **Disciplina:** Interação Humano-Computador  
-**Instituição:** {{FEI}}  
-**Semestre:** {{2026/Oitavo}}
+**Instituição:** FEI  
+**Semestre:** 8° Semestre/2026
 
 ### Equipe
 
 | Nome completo | Matrícula | GitHub | Responsabilidade principal |
 |---|---:|---|---|
-| {{Renan Casemiro Hessel}} | {{24.123.019-2}} | {{@RenanCasemiroHessel}} | {{...}} |
-| {{Gustavo Mendes Franco Lapin Atui}} | {{24.123.072-1}} | {{@GustavoAtui}} | {{...}} |
-| {{Rafael Takahagi Mendes}} | {{...}} | {{...}} | {{...}} |
+| Renan Casemiro Hessel | 24.123.019-2 | @RenanCasemiroHessel | {{...}} |
+| Gustavo Mendes Franco Lapin Atui | {{24.123.072-1}} | @GustavoAtui | {{...}} |
+| Rafael Takahagi Mendes | 22.126.084-7 | @rafamendes04 | {{...}} |
 
 ## Relação entre TCC e projeto de IHC
 
 | Item | Descrição |
 |---|---|
-| Tema central do TCC | {{Estimativa do peso de bovinos utilizando visão computacional}} |
+| Tema central do TCC | Estimativa do peso de bovinos utilizando visão computacional |
 | Resultado técnico esperado do TCC | {{algoritmo, estudo, sistema, modelo, análise, API...}} |
 | O TCC já previa interface? | sim |
-| Capacidade técnica que pode gerar valor para pessoas | {{...}} |
-| Usuário principal adotado em IHC | {{...}} |
-| Objetivo principal desse usuário | {{...}} |
+| Capacidade técnica que pode gerar valor para pessoas | Estimar o peso de um bovino a partir de uma fotografia tirada com smartphone, sem necessidade de balança de contenção, infraestrutura especializada ou mão de obra adicional. |
+| Usuário principal adotado em IHC | Produtor rural (pecuarista) responsável pelo manejo e monitoramento do rebanho de corte. |
+| Objetivo principal desse usuário | obter uma estimativa confiável do peso dos animais para tomada de decisões de manejo, como dosagem de medicamentos, controle/acompanhamento de crescimento e seleção de animais para abate e sem precisar conduzir o animal até a balança de contenção. |
 | Interface/recorte explorado na disciplina | {{...}} |
 | Relação com o escopo formal do TCC | parte prevista / extensão conceitual / protótipo demonstrativo / outra |
 
@@ -54,6 +54,8 @@ Escreva **um parágrafo curto e concreto** explicando: quem é o usuário escolh
 Evite começar pela tecnologia.
 
 > **Estrutura sugerida:** “`{{tipo de usuário}}` precisa `{{objetivo}}` em `{{contexto}}`. Atualmente enfrenta `{{problema/limitação}}` e utiliza `{{processo/alternativa atual}}`. O tema do TCC investiga `{{contribuição técnica}}`. Para fins da disciplina de IHC, será explorada uma interface que permita `{{forma de uso da contribuição}}`.”
+>
+Resumo do Projeto: O produtor rural de gado de corte precisa acompanhar o peso dos animais do rebanho com frequência para tomar decisões de manejo — dosagem de medicamentos, acompanhamento de crescimento e seleção de animais para abate — no contexto de propriedades rurais, muitas vezes sem infraestrutura especializada e com equipe reduzida. Atualmente enfrenta o alto custo operacional e a mobilização de mão de obra que a pesagem convencional exige, além do estresse causado aos animais, e recorre à balança de contenção (tronco hidráulico), que precisa conduzir cada animal individualmente até o equipamento — o que reduz a frequência do monitoramento. O tema do TCC investiga a estimativa não invasiva de peso bovino a partir de fotografias digitais, combinando segmentação semântica e modelos de regressão. Para fins da disciplina de IHC, será explorada uma interface que permita ao produtor fotografar o bovino com o smartphone, acionar a predição e visualizar o peso estimado com histórico por animal.
 
 Se alguma afirmação ainda não estiver sustentada por evidência, registre-a como hipótese na [Entrega 1](docs/01_conhecendo_o_problema.md).
 
