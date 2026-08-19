@@ -42,7 +42,7 @@ Leia obrigatoriamente o [Guia para definir o escopo de IHC a partir do tema do T
 | Capacidade técnica que pode gerar valor para pessoas | Estimar o peso de um bovino a partir de uma fotografia tirada com smartphone, sem necessidade de balança de contenção, infraestrutura especializada ou mão de obra adicional. |
 | Usuário principal adotado em IHC | Produtor rural (pecuarista) responsável pelo manejo e monitoramento do rebanho de corte. |
 | Objetivo principal desse usuário | obter uma estimativa confiável do peso dos animais para tomada de decisões de manejo, como dosagem de medicamentos, controle/acompanhamento de crescimento e seleção de animais para abate e sem precisar conduzir o animal até a balança de contenção. |
-| Interface/recorte explorado na disciplina | {{...}} |
+| Interface/recorte explorado na disciplina | Para fins da disciplina de IHC, será projetada uma interface móvel que permita ao produtor rural de bovinos de corte utilizar a estimativa de peso por foto (capacidade central do TCC) para saber rapidamente o peso de um animal do rebanho em campo, sem balança de contenção, no contexto do manejo diário em pasto ou curral, com smartphone e sob luz solar. |
 | Relação com o escopo formal do TCC | parte prevista / extensão conceitual / protótipo demonstrativo / outra |
 
 > **Importante:** a tabela acima explica a relação entre os dois trabalhos. Ela não altera o compromisso formal do TCC.
