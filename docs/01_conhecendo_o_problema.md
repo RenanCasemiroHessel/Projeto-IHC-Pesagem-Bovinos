@@ -1,7 +1,7 @@
 # Entrega 1 — Conhecendo o projeto, o usuário e o problema
 
 **Data:** {{13/08/2026}}  
-**Status:** ⬜ não iniciada  
+**Status:** 🟨 em andamento
 **Responsabilidade:** 1 solução consolidada por equipe
 
 ## Objetivo da atividade
@@ -205,17 +205,20 @@ Não responda “usar o algoritmo”, “clicar no sistema” ou “ver o dashbo
 [F] Conduzir o rebanho até a balança, exige mão de obra e tempo.
 [F] O animal ficar preso gera estresse.
 [H] Como os registros são feitos manualmente muitas vezes são perdidos.
+
 ## 4.3 Que informações o profissional precisa interpretar para tomar decisão?
 
-{{[F/H/?] ...}}
+[H] Peso atual em kg e arrobas, ganho de peso desde a última medição e se o animal atingiu o peso mínimo de abate.
 
 ## 4.4 O que acontece quando a atividade falha ou quando o resultado é interpretado incorretamente?
 
-{{[F/H/?] ...}}
+[H] O produto deixa de ser vantajoso para o usuário.
 
 ## 4.5 Conte uma situação concreta.
 
 Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificuldade e consequência. **Não descreva ainda a futura solução.**
+
+
 
 {{[F/H/?] narrativa...}}
 
@@ -223,7 +226,9 @@ Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificul
 
 | Evidência/fonte | O que sustenta | Limitação |
 |---|---|---|
-| {{...}} | {{...}} | {{...}} |
+| Resultados experimentais do próprio TCC | O peso pode ser estimado através de uma imagem estática | Pouco material para pesquisa em outras raças |
+| Resultados experimentais do próprio TCC | O peso pode ser estimado através de uma imagem estática | Pouco material para pesquisa em outras raças |
+| Resultados experimentais do próprio TCC | O peso pode ser estimado através de uma imagem estática | Pouco material para pesquisa em outras raças |
 
 ---
 
@@ -231,27 +236,29 @@ Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificul
 
 ## 5.1 Onde e em quais situações a interação poderia ocorrer?
 
-{{[F/H/?] ...}}
+[H] Curral ou pasto durante o manejo de rotina.
 
 ## 5.2 Em quais dispositivos/equipamentos?
 
-{{[F/H/?] ...}}
+[F] Smartphone pessoal do produtor ou peão.
 
 ## 5.3 Existem condições físicas relevantes?
 
 Considere iluminação, ruído, mobilidade, conexão, privacidade, uso compartilhado, interrupções, pressão de tempo etc.
 
-{{[F/H/?] ...}}
+[H] Sol forte reduzindo a legibilidade da tela; poeira, barro e mãos sujas ou com luva; uso com uma das mãos enquanto a outra controla portão ou animal; animal em movimento, o que limita o tempo de enquadramento; conexão de internet instável ou inexistente em parte da propriedade; ruído e pressa durante o manejo, com interrupções constantes.
 
 ## 5.4 Existem fatores sociais ou organizacionais?
 
 Considere papéis, chefias, equipes, permissões, aprovação, responsabilidade profissional, auditoria, turnos e colaboração.
 
-{{[F/H/?] ...}}
+Sim.
+[H] O aparelho pode ser operado pelo vaqueiro, mas a decisão é do produtor ou do gerente da fazenda.
 
 ## 5.5 Existe necessidade de histórico, rastreabilidade ou auditoria?
 
-{{[F/H/?] ...}}
+Sim.
+[H] Histórico por animal identificado (brinco) para acompanhar ganho de peso ao longo do tempo.
 
 ## 5.6 Um erro pode produzir consequência relevante? Qual?
 
@@ -267,29 +274,32 @@ Considere papéis, chefias, equipes, permissões, aprovação, responsabilidade 
 
 | Alternativa atual | Quem usa | Para quê | Status/evidência |
 |---|---|---|---|
-| {{...}} | {{...}} | {{...}} | {{...}} |
+| Balança de tronco | Fazenda de médio/grande porte | Pesagem precisa de todo o lote | [F] Solução padrão com alto custo  |
+| Estimativa visual do peão | Produtores e funcionários experientes | Decisão rápida do dia a dia | [H] Sem custo e altamente variável  |
+| Pesagem apenas na venda | Todos | Fechamento comercial | [F] Não é mais possível orientar o manejo devido  |
 
 ## 6.2 Existem produtos que atuam na mesma área, mesmo sem serem equivalentes ao TCC?
 
-{{[F/H/?] ...}}
+Sim
+[?] Softwares de gestão de rebanho, sistemas de pesagem eletrônica integrados a leitores de brinco e soluções comerciais de pecuária de precisão.
 
 ## 6.3 Quais interfaces profissionais esse público já conhece?
 
 Exemplos possíveis: ferramentas de banco, IDEs, consoles de nuvem, dashboards, plataformas de dados, ferramentas de monitoramento, painéis de IA, sistemas administrativos.
 
-{{[F/H/?] ...}}
+[H] WhatsApp, aplicativos de banco, apps de clima e de cotação da arroba, sistemas de cooperativa e leilão, e softwares de gestão de rebanho em uma parcela do público
 
 ## 6.4 O que essas soluções parecem fazer bem?
 
-{{[F/H/?] ...}}
+[H] Registro estruturado por animal e por lote, relatórios de evolução do rebanho e integração com equipamentos de pesagem eletrônica.
 
 ## 6.5 O que parecem fazer mal, dificultar ou não atender?
 
-{{[F/H/?] ...}}
+[H] Exigem cadastro longo antes de qualquer uso, pressupõem conexão estável, cobram assinatura e ainda dependem de uma balança para obter o dado de peso.
 
 ## 6.6 Que padrões de interface ou vocabulário parecem familiares a esse público?
 
-{{[F/H/?] ...}}
+[H] Arroba (@) como unidade de negociação junto com o quilograma, número do brinco, lote, pasto, "ponto de abate"; listas simples, botão de câmera e navegação rasa no estilo WhatsApp.
 
 ---
 
