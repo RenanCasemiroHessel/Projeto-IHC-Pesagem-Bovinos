@@ -418,6 +418,10 @@ A tecnologia aparece **agora**, depois do entendimento do uso.
 | Tecnologia/restrição | Por que existe | Possível impacto na interação |
 |---|---|---|
 | Pipeline: segmentação (YOLO zero-shot) -> medidas morfométricas -> regressão (CNN ResNet18) | [F] é a arquitetura técnica definida e validada no TCC 1 | [?] não sabemos o tempo de inferência em produção/mobile — impacta se precisa de tela de "processando" |
+| Uma foto (single-view) já é quase tão boa quanto duas (multi-view) | [F] diferença de só 0,04 kg de MAE entre os dois modos | Simplifica a interação: o app pode pedir só 1 foto, reduzindo fricção no momento da captura |
+| Dataset de treino é de bovinos de Bangladesh, ainda não testado em gado brasileiro (Nelore) | [F] limitação conhecida do TCC 1 | A interface precisa deixar claro que a estimativa pode ser menos confiável pra raças brasileiras |
+| Overfitting identificado na versão multi-view | [F] resultado técnico do TCC | Reforça a escolha por single-view como fluxo principal na interface |
+| MAE ~20,75 kg / acerto em ±10% em ~48% dos casos | [F] resultado atual do modelo | Interface não pode apresentar o peso como valor exato/definitivo — precisa de alguma indicação de margem de erro |
 
 ---
 
@@ -425,9 +429,11 @@ A tecnologia aparece **agora**, depois do entendimento do uso.
 
 | ID | Hipótese/dúvida | Por que importa | Como poderá ser investigada |
 |---|---|---|---|
-| H01 | {{...}} | {{...}} | Entrega 2/3/7/... |
-| H02 | {{...}} | {{...}} | {{...}} |
-| H03 | {{...}} | {{...}} | {{...}} |
+| H01 | O produtor consegue usar o app sozinho em campo (sol forte, poeira, mãos sujas, sinal instável) sem ajuda de terceiros | [H] se a interação não funcionar nessas condições, o app não resolve o problema real, mesmo com o modelo de ML preciso | Entrega 3 (persona/contexto) e Entrega 14 (avaliação com usuários) |
+| H02 | Mostrar a margem de erro da estimativa (ex: "peso estimado: 180kg ± 20kg") aumenta a confiança do produtor no número, em vez de reduzir | [H] o TCC tem MAE de ~20,75 kg — se a interface esconder isso, o produtor pode tomar decisão errada; se comunicar mal, pode desconfiar do app inteiro | Entrega 7 (coleta de dados) e Entrega 13 (avaliação heurística) |
+| H03 | O produtor quer acompanhar a evolução de peso do animal ao longo do tempo (não só o valor pontual da última pesagem) | [H] justifica ou não incluir "comparação de resultados" no escopo do projeto (seção 8) | Entrega 2/3 (entrevistas com público-alvo/persona) |
+| H04 | Uma única foto (single-view) é suficiente pra captura em campo sem gerar frustração por foto rejeitada/mal enquadrada | [?] o TCC valida single-view tecnicamente (MAE quase igual ao multi-view), mas não valida a facilidade de capturar essa foto em condições reais de curral | Entrega 6 (prototipação em papel) e Entrega 14 (observação de usuários) |
+| H05 | O técnico agropecuário (perfil secundário) usaria o mesmo app que o pecuarista, ou precisaria de uma visão/acesso diferente | [?] afeta diretamente se a seção 8 precisa de "perfis/permissões" no escopo ou não | Entrega 2 (público-alvo) |
 
 Registre em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
@@ -437,23 +443,23 @@ Registre em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
 | Pergunta | Síntese atual |
 |---|---|
-| Qual é a contribuição central do TCC? | {{...}} |
-| O TCC já previa interface? | {{...}} |
-| Quem é o usuário prioritário de IHC? | {{...}} |
-| O que ele precisa alcançar? | {{...}} |
-| Qual problema/atividade será estudado? | {{...}} |
-| Como isso acontece hoje? | {{...}} |
-| Qual é o contexto de uso? | {{...}} |
-| Que interface/recorte será explorado? | {{...}} |
-| Como a interface se relaciona ao TCC? | {{...}} |
-| Quais pontos ainda são hipóteses? | {{H01...}} |
+| Qual é a contribuição central do TCC? | [F] estimar o peso de bovinos leves (até 250 kg) a partir de fotos, sem balança, usando um pipeline de segmentação (YOLO) + extração morfométrica + regressão (CNN ResNet18) |
+| O TCC já previa interface? | [F] sim, o app com 4 telas: login/cadastro, cadastro do fazendeiro, captura de fotos, dashboard/histórico |
+| Quem é o usuário prioritário de IHC? | [F] o pecuarista |
+| O que ele precisa alcançar? | [H] obter o peso estimado de um bovino específico de forma rápida e confiável, sem balança, com o peso corretamente associado ao animal certo no histórico |
+| Qual problema/atividade será estudado? | [F] o fluxo de fotografar, receber o peso eidentificar o animal antes de salvar) |
+| Como isso acontece hoje? | [F] por balança de tronco (R$ 30-50 mil), o que faz muitos produtores pesarem só 2-4 vezes por ano |
+| Qual é o contexto de uso? | [F] curral ou pasto, no smartphone pessoal do produtor/peão, com sol forte, poeira, mãos sujas, conexão instável, animal em movimento |
+| Que interface/recorte será explorado? | [F] as telas 3 (captura de fotos) e 4 (dashboard/histórico) do app previsto |
+| Como a interface se relaciona ao TCC? | [F] já fazia parte do TCC, mas [H] também é um aprofundamento — o TCC definiu as telas de forma superficial, sem trabalho de UX |
+| Quais pontos ainda são hipóteses? | H01, H02, H03, H04, H05 |
 
 ### Delimitação
 
-**Dentro do escopo de IHC:** {{...}}  
-**Fora do escopo de IHC:** {{...}}  
-**Dentro do escopo formal do TCC:** {{...}}  
-**Interface da disciplina será implementada no TCC?** não definido / sim / não — {{justificativa, se houver}}
+**Dentro do escopo de IHC:** [F] captura de foto, identificação do animal (brinco/lote), exibição do peso estimado com indicação de margem de erro, histórico de peso por animal, visão geral do rebanho (dashboard).  
+**Fora do escopo de IHC:** [H] administração multi-usuário/permissões, auditoria/logs, cadastro completo do fazendeiro (tela 2, configuração única de baixa prioridade), qualquer detalhamento técnico do modelo de ML (explicabilidade da CNN).  
+**Dentro do escopo formal do TCC:** [F] o pipeline de visão computacional e ML (segmentação, extração de medidas, regressão) — a interface em si nunca foi o foco técnico do TCC, só um pré-requisito de uso.  
+**Interface da disciplina será implementada no TCC?** sim.
 
 ---
 
@@ -477,9 +483,9 @@ A Entrega 1 é uma **fotografia inicial do conhecimento**. Ela pode e deve ser r
 
 Prepare uma explicação de até três frases:
 
-1. **Problema/atividade humana:** {{...}}
-2. **Contribuição técnica do TCC:** {{...}}
-3. **Como uma pessoa poderia utilizar essa contribuição:** {{...}}
+1. **Problema/atividade humana:** Pecuaristas de pequeno porte frequentemente não têm balança de tronco (equipamento que custa R$ 30-50 mil), por isso pesam o gado poucas vezes por ano, prejudicando o acompanhamento do desenvolvimento dos animais e a tomada de decisão sobre venda e manejo.
+2. **Contribuição técnica do TCC:** O projeto usa visão computacional e aprendizado de máquina (segmentação de imagem, extração de medidas morfométricas e uma rede neural convolucional) pra estimar o peso de bovinos leves a partir de uma única foto, sem precisar de balança.
+3. **Como uma pessoa poderia utilizar essa contribuição:** O produtor tiraria uma foto do animal com o próprio celular, direto no curral ou pasto, e receberia uma estimativa de peso já vinculada ao histórico daquele bovino.
 
 Essa síntese ajuda a apresentar o projeto para público não especializado sem reduzir seu mérito técnico.
 
@@ -487,21 +493,21 @@ Essa síntese ajuda a apresentar o projeto para público não especializado sem 
 
 # Checklist de qualidade
 
-- [ ] Está clara a diferença entre tema do TCC, escopo formal do TCC e escopo de IHC.
-- [ ] A equipe declarou se o TCC já previa interface.
-- [ ] Se não previa, foi derivado um usuário plausível e um objetivo de uso.
-- [ ] A interface de IHC não foi apresentada como obrigação automática do TCC.
-- [ ] A contribuição do TCC foi descrita sem começar por tecnologias de implementação.
-- [ ] Usuários diretos e stakeholders foram diferenciados.
-- [ ] Foram considerados profissionais que configuram, administram, interpretam ou decidem, quando pertinente.
-- [ ] Objetivo do usuário não foi confundido com objetivo do projeto.
-- [ ] Processo/problema atual foi descrito antes da solução.
-- [ ] Existe situação concreta de uso/problema.
-- [ ] Contexto físico, social/organizacional, dispositivos e consequências de erro foram considerados.
-- [ ] Mercado/alternativas existentes foram levantados inicialmente.
-- [ ] Possibilidades como dashboard, relatório, histórico, filtros e CRUD foram tratadas como hipóteses de solução, não como requisitos automáticos.
-- [ ] Cada possibilidade de interface tem um objetivo/tarefa que poderia justificá-la.
-- [ ] Afirmações relevantes estão marcadas `[F]`, `[H]` ou `[?]`.
-- [ ] Hipóteses prioritárias receberam IDs e foram para a rastreabilidade.
-- [ ] O recorte de IHC é viável para modelar, prototipar e avaliar no semestre.
-- [ ] A equipe consegue explicar problema humano → contribuição computacional → forma de uso.
+- [x] Está clara a diferença entre tema do TCC, escopo formal do TCC e escopo de IHC.
+- [x] A equipe declarou se o TCC já previa interface.
+- [x] Se não previa, foi derivado um usuário plausível e um objetivo de uso.
+- [x] A interface de IHC não foi apresentada como obrigação automática do TCC.
+- [x] A contribuição do TCC foi descrita sem começar por tecnologias de implementação.
+- [x] Usuários diretos e stakeholders foram diferenciados.
+- [x] Foram considerados profissionais que configuram, administram, interpretam ou decidem, quando pertinente.
+- [x] Objetivo do usuário não foi confundido com objetivo do projeto.
+- [x] Processo/problema atual foi descrito antes da solução.
+- [x] Existe situação concreta de uso/problema.
+- [x] Contexto físico, social/organizacional, dispositivos e consequências de erro foram considerados.
+- [x] Mercado/alternativas existentes foram levantados inicialmente.
+- [x] Possibilidades como dashboard, relatório, histórico, filtros e CRUD foram tratadas como hipóteses de solução, não como requisitos automáticos.
+- [x] Cada possibilidade de interface tem um objetivo/tarefa que poderia justificá-la.
+- [x] Afirmações relevantes estão marcadas `[F]`, `[H]` ou `[?]`.
+- [x] Hipóteses prioritárias receberam IDs e foram para a rastreabilidade.
+- [x] O recorte de IHC é viável para modelar, prototipar e avaliar no semestre.
+- [x] A equipe consegue explicar problema humano → contribuição computacional → forma de uso.
