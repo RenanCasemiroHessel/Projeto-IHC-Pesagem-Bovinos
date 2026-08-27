@@ -311,7 +311,9 @@ Exemplos possíveis: ferramentas de banco, IDEs, consoles de nuvem, dashboards, 
 
 Explique qual parte da interface será usada como recorte da disciplina e por que esse fluxo é relevante.
 
-{{...}}
+[F] O recorte da disciplina será o fluxo de captura de foto -> identificação do animal -> visualização do peso estimado, que corresponde às telas 3 (captura de fotos) e 4 (dashboard/histórico) da interface prevista.
+Esse fluxo é relevante porque concentra as duas atividades mais críticas já mapeadas: A01 (fotografar e receber o peso, sendo essa a mais frequente) e A02 (identificar o animal antes de salvar, sendo essa a mais crítica, já que erro aqui compromete o histórico inteiro daquele animal). 
+[H] As telas 1 e 2 (login/cadastro e cadastro do fazendeiro) ficam fora do recorte principal por serem telas de configuração única, não de uso recorrente — mas podem aparecer de forma simplificada no protótipo pra dar contexto de navegação.
 
 ### Caminho B — TCC não possui interface prevista
 
@@ -332,13 +334,14 @@ Responda:
 
 ## 7.2 Qual perfil será priorizado no projeto de IHC?
 
-{{...}}
+[F] Pecuarista (usuário direto)
 
-**Por que esse perfil foi escolhido?** {{...}}
+**Por que esse perfil foi escolhido?** 
+[F] Porque é quem de fato maneja o app no curral/pasto, no smartphone pessoal, no momento da pesagem. O técnico agropecuário é perfil secundário, pois ele consulta e orienta, mas não é quem fotografa o animal no dia a dia.
 
 ## 7.3 Qual objetivo desse usuário será priorizado?
 
-{{...}}
+[H] Obter o peso estimado de um bovino específico de forma rápida e confiável, sem precisar de balança, garantindo que o peso seja corretamente associado ao animal certo no histórico.
 
 ## 7.4 Que interface será explorada na disciplina?
 
@@ -346,11 +349,11 @@ Complete:
 
 > **Para fins da disciplina de IHC, será projetada uma interface que permita a `{{perfil}}` utilizar `{{capacidade/resultado do TCC}}` para `{{objetivo}}`, no contexto de `{{situação}}`.**
 
-{{...}}
+[F] Para fins da disciplina de IHC, será projetada uma interface que permita ao pecuarista utilizar a estimativa de peso do bovino via foto para registrar o peso do animal certo no histórico, sem precisar de balança, no contexto de curral ou pasto, usando o smartphone pessoal, com sol forte, poeira, mãos sujas e conexão instável.
 
 ## 7.5 Qual é a relação dessa interface com o TCC?
 
-- [ ] Já fazia parte do TCC.
+- [x] Já fazia parte do TCC.
 - [ ] É um aprofundamento de algo parcialmente previsto.
 - [ ] É uma extensão conceitual criada para a disciplina.
 - [ ] É um protótipo demonstrativo de aplicação potencial.
@@ -368,20 +371,20 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 
 | Possibilidade | Pode fazer sentido? | Objetivo/tarefa que justificaria | Evidência atual |
 |---|---|---|---|
-| Dashboard/visão geral | sim/não/talvez | {{...}} | {{...}} |
-| Configuração/parametrização | sim/não/talvez | {{...}} | {{...}} |
-| Entrada/upload/seleção de dados | sim/não/talvez | {{...}} | {{...}} |
-| Acompanhamento de processamento | sim/não/talvez | {{...}} | {{...}} |
-| Relatório/resultados | sim/não/talvez | {{...}} | {{...}} |
-| Histórico com busca/filtros | sim/não/talvez | {{...}} | {{...}} |
-| Comparação de resultados | sim/não/talvez | {{...}} | {{...}} |
-| Explicabilidade/detalhamento | sim/não/talvez | {{...}} | {{...}} |
-| Administração/configurações globais | sim/não/talvez | {{...}} | {{...}} |
-| Usuários/perfis/permissões | sim/não/talvez | {{...}} | {{...}} |
-| CRUD de entidade do domínio | sim/não/talvez | {{...}} | {{...}} |
-| Auditoria/logs | sim/não/talvez | {{...}} | {{...}} |
-| Alertas/ocorrências | sim/não/talvez | {{...}} | {{...}} |
-| Ajuda/documentação | sim/não/talvez | {{...}} | {{...}} |
+| Dashboard/visão geral | sim | Reunir os animais/lotes do produtor com peso mais recente de cada um, pra ele ter visão geral do rebanho sem abrir animal por animal | [F] já previsto como tela 4 do projeto (dashboard/histórico) |
+| Configuração/parametrização | sim | Cadastro inicial do fazendeiro (quantidade de gado, localização) | [F] já previsto como tela 2 do projeto |
+| Entrada/upload/seleção de dados | sim | Capturar foto do bovino pra gerar a estimativa de peso | [F] já previsto como tela 3 do TCC (captura de fotos) |
+| Acompanhamento de processamento | talvez | Mostrar status enquanto o modelo processa a foto (segmentação + regressão não é instantâneo) | ?] não sabemos o tempo de inferência do pipeline rodando em campo/mobile, sendo essa uma lacuna a validar |
+| Relatório/resultados | sim | Exibir o peso estimado (em kg e/ou @) depois da foto, com clareza de que é uma estimativa e não pesagem exata | [F] é a saída central do TCC, atualmente sendo MAE ~20,75 kg, acerto em ±10% em ~48% dos casos, então a interface precisa comunicar isso de forma honesta |
+| Histórico com busca/filtros | sim | Consultar o histórico de peso de um bovino específico (busca por brinco/lote) | [F] já previsto como parte da tela 4; brinco e lote são vocabulário já validado como familiar ao público |
+| Comparação de resultados | talvez | 	Visualizar evolução de peso do animal ao longo do tempo (ganho de peso entre pesagens) | H] hipótese de que o produtor quer acompanhar engorda, não só o valor pontual, sendo necessário validar com usuário |
+| Explicabilidade/detalhamento | talvez | Não faz sentido explicar a CNN, mas pode fazer sentido comunicar a margem de erro/confiança da estimativa | [H] hipótese de que mostrar incerteza (ex: "peso estimado: 180kg ± 20kg") ajuda o produtor a confiar mais no número do que um valor seco |
+| Administração/configurações globais | não | 	Não há indício de necessidade de administração central (múltiplas fazendas, múltiplos operadores por conta) | [?] não foi definido se o app atende 1 produtor = 1 conta ou estrutura multi-usuário |
+| Usuários/perfis/permissões | talvez | Diferenciar visualização do pecuarista (seu próprio rebanho) da do técnico agropecuário (pode acompanhar vários produtores) | [H] hipótese, decorre do perfil secundário já definido, mas não há confirmação de que o técnico usa o mesmo app |
+| CRUD de entidade do domínio | sim | Cadastrar/editar/excluir bovino (brinco, lote) | [F] decorre diretamente da atividade mais crítica já mapeada |
+| Auditoria/logs | não | 	Não há indício de necessidade de rastrear alterações/quem editou o quê | [?] pode ganhar relevância se peso errado gerar disputa com frigorífico, mas não foi validado |
+| Alertas/ocorrências | talvez | Avisar quando a foto capturada não está em condições boas pra estimativa (ângulo, distância, animal em movimento) | [H] hipótese ligada às condições reais de uso (sol forte, poeira, animal se mexendo) que podem prejudicar a qualidade da foto |
+| Ajuda/documentação | talvez | Orientar o pecuarista sobre como tirar a foto corretamente (distância, ângulo) | [H] hipótese, reforçada pelo contexto de baixa familiaridade digital do público e pela sensibilidade do modelo à imagem de entrada |
 
 > **Atenção:** “login + dashboard + CRUD” não é uma solução universal. Cada padrão deve surgir de uma tarefa real.
 
@@ -393,13 +396,20 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 
 | Benefício esperado | Problema/necessidade | Usuário | Status/evidência |
 |---|---|---|---|
-| {{...}} | {{...}} | {{...}} | {{...}} |
+| Conseguir estimar o peso do rebanho sem precisar comprar/alugar balança de tronco | [F] balança de tronco custa R$ 30-50 mil, por isso muitos produtores pesam só 2-4 vezes por ano | Pecuarista | [F] já validado como motivação central do TCC |
+| Reduzir o risco de erro na hora de associar o peso ao animal certo | [F] Identificar o animal foi mapeada como a atividade mais crítica, pois um erro aqui compromete todo o histórico daquele animal | Pecuarista | [F] já decidido nas entregas anteriores |
+| Conseguir usar o app mesmo em condições ruins de campo (sol forte, mãos sujas, sinal instável) | [F] Contexto de uso real é curral/pasto | Pecuarista | [H] hipótese de que isso é viável — ainda não testado com interface real |
 
 ## 9.2 Que ações o usuário deverá conseguir realizar?
 
 | ID | O usuário precisa conseguir... | Para alcançar... | Prioridade inicial |
 |---|---|---|---|
-| F01 | {{ação}} | {{objetivo}} | alta/média/baixa |
+| F01 | Tirar/enviar uma foto do bovino pelo celular | Receber o peso estimado sem balança | alta |
+| F02 | Identificar/vincular a foto ao animal certo (por brinco ou lote) | Garantir que o peso seja salvo no histórico correto | alta |
+| F03 | Consultar o histórico de peso de um bovino específico | Acompanhar a evolução do animal ao longo do tempo | alta |
+| F04 | Ver uma lista/visão geral dos animais do seu rebanho | Ter noção geral do estado do rebanho sem abrir animal por animal | média |
+| F05 | Cadastrar novo bovino (brinco, lote) | Ter o animal disponível para registrar pesagens futuras | média |
+| F06 | Entender que o peso mostrado é uma estimativa, não uma pesagem exata | Tomar decisões de manejo/venda com expectativa correta em relação à margem de erro do modelo | alta |
 
 ## 9.3 Tecnologias/restrições já definidas no TCC
 
@@ -407,7 +417,7 @@ A tecnologia aparece **agora**, depois do entendimento do uso.
 
 | Tecnologia/restrição | Por que existe | Possível impacto na interação |
 |---|---|---|
-| {{...}} | {{...}} | {{...}} |
+| Pipeline: segmentação (YOLO zero-shot) -> medidas morfométricas -> regressão (CNN ResNet18) | [F] é a arquitetura técnica definida e validada no TCC 1 | [?] não sabemos o tempo de inferência em produção/mobile — impacta se precisa de tela de "processando" |
 
 ---
 
