@@ -31,6 +31,7 @@ Retome o mapa inicial de alternativas e produtos citado na Entrega 1. Aqui a equ
 | Software | Tipo | Por que foi citado | Status inicial | Decisão nesta entrega |
 |---|---|---|---|---|
 | Cattle Weight AI | concorrente | concorrente direto com funcionalidades semelhantes | F  | analisar C01 |
+| Olho do dono | concorrente | funcionalidades diferentes mas voltado pro mesmo público | F  | analisar C02 |
 
 Se uma hipótese da Entrega 1 for confirmada ou refutada durante esta análise, atualize `H01`, `H02`... em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
