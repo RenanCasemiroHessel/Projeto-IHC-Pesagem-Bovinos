@@ -65,7 +65,7 @@ C02 - O concorrente Olho do Dono é uma empresa que desenvolveu um equipamento p
 
 | Funcionalidade | Como é realizada | Evidência/print | Observação de IHC |
 |---|---|---|---|
-| C01 | Estimar o peso através de fotos tiradas dentro do aplicativo, acompanhamento de pesagem através de um histórico (por animal) | O usuário tira uma foto através do aplicativo, onde a IA estima o peso do animal, salvando o resultado no histórico de pesagem| assets/02_concorrencia/evidencia_Cattle_weight.webp | {{...}} |
+| C01 | Estimar o peso através de fotos tiradas dentro do aplicativo, acompanhamento de pesagem através de um histórico (por animal) | O usuário tira uma foto através do aplicativo, onde a IA estima o peso do animal, salvando o resultado no histórico de pesagem| ![Imagem Cattle Weight AI](assets/02_concorrencia/evidencia_Cattle_weight.webp) | {{...}} |
 | C02 | Pesagem do animal em tempo real, podendo ser vista de forma remota sem estar presente através do aplicativo desenvolvido por eles | O animal passa por um corredor no curral aonde a câmera está posicionada, o usuário tem acesso ao peso do animal através do aplicativo, onde é possível ver em tempo real o animal passando e o dispositivo predizendo o peso | `../assets/02_concorrencia/...` | {{...}} |
 
 
