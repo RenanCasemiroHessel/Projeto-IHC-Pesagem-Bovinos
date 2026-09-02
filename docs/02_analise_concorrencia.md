@@ -31,13 +31,13 @@ Retome o mapa inicial de alternativas e produtos citado na Entrega 1. Aqui a equ
 | Software | Tipo | Por que foi citado | Status inicial | Decisão nesta entrega |
 |---|---|---|---|---|
 | Cattle Weight AI | concorrente | concorrente direto com funcionalidades semelhantes | F  | analisar C01 |
-| Olho do dono | concorrente | funcionalidades diferentes mas voltado pro mesmo público | F  | analisar C02 |
+| Olho do dono | concorrente | funcionalidades diferentes mas voltado para o mesmo público | F  | analisar C02 |
 
 Se uma hipótese da Entrega 1 for confirmada ou refutada durante esta análise, atualize `H01`, `H02`... em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
 ## 1. Público-alvo desta análise
 
-{{descrever e ligar à Entrega 1}}
+O público alvo da análise segue sendo o mesmo da entrega 1. Pecuaristas de corte pequeno e médio porte, trabalhadores de campo. Que precisam estimar o peso do gado sem uma balança própria, além de veterinários e técnicos que acompanham o ganho de peso do rebanho.
 
 ## 2. Concorrentes diretos/indiretos
 
@@ -48,15 +48,26 @@ Se uma hipótese da Entrega 1 for confirmada ou refutada durante esta análise, 
 **Link oficial:** https://play.google.com/store/apps/details?id=com.tlt.androidapps.cattlewt&hl=pt_BR  
 **Data de acesso:** 26/08/2026
 
+### Análise C02 — Olho do dono
+
+**Autor(a):** Renan Casemiro Hessel — 24.123.019-2  
+**Tipo:** direto 
+**Link oficial:** https://olhododono.agr.br/ 
+**Data de acesso:** 02/09/2026
+
 #### Contexto e proposta
 
-{{...}}
+C01 - O concorrente Cattle Weight AI utiliza visão computacional e inteligência artificial para estimar e acompanhar o ganho de peso do animal (bovíno) através de fotos tiradas pelo celular.
+
+C02 - O concorrente Olho do Dono é uma empresa que desenvolveu um equipamento portátil e com tecnologia própria que permite o produtor a acompanhar e realizar pesagem do rebanho de maneira remota, apenas com uma câmera instalada no curral.
 
 #### Funcionalidades relevantes
 
 | Funcionalidade | Como é realizada | Evidência/print | Observação de IHC |
 |---|---|---|---|
-| {{...}} | {{...}} | `../assets/02_concorrencia/...` | {{...}} |
+| C01 | Estimar o peso através de fotos tiradas dentro do aplicativo, acompanhamento de pesagem através de um histórico (por animal) | O usuário tira uma foto através do aplicativo, onde a IA estima o peso do animal, salvando o resultado no histórico de pesagem| `../assets/02_concorrencia/` | {{...}} |
+| C02 | Pesagem do animal em tempo real, podendo ser vista de forma remota sem estar presente através do aplicativo desenvolvido por eles | O animal passa por um corredor no curral aonde a câmera está posicionada, o usuário tem acesso ao peso do animal através do aplicativo, onde é possível ver em tempo real o animal passando e o dispositivo predizendo o peso | `../assets/02_concorrencia/...` | {{...}} |
+
 
 #### Experiência do usuário e opiniões
 
