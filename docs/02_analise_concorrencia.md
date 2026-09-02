@@ -57,8 +57,7 @@ O público alvo da análise segue sendo o mesmo da entrega 1. Pecuaristas de cor
 
 #### Contexto e proposta
 
-##### C01 
-O concorrente Cattle Weight AI utiliza visão computacional e inteligência artificial para estimar e acompanhar o ganho de peso do animal (bovíno) através de fotos tiradas pelo celular.
+C01 - O concorrente Cattle Weight AI utiliza visão computacional e inteligência artificial para estimar e acompanhar o ganho de peso do animal (bovíno) através de fotos tiradas pelo celular.
 
 C02 - O concorrente Olho do Dono é uma empresa que desenvolveu um equipamento portátil e com tecnologia própria que permite o produtor a acompanhar e realizar pesagem do rebanho de maneira remota, apenas com uma câmera instalada no curral.
 
@@ -71,8 +70,7 @@ C02 - O concorrente Olho do Dono é uma empresa que desenvolveu um equipamento p
 
 
 #### Experiência do usuário e opiniões
-##### C01 
-Com base nas avaliações públicas da Play Store (117 avaliações, média **3.0 estrelas**):
+C01 - Com base nas avaliações públicas da Play Store (117 avaliações, média **3.0 estrelas**):
 - Distribuição polarizada: muitas avaliações de 5 estrelas e muitas de 1 estrela — indica experiência inconsistente.
 - Reclamações graves de imprecisão: múltiplos usuários relatam erros superiores a 500 kg ou 500 lbs na predição.
   - *"Off on my calves by over 500 lbs"* — Joshua Vandever, 1 estrela, jun/2026
@@ -84,17 +82,16 @@ Com base nas avaliações públicas da Play Store (117 avaliações, média **3.
 
 #### Preço/modelo de negócio
 
-#### C01 
-Gratuito com compras no app, Versão pro disponivel com funcionalidades adicionais.
+C01 - Gratuito com compras no app, Versão pro disponivel com funcionalidades adicionais.
 
 #### Padrões e tendências percebidos
 
-##### C01 
+C01:   
   - Dois botões de entrada claros (Camera e Library) na tela inicial.
   - Orientação de captura antes da foto — reduz erros sem treinamento do usuário.
   - Peso em kg em tipografia grande como elemento principal do resultado.
-  - Intervalo de confiança exibido junto ao resultado — transparência sobre a margem de erro.
-  - Dados complementares do animal inferidos pela IA (raça, sexo, medidas).
+  - Intervalo de confiança exibido junto ao resultado.
+  - Dados complementares do animal (raça, sexo, medidas).
 
 #### Pontos positivos, limitações e lições
 
