@@ -32,7 +32,7 @@ Retome o mapa inicial de alternativas e produtos citado na Entrega 1. Aqui a equ
 |---|---|---|---|---|
 | Cattle Weight AI | concorrente | concorrente direto com funcionalidades semelhantes | F  | analisar C01 |
 | Olho do dono | concorrente | funcionalidades diferentes mas voltado para o mesmo público | F  | analisar C02 |
-| Olho do dono | concorrente | concorrente direto pois utiliza funcionalidades parecidas (peso por foto do celular)| F  | analisar C03 |
+| Beefie | concorrente | concorrente direto pois utiliza funcionalidades parecidas (peso por foto do celular)| F  | analisar C03 |
 
 Se uma hipótese da Entrega 1 for confirmada ou refutada durante esta análise, atualize `H01`, `H02`... em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 
@@ -75,7 +75,7 @@ C03 - O concorrente Beefie é um aplicativo da empresa húngara Agroninja que es
 | Funcionalidade | Como é realizada | Evidência/print | Observação de IHC |
 |---|---|---|---|
 | C01 | Estimar o peso através de fotos tiradas dentro do aplicativo, acompanhamento de pesagem através de um histórico (por animal) |  ![Imagem Cattle Weight AI](../assets/02_concorrencia/cattle-weight-ai-1.png)| O usuário tira uma foto através do aplicativo, onde a IA estima o peso do animal, salvando o resultado no histórico de pesagem| {{...}} |
-| C02 | Pesagem do animal em tempo real, podendo ser vista de forma remota sem estar presente através do aplicativo desenvolvido por eles |  ![](assets/02_concorrencia/...) | O animal passa por um corredor no curral aonde a câmera está posicionada, o usuário tem acesso ao peso do animal através do aplicativo, onde é possível ver em tempo real o animal passando e o dispositivo predizendo o peso | {{...}} |
+| C02 | Pesagem do animal em tempo real, podendo ser vista de forma remota sem estar presente através do aplicativo desenvolvido por eles |  [Imagem Beefie](../assets/02_concorrencia/evidencia_olhododono.jpeg) | O animal passa por um corredor no curral aonde a câmera está posicionada, o usuário tem acesso ao peso do animal através do aplicativo, onde é possível ver em tempo real o animal passando e o dispositivo predizendo o peso | {{...}} |
 | C03 | Pesagem por foto lateral do animal, em cerca de 40 segundos por cabeça, combinando a imagem com a leitura do medidor a laser pareado via Bluetooth | ![Imagem Beefie](../assets/02_concorrencia/beefie-1.webp) | [F] O app depende de um passo extra de setup antes mesmo de chegar na foto (conectar o Bluetooth do laser). Isso adiciona fricção logo no início do fluxo, diferente do nosso caminho pretendido (captura de foto → identificação → peso), que não depende de hardware pareado. |
 
 
@@ -91,6 +91,8 @@ C01 - Com base nas avaliações públicas da Play Store (117 avaliações, médi
   - Usuário relatou imprecisão → resposta: *"Stop lying, you were using incorrect images"*
   - Usuário relatou que não conseguiu operar o app → resposta: *"just capture the pics and upload. how difficult is it?"*
  
+C02 - Ausência de avaliação pública independente: sem app em loja pública, sem perfil no Reclame Aqui, sem base de reviews. Todo o material disponível é institucional (site próprio, releases, entrevistas do CEO) ou imprensa setorial. Não há como aferir experiência real de uso por fonte independente.
+ 
 C03 - Com base nas avaliações públicas da Play Store (75 avaliações, média **2.5 estrelas**, ~46 mil instalações):
 - Nota média mais baixa que a do C01 (2.5 vs 3.0), o que sugere frustração ainda maior dos usuários.
 - O próprio texto de descrição do app já avisa, em letras maiúsculas, que é preciso ter uma licença ativa pra acessar o aplicativo — ou seja, o usuário pode baixar o app de graça e descobrir só depois que não consegue usar nada sem pagar e sem comprar o acessório físico. Isso é uma barreira de entrada exposta de forma pouco amigável.
@@ -98,6 +100,8 @@ C03 - Com base nas avaliações públicas da Play Store (75 avaliações, média
 #### Preço/modelo de negócio
 
 C01 - Gratuito com compras no app, Versão pro disponivel com funcionalidades adicionais.
+
+C02 - Não possui valores divulgados publicamente.
 
 C03 - [F] Modelo de licença paga obrigatória, vendida junto com o acessório físico (medidor de distância a laser) pelo site da Agroninja — não é possível usar o app sem comprar o pacote completo. Existe uma licença "plus" que adiciona a medição de altura do animal. Diferente do C01 (freemium, uso imediato) e mais parecido com o C02 em exigir hardware, mas em escala bem menor (um acessório portátil, não uma câmera 3D fixa).
 
@@ -110,10 +114,19 @@ C01:
   - Intervalo de confiança exibido junto ao resultado.
   - Dados complementares do animal (raça, sexo, medidas).
 
+C02: 
+  - Instalação física — corredor de ~8 m × 70 cm em arame liso e estacas, câmera a ~3 m de altura
+  - Operação de um botão só; a empresa descreve o processo como intuitivo, operável por qualquer pessoa, com setup em ~5 minutos após a estrutura montada.
+  - Zero enquadramento manual — o animal passa em movimento e a câmera capta ~30 imagens por segundo, gerando ~30 modelos 3D por animal.
+  - Resultado não aparece na hora para o operador: entrega é por relatório em Excel ou PDF, ou integração com o sistema de gestão da fazenda.
+  - GMD calculado automaticamente a partir do histórico, sem nova ida ao curral.
+
 C03:
 - [F] Fluxo pensado pra ser feito "dentro da caminhonete" — foto a distância, sem precisar entrar no curral com o animal.
 - [F] Adaptação de mercado visível: a versão original só cobria algumas raças europeias e animais adultos; a equipe teve que desenvolver uma versão nova pra cobrir Nelore (mais de 80% do rebanho brasileiro) e bezerros. [H] Isso é um sinal forte de que modelos treinados fora do Brasil (como o nosso, treinado em gado de Bangladesh) tendem a errar mais em Nelore até passarem por esse tipo de ajuste — reforça um risco que já era hipótese no TCC.
 - [F] Integração com um "HUB" de gestão do rebanho da própria empresa, indo além do peso isolado (estoque, tendências em gráfico).
+
+#### Pontos positivos, limitações e lições - C01
 
 | Ponto | Evidência | Implicação para nosso projeto |
 |---|---|---|
@@ -123,6 +136,15 @@ C03:
 | Desenvolvedor responde reclamações culpando o usuário | Respostas públicas do desenvolvedor a avaliações negativas na Play Store | [F] Padrão a evita |
 | Sem histórico de pesagens por animal e sem identificação por brinco | Ausência dessas funcionalidades nas telas disponíveis na Play Store | [H] Reforça que gerenciamento de rebanho real exige rastreabilidade individual |
 | Disponível apenas para Android | App não encontrado na App Store em busca | [F] Confirma lacuna de mercado em iOS  |
+
+#### Pontos positivos, limitações e lições - C02
+| Ponto | Evidência | Implicação para nosso projeto |
+|---|---|---|
+| Captura passiva elimina erro de operador | Animal passa em movimento pelo corredor; câmera capta ~30 imagens/s e gera ~30 modelos 3D por animal automaticamente | O C02 resolve por hardware o problema que o nosso app precisa resolver por interface |
+| Interface reduzida ao mínimo | Sistema descrito como operável por um único botão, com processos intuitivos e ~5 min de setup | Confirma a decisão de dois botões na home. Cada tela a mais é atrito com usuário de campo| Valida a premissa de poucos passos por tarefa |
+| Autonomia total de campo | Opera com bateria interna, sem depender de internet nem energia elétrica no local | O concorrente que atende o mesmo público tratou offline como requisito, não como funcionalidade. | 
+| Acurácia declarada e inconsistente | todos os números divulgados são da própria empresa, sem estudo independente | O setor comunica acurácia sem método. |
+
 
 #### Pontos positivos, limitações e lições - C03
 
