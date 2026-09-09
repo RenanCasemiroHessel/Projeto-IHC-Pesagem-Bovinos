@@ -115,6 +115,14 @@ C03:
 - [F] Adaptação de mercado visível: a versão original só cobria algumas raças europeias e animais adultos; a equipe teve que desenvolver uma versão nova pra cobrir Nelore (mais de 80% do rebanho brasileiro) e bezerros. [H] Isso é um sinal forte de que modelos treinados fora do Brasil (como o nosso, treinado em gado de Bangladesh) tendem a errar mais em Nelore até passarem por esse tipo de ajuste — reforça um risco que já era hipótese no TCC.
 - [F] Integração com um "HUB" de gestão do rebanho da própria empresa, indo além do peso isolado (estoque, tendências em gráfico).
 
+| Ponto | Evidência | Implicação para nosso projeto |
+|---|---|---|
+| Fluxo direto: dois botões Camera e Library visíveis na tela inicial, sem etapas intermediárias | Capturas de tela disponíveis na página do app na Play Store | [F] Padrão a seguir — câmera e galeria devem estar acessíveis na primeira tela sem navegação adicional |
+| Orientação de captura integrada ao fluxo ("capture whole body from side angle, in natural light") | Texto de instrução exibido abaixo dos botões na tela principal do app | [F] Boa prática que reduz erros antes do disparo |
+| Erros de predição superiores a 500 kg relatados por múltiplos usuários | Avaliações de 1 estrela na Play Store, média geral 3.0 de 117 avaliações | [F] Confirma que precisão é o critério decisivo de adoção |
+| Desenvolvedor responde reclamações culpando o usuário | Respostas públicas do desenvolvedor a avaliações negativas na Play Store | [F] Padrão a evita |
+| Sem histórico de pesagens por animal e sem identificação por brinco | Ausência dessas funcionalidades nas telas disponíveis na Play Store | [H] Reforça que gerenciamento de rebanho real exige rastreabilidade individual |
+| Disponível apenas para Android | App não encontrado na App Store em busca | [F] Confirma lacuna de mercado em iOS  |
 
 #### Pontos positivos, limitações e lições - C03
 
