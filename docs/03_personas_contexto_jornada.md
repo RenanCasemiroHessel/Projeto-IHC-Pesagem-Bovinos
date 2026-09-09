@@ -69,6 +69,38 @@ Antes de criar personas, retome os tipos de usuários, características relevant
 - Vocabulário do domínio (arroba, brinco, lote) em vez de termos técnicos de ML/CV.
 - Fluxo prioritário: fotografar → ver peso, sem etapas extras.
 
+### Persona P02 — Dinho
+ 
+**Autor(a):** Gustavo Mendes Franco Lapin Atui — 24.123.072-1
+**Tipo:** secundária
+**Base de evidências:** proto-persona a validar
+**Hipóteses da Entrega 1 relacionadas:** H01 (usuário é o técnico agropecuário)
+
+![Persona P02](../assets/03_personas/persona_p01.svg)
+
+ | Campo | Descrição |
+|---|---|
+| Faixa etária / contexto relevante | [H] 28–45 anos — técnico agropecuário formado, presta assistência a múltiplas propriedades rurais na região |
+| Ocupação/papel | [H] Técnico agropecuário autônomo ou contratado por cooperativa. Visita fazendas periodicamente para orientar manejo e nutrição do rebanho |
+| Conhecimento do domínio | [F] Alto — formação técnica em agropecuária; interpreta curva de crescimento, ganho médio diário e indicadores de sanidade animal |
+| Experiência tecnológica | [H] Média/alta — usa apps de gestão rural no trabalho, planilhas e WhatsApp para comunicação com produtores, confortável com telas de histórico e relatórios |
+| Objetivos | [H] Consultar o histórico de peso dos animais de uma fazenda para avaliar se o ganho diário está dentro do esperado e orientar o produtor sobre manejo, dosagem e momento de venda |
+| Necessidades | [H] Acesso rápido ao histórico de pesagens por animal ou por lote, comparativo de evolução de peso ao longo do tempo |
+| Dores/frustrações | [H] Produtor frequentemente não tem registro de peso "é no olho mesmo", sem dados históricos, a orientação técnica fica baseada em estimativa visual | 
+| Motivadores | [H] Dar recomendações embasadas em dados reais, ajudar o produtor a tomar decisões mais rentáveis, diferenciar seu serviço técnico pela qualidade da análise |
+| Restrições/acessibilidade | [H] Usa o app no celular durante a visita à fazenda ou no escritório |
+| Ambiente típico de uso | [H] Curral durante a visita técnica ou escritório após a visita, celular próprio ou tablet |
+| Comportamentos relevantes | [H] Acessa o histórico de peso antes de cada visita para preparar orientações, compartilha dados com o produtor |
+ 
+**Decisões de design influenciadas por P02:**
+ 
+- Histórico de pesagens por animal deve ser consultável de forma rápida e legível.
+- Peso ao longo do tempo é funcionalidade de valor para esse perfil.
+- Possibilidade de compartilhar histórico via WhatsApp ou PDF.
+- Interface deve funcionar também fora do campo.
+ 
+
+
 > Repita para P02, P03... Cada integrante deve produzir ao menos uma persona.
 
 ### Síntese das personas
