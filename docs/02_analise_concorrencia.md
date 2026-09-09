@@ -56,6 +56,8 @@ O público alvo da análise segue sendo o mesmo da entrega 1. Pecuaristas de cor
 **Link oficial:** https://olhododono.agr.br/ 
 **Data de acesso:** 02/09/2026
 
+### Análise C03 — Beefie
+
 **Autor(a):** Rafael Takahagi Mendes — 22.126.084-7
 **Tipo:** direto
 **Link oficial:** https://play.google.com/store/apps/details?id=com.agroninja.beefie
