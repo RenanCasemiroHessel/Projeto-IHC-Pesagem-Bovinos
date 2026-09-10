@@ -38,7 +38,7 @@ Antes de criar personas, retome os tipos de usuários, características relevant
 
 ## 1. Personas
 
-### Persona P01 — Chico Bento
+### Persona P01 — Chico
 
 **Autor(a):** Rafael Takahagi Mendes - 22.126.084-7 
 **Tipo:** primária
@@ -120,7 +120,7 @@ Documente também em texto: o que vê; ouve; diz/faz; pensa/sente; dores; ganhos
 
 | Dimensão | Descrição | Implicação de design |
 |---|---|---|
-| Usuários | [H] Pecuarista (decide), técnico agropecuário (consulta/orienta), peão (executa a captura) | Interface precisa servir a três níveis de letramento digital com a mesma tela |
+| Usuários | [H] Pecuarista (decide), técnico agropecuário (consulta/orienta), funcionário (executa a captura) | Interface precisa servir a três níveis de letramento digital com a mesma tela |
 | Tarefas | [F] A01 fotografar e receber peso, A02 identificar o animal antes de salvar, A03 consultar histórico | Fluxo A01→A02 tem que ser rápido e sem fricção; A03 pode ser mais denso em informação |
 | Equipamentos | [H] Smartphone pessoal do produtor/peão, câmera do próprio aparelho | App não pode depender de hardware adicional |
 | Ambiente físico | [H] Curral ou pasto, sol forte, poeira, calor | Alto contraste, textos grandes, resistência a toque com mãos sujas/suadas |
@@ -131,13 +131,13 @@ Documente também em texto: o que vê; ouve; diz/faz; pensa/sente; dores; ganhos
 
 ## 4. Jornada do usuário — equipe
 
-**Persona:** P01 - Chico Bento   
-**Objetivo da jornada:** {{...}}  
-**Início e fim da jornada:** {{...}}
+**Persona:** P01 - Chico   
+**Objetivo da jornada:** decidir o momento certo de vender um lote de gado com base no acompanhamento de peso  
+**Início e fim da jornada:** começa na dúvida "esse lote já está no ponto de venda?" e termina na decisão de venda concluída (ou adiada com nova data de reavaliação)
 
 | Etapa | Situação/ação | Objetivo | Pensamento/emoção | Dor | Oportunidade de design | Evidência |
 |---|---|---|---|---|---|---|
-| 1 | {{...}} | {{...}} | {{...}} | {{...}} | {{...}} | {{...}} |
+| 1 (antes) | Chico percebe que faz meses que não pesa o lote | Saber se algum animal já está pronto pra venda | [H] Incerteza, "será que já vale a pena chamar o comprador?" | [F] Não tem balança própria | Lembrar o produtor com que frequência vale a pena reavaliar o lote | H |
 
 > A jornada pode incluir etapas **antes, durante e depois** do uso do produto. Não transforme a jornada em lista de telas.
 
