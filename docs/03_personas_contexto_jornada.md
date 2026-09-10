@@ -109,8 +109,8 @@ Explique diferenças entre os perfis e qual persona é prioritária. Evite perso
 
 ## 2. Mapa de empatia — equipe
 
-**Persona escolhida:** {{P01}}  
-**Justificativa:** {{por que esse perfil é relevante}}
+**Persona escolhida:** P01 - Chico Bento  
+**Justificativa:** [H] é o usuário direto e quem toma a decisão de adoção da ferramenta; entender as frustrações dele orienta as prioridades de design de toda a interface.
 
 ![Mapa de empatia](../assets/03_personas/mapa_empatia.svg)
 
@@ -120,17 +120,18 @@ Documente também em texto: o que vê; ouve; diz/faz; pensa/sente; dores; ganhos
 
 | Dimensão | Descrição | Implicação de design |
 |---|---|---|
-| Usuários | {{...}} | {{...}} |
-| Tarefas | {{...}} | {{...}} |
-| Equipamentos | {{...}} | {{...}} |
-| Ambiente físico | {{...}} | {{...}} |
-| Ambiente social/organizacional | {{...}} | {{...}} |
-| Papéis/permissões/governança | {{...}} | {{...}} |
-| Volume de dados/histórico | {{...}} | {{...}} |
+| Usuários | [H] Pecuarista (decide), técnico agropecuário (consulta/orienta), peão (executa a captura) | Interface precisa servir a três níveis de letramento digital com a mesma tela |
+| Tarefas | [F] A01 fotografar e receber peso, A02 identificar o animal antes de salvar, A03 consultar histórico | Fluxo A01→A02 tem que ser rápido e sem fricção; A03 pode ser mais denso em informação |
+| Equipamentos | [H] Smartphone pessoal do produtor/peão, câmera do próprio aparelho | App não pode depender de hardware adicional |
+| Ambiente físico | [H] Curral ou pasto, sol forte, poeira, calor | Alto contraste, textos grandes, resistência a toque com mãos sujas/suadas |
+| Ambiente social/organizacional | [H] Uso solitário no momento da foto; técnico participa em visitas pontuais | Não precisa de colaboração em tempo real entre usuários |
+| Papéis/permissões/governança | [F] Fora de escopo nesta versão (decisão da Entrega 1) — sem múltiplos perfis/permissões | Todas as personas operam no mesmo login/aparelho por enquanto |
+| Volume de dados/histórico | [H] Histórico por animal, poucas pesagens por ano (2-4 hoje, potencialmente mais com o app) | Tela de histórico (A03) pode ser simples, não precisa de analytics complexo nesta fase |
+
 
 ## 4. Jornada do usuário — equipe
 
-**Persona:** {{P01}}  
+**Persona:** P01 - Chico Bento   
 **Objetivo da jornada:** {{...}}  
 **Início e fim da jornada:** {{...}}
 
