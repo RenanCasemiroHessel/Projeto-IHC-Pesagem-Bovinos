@@ -72,7 +72,7 @@ Antes de criar personas, retome os tipos de usuários, características relevant
 ### Persona P02 — Dinho
  
 **Autor(a):** Gustavo Mendes Franco Lapin Atui — 24.123.072-1
-**Tipo:** secundária
+**Tipo:** primária 
 **Base de evidências:** proto-persona a validar
 **Hipóteses da Entrega 1 relacionadas:** H02 (usuário é o técnico agropecuário)
 
