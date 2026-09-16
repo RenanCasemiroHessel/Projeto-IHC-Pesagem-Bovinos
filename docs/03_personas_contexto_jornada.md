@@ -139,6 +139,17 @@ Documente também em texto: o que vê; ouve; diz/faz; pensa/sente; dores; ganhos
 |---|---|---|---|---|---|---|
 | 1 (antes) | Chico percebe que faz meses que não pesa o lote | Saber se algum animal já está pronto pra venda | [H] Incerteza, "será que já vale a pena chamar o comprador?" | [F] Não tem balança própria | Lembrar o produtor com que frequência vale a pena reavaliar o lote | H |
 
+### Jornada do Usuário — P02 Dinho
+ 
+**Persona:** P02 — Dinho 
+**Objetivo da jornada:** preparar e executar uma visita técnica usando o histórico de peso do app para orientar o produtor sobre o momento de venda
+**Início e fim da jornada:** começa no dia anterior à visita e termina com a recomendação enviada ao produtor e próxima data de avaliação definida
+
+| Etapa | Situação/ação | Objetivo | Pensamento/emoção | Dor | Oportunidade de design | Evidência |
+|---|---|---|---|---|---|---|
+| 1 (antes) | Abre o app e consulta o histórico de peso do lote do Chico | Ver a evolução de peso dos últimos meses | [H] "Bom dá pra ver o ganho mensal por aqui" | [H] Histórico tem poucas entradas. Chico só registrou 2 vezes | App poderia mostrar alerta de que o histórico está muito espaçado e sugerir frequência ideal de pesagem | H |
+| 2 (durante) | Dinho e Chico analisam juntos se o lote já atingiu o peso de abate | Decidir se vale chamar o comprador agora ou esperar mais | [H] Satisfação em ter dados para embasar a conversa | [H] App não mostra claramente quantos animais já estão acima do peso mínimo de abate | Dashboard: "X de Y animais já atingiram o peso de venda" | H |
+
 > A jornada pode incluir etapas **antes, durante e depois** do uso do produto. Não transforme a jornada em lista de telas.
 
 ## Síntese
