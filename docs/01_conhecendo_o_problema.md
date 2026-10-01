@@ -308,8 +308,7 @@ Exemplos possíveis: ferramentas de banco, IDEs, consoles de nuvem, dashboards, 
 
 ## 6.6 Que padrões de interface ou vocabulário parecem familiares a esse público?
 
-[F] Arroba (@) como unidade de negociação junto com o quilograma, número do brinco, lote, pasto, "ponto de abate"; listas simples, botão de câmera e navegação rasa no estilo WhatsApp. (vocabulário já validado como familiar ao público)
-
+[H] Arroba (@) como unidade de negociação junto com o quilograma, número do brinco, lote, pasto, "ponto de abate"; listas simples, botão de câmera e navegação rasa no estilo WhatsApp.
 ---
 
 # 7. Derivando o escopo de IHC da disciplina
@@ -383,10 +382,10 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 | Dashboard/visão geral | sim | Reunir os animais/lotes do produtor com peso mais recente de cada um, pra ele ter visão geral do rebanho sem abrir animal por animal | [F] já previsto como tela 4 do projeto (dashboard/histórico) |
 | Configuração/parametrização | sim | Cadastro inicial do fazendeiro (quantidade de gado, localização) | [F] já previsto como tela 2 do projeto |
 | Entrada/upload/seleção de dados | sim | Capturar foto do bovino pra gerar a estimativa de peso | [F] já previsto como tela 3 do TCC (captura de fotos) |
-| Acompanhamento de processamento | talvez | Mostrar status enquanto o modelo processa a foto (segmentação + regressão não é instantâneo) | ?] não sabemos o tempo de inferência do pipeline rodando em campo/mobile, sendo essa uma lacuna a validar |
+| Acompanhamento de processamento | talvez | Mostrar status enquanto o modelo processa a foto (segmentação + regressão não é instantâneo) | [?] não sabemos o tempo de inferência do pipeline rodando em campo/mobile, sendo essa uma lacuna a validar |
 | Relatório/resultados | sim | Exibir o peso estimado (em kg e/ou @) depois da foto, com clareza de que é uma estimativa e não pesagem exata | [F] é a saída central do TCC, atualmente sendo MAE ~20,75 kg, acerto em ±10% em ~48% dos casos, então a interface precisa comunicar isso de forma honesta |
-| Histórico com busca/filtros | sim | Consultar o histórico de peso de um bovino específico (busca por brinco/lote) | [F] já previsto como parte da tela 4; brinco e lote são vocabulário já validado como familiar ao público |
-| Comparação de resultados | talvez | 	Visualizar evolução de peso do animal ao longo do tempo (ganho de peso entre pesagens) | H] hipótese de que o produtor quer acompanhar engorda, não só o valor pontual, sendo necessário validar com usuário |
+| Histórico com busca/filtros | sim | Consultar o histórico de peso de um bovino específico (busca por brinco/lote) | [H] já previsto como parte da tela 4; familiaridade do público com o vocabulário (brinco, lote) |
+| Comparação de resultados | talvez | 	Visualizar evolução de peso do animal ao longo do tempo (ganho de peso entre pesagens) | [H] hipótese de que o produtor quer acompanhar engorda, não só o valor pontual, sendo necessário validar com usuário |
 | Explicabilidade/detalhamento | talvez | Não faz sentido explicar a CNN, mas pode fazer sentido comunicar a margem de erro/confiança da estimativa | [H] hipótese de que mostrar incerteza ajuda o produtor a confiar mais no número do que um valor seco |
 | Administração/configurações globais | não | 	Não há indício de necessidade de administração central (múltiplas fazendas, múltiplos operadores por conta) | [?] não foi definido se o app atende 1 produtor = 1 conta ou estrutura multi-usuário |
 | Usuários/perfis/permissões | talvez | Diferenciar visualização do pecuarista (seu próprio rebanho) da do técnico agropecuário (pode acompanhar vários produtores) | [H] hipótese, decorre do perfil secundário já definido, mas não há confirmação de que o técnico usa o mesmo app |
@@ -405,9 +404,9 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 
 | Benefício esperado | Problema/necessidade | Usuário | Status/evidência |
 |---|---|---|---|
-| Conseguir estimar o peso do rebanho sem precisar comprar/alugar balança de tronco | [F] balança de tronco custa R$ 30-50 mil, por isso muitos produtores pesam só 2-4 vezes por ano | Pecuarista | [F] já validado como motivação central do TCC |
-| Reduzir o risco de erro na hora de associar o peso ao animal certo | [H] Identificar o animal foi mapeada como a atividade mais crítica, pois um erro aqui compromete todo o histórico daquele animal | Pecuarista | [F] já decidido nas entregas anteriores |
-| Conseguir usar o app mesmo em condições ruins de campo (sol forte, mãos sujas, sinal instável) | [F] Contexto de uso real é curral/pasto | Pecuarista | [H] hipótese de que isso é viável — ainda não testado com interface real |
+| Conseguir estimar o peso do rebanho sem precisar comprar/alugar balança de tronco | [H] balança de tronco custa R$ 30-50 mil, por isso muitos produtores pesam só 2-4 vezes por ano | Pecuarista | [F] já validado como motivação central do TCC |
+| Reduzir o risco de erro na hora de associar o peso ao animal certo | [H] Identificar o animal foi mapeada como a atividade mais crítica, pois um erro aqui compromete todo o histórico daquele animal | Pecuarista | [H] priorização definida pela equipe, ainda não validada |
+| Conseguir usar o app mesmo em condições ruins de campo (sol forte, mãos sujas, sinal instável) | [H] Contexto de uso previsto é curral/pasto | Pecuarista | [H] hipótese de que isso é viável — ainda não testado com interface real |
 
 ## 9.2 Que ações o usuário deverá conseguir realizar?
 
@@ -454,12 +453,12 @@ Registre em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 |---|---|
 | Qual é a contribuição central do TCC? | [F] estimar o peso de bovinos leves (até 250 kg) a partir de fotos, sem balança, usando um pipeline de segmentação (YOLO) + extração morfométrica + regressão (CNN ResNet18) |
 | O TCC já previa interface? | [F] sim, o app com 4 telas: login/cadastro, cadastro do fazendeiro, captura de fotos, dashboard/histórico |
-| Quem é o usuário prioritário de IHC? | [F] o pecuarista |
+| Quem é o usuário prioritário de IHC? | [H] o pecuarista |
 | O que ele precisa alcançar? | [H] obter o peso estimado de um bovino específico de forma rápida e confiável, sem balança, com o peso corretamente associado ao animal certo no histórico |
-| Qual problema/atividade será estudado? | [F] o fluxo de fotografar, receber o peso eidentificar o animal antes de salvar) |
+| Qual problema/atividade será estudado? | [F] o fluxo de fotografar, receber o peso e identificar o animal antes de salvar) |
 | Como isso acontece hoje? | [H] por balança de tronco (R$ 30-50 mil), o que faz muitos produtores pesarem só 2-4 vezes por ano |
-| Qual é o contexto de uso? | [F] curral ou pasto, no smartphone pessoal do produtor/peão, com sol forte, poeira, mãos sujas, conexão instável, animal em movimento |
-| Que interface/recorte será explorado? | [F] as telas 3 (captura de fotos) e 4 (dashboard/histórico) do app previsto |
+| Qual é o contexto de uso? | [H] curral ou pasto, no smartphone pessoal do produtor/peão, com sol forte, poeira, mãos sujas, conexão instável, animal em movimento |
+| Que interface/recorte será explorado? | [H] as telas 3 (captura de fotos) e 4 (dashboard/histórico) do app previsto |
 | Como a interface se relaciona ao TCC? | [F] já fazia parte do TCC, mas [H] também é um aprofundamento — o TCC definiu as telas de forma superficial, sem trabalho de UX |
 | Quais pontos ainda são hipóteses? | H01, H02, H03, H04, H05 |
 
