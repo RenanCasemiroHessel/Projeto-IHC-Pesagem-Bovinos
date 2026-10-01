@@ -1,7 +1,7 @@
 # Entrega 1 — Conhecendo o projeto, o usuário e o problema
 
 **Data:** {{13/08/2026}}  
-**Status:** 🟩 concluída
+**Status:** 🟦 revisada 
 **Responsabilidade:** 1 solução consolidada por equipe
 
 ## Objetivo da atividade
@@ -60,7 +60,7 @@ Uma hipótese explicitada é melhor do que uma suposição escondida.
 | Nome completo | Matrícula | GitHub |
 |---|---:|---|
 | Renan Casemiro Hessel | 24.123.019-2 | RenanCasemiroHessel |
-| Gustavo Mendes Franco Lapin Atui | 24.123.072-1 | GustovoAtui |
+| Gustavo Mendes Franco Lapin Atui | 24.123.072-1 | GustavoAtui |
 | Rafael Takahagi Mendes | 22.126.084-7 | rafamendes04 |
 
 ## 0.2 Título atual do TCC
@@ -85,7 +85,7 @@ Marque e descreva:
 - [ ] componente embarcado/IoT;
 - [ ] outro: {{...}}.
 
-**Descrição:** {{...}}
+**Descrição:** Sistema de estimativa de peso bovino por imagem composto por segmentação semântica, extração de características morfométricas e regressão com CNN ResNet18, acessível via aplicativo móvel.
 
 ## 0.5 O TCC já previa desenvolvimento de interface com usuário?
 
@@ -93,7 +93,7 @@ Marque e descreva:
 - [ ] Parcialmente; existe alguma interação, mas ainda não está bem definida.
 - [ ] Não. O TCC é predominantemente técnico e não previa interface.
 
-**Explique o que está formalmente previsto no TCC:** {{...}}
+**Explique o que está formalmente previsto no TCC:** O TCC prevê um aplicativo móvel como forma de acesso ao pipeline de estimativa de peso bovino. O aplicativo foi definido com quatro telas (login/cadastro, captura de fotos, histórico, dashboard)
 
 > Um sistema de estimativa de peso de bovinos.
 
@@ -117,7 +117,7 @@ Complete, se ajudar:
 
 Exemplos: otimizar consultas; classificar imagens; detectar anomalias; comparar modelos; identificar padrões; prever demanda; analisar desempenho; gerar resumos; recomendar configurações.
 
-Nosso TCC produz um aplicativo móvel que estima o peso do bovino a partir de uma foto estática.
+Nosso TCC produz a capacidade de estimar o peso de bovinos a partir de uma imagem digital, sem balança. A forma de disponibilizar essa capacidade é um aplicativo móvel. O valor obtido pelo usuário é apoiar decisões de manejo sem precisar conduzir o animal até a balança.
 
 ## 1.4 O que se espera que esteja diferente **para pessoas, organizações ou processos** se essa contribuição for bem-sucedida?
 
@@ -138,7 +138,7 @@ Nosso TCC produz um aplicativo móvel que estima o peso do bovino a partir de um
 
 ## 2.1 Quem interage diretamente com o produto, se já existe interface prevista?
 
-De maneira geral: Pecuarista, Frigorificos.
+De maneira geral: Pecuarista.
 
 ## 2.2 Quem poderia **usar, configurar, administrar, operar, interpretar ou tomar decisões** a partir da contribuição técnica?
 
@@ -164,7 +164,9 @@ Considere conhecimento do domínio, experiência tecnológica, frequência de us
 {{[F/H/?] ...}}
 
 [H]  O produtor rural pode ter baixa familiaridade com aplicativos técnicos, preferindo poucos passos e resultado imediato na tela.
-[F] Smartphones são amplamente usados no meio rural brasileiro.
+[F] Smartphones são amplamente usados no meio rural brasileiro. 
+Fonte: PNAD Contínua TIC 2024, IBGE — 77,2% da população 
+rural possuía celular em 2024.
 
 ---
 
@@ -181,11 +183,11 @@ Não responda “usar o algoritmo”, “clicar no sistema” ou “ver o dashbo
 |---|---|---|---|---|
 | A01 | fotografar o animal e receber o peso predito | pecuarista | alta | [H] |
 | A02 | Identificar o animal antes de salvar o peso | pecuarista | alta | [H] |
-| A03 | consultar o historico de peso do bovino | pecuarista/comprador/veterinário | média | H |  
+| A03 | consultar o historico de peso do bovino | pecuarista | média | H |  
 
 ## 3.3 Qual atividade parece mais frequente? Por quê?
 
-[F] A01 - fotografar o animal e receber o peso predito, é a principal funcionalidade do aplicativo e as outras atividades dependem dela. 
+[H] A01 - fotografar o animal e receber o peso predito, é a principal funcionalidade do aplicativo e as outras atividades dependem dela. 
 
 ## 3.4 Qual parece mais crítica? Que consequência existe se for mal executada?
 
@@ -212,11 +214,18 @@ Não responda “usar o algoritmo”, “clicar no sistema” ou “ver o dashbo
 
 ## 4.4 O que acontece quando a atividade falha ou quando o resultado é interpretado incorretamente?
 
-[H] O produto deixa de ser vantajoso para o usuário.
+[H] Quando o peso é associado ao animal errado, por causa de uma falha em A02, o histórico daquele bovino pode ficar errado. Isso pode atrapalhar decisões futuras, como a dosagem de medicamentos e o momento certo para realizar a venda.
+Além disso, se uma estimativa de peso for considerada como um valor exato, sem levar em conta uma margem de ±10%, o produtor pode tomar decisões erradas. Por exemplo, pode vender um animal antes de ele atingir o peso ideal.
 
 ## 4.5 Conte uma situação concreta.
 
-Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificuldade e consequência. **Não descreva ainda a futura solução.**
+Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificuldade e consequência. **Não descreva ainda a futura solução.**:
+
+[H] João tem 80 cabeças de Nelore em uma propriedade de médio porte no interior de São Paulo. Quando chega o momento de avaliar quais animais estão prontos para venda, ele precisa realizar uma pesagem. Para isso, é necessário reunir pelo menos dois funcionários, separar o lote e conduzir os animais pelo corredor de contenção, pesando e registrando cada um individualmente.
+
+Na última vez que realizou esse processo, foram necessárias cerca de 8 horas para pesar 40 animais. Além do tempo gasto, a contenção acaba deixando alguns animais estressados, o que pode fazer com que eles percam peso temporariamente antes da pesagem.
+
+Por ser um processo trabalhoso, João costuma realizar a pesagem apenas duas ou três vezes por ano. Durante o período entre as pesagens, ele acaba estimando o peso dos animais "no olho". Com isso, muitas vezes não consegue identificar o melhor momento para realizar a venda, podendo vender alguns animais antes ou depois do peso ideal.
 
 
 
@@ -226,12 +235,11 @@ Escreva uma pequena narrativa com pessoa, objetivo, atividade, contexto, dificul
 
 | Evidência/fonte | O que sustenta | Limitação |
 |---|---|---|
-| Resultados experimentais do próprio TCC | O peso pode ser estimado através de uma imagem estática | Pouco material para pesquisa em outras raças |
-| Resultados experimentais do próprio TCC | O peso pode ser estimado através de uma imagem estática | Pouco material para pesquisa em outras raças |
-| Resultados experimentais do próprio TCC | O peso pode ser estimado através de uma imagem estática | Pouco material para pesquisa em outras raças |
-
+| Resultados experimentais do TCC 1 (dataset BMGF, lotes B2 e B4, 4.818 amostras) | O peso pode ser estimado a partir de imagem estática com MAE ~20,75 kg e acuracia de ±10% em ~48% dos casos | Dataset de Bangladesh; bovinos taurino-zebuínos; não testado em Nelore brasileiro |
+| Literatura do TCC 1 (Berckmans 2017, Tedeschi 2021, Cominotte 2020) | Pesagem não invasiva é problema reconhecido em pecuária de precisão | Contexto europeu e americano predominante; raças e condições de campo diferentes |
+| Pesquisa de mercado conduzida durante o TCC 1 | Balança de contenção tem custo elevado (R$ 15-80 mil) e processo trabalhoso; cria barreira de frequência de pesagem | Pesquisa informal, sem amostragem sistemática de produtores brasileiros |
+ 
 ---
-
 # 5. Entendendo o contexto de uso
 
 ## 5.1 Onde e em quais situações a interação poderia ocorrer?
@@ -262,6 +270,7 @@ Sim.
 
 ## 5.6 Um erro pode produzir consequência relevante? Qual?
 
+[H] Sim. Associar um peso ao animal errado (confundir brincos) compromete o histórico inteiro daquele bovino e invalida decisões futuras de manejo e venda baseadas nesse dado. Uma estimativa interpretada como pesagem exata pode levar à dosagem incorreta de medicamento ou à decisão equivocada de abate.
 {{[F/H/?] ...}}
 
 ---
@@ -299,7 +308,7 @@ Exemplos possíveis: ferramentas de banco, IDEs, consoles de nuvem, dashboards, 
 
 ## 6.6 Que padrões de interface ou vocabulário parecem familiares a esse público?
 
-[H] Arroba (@) como unidade de negociação junto com o quilograma, número do brinco, lote, pasto, "ponto de abate"; listas simples, botão de câmera e navegação rasa no estilo WhatsApp.
+[F] Arroba (@) como unidade de negociação junto com o quilograma, número do brinco, lote, pasto, "ponto de abate"; listas simples, botão de câmera e navegação rasa no estilo WhatsApp. (vocabulário já validado como familiar ao público)
 
 ---
 
@@ -334,14 +343,14 @@ Responda:
 
 ## 7.2 Qual perfil será priorizado no projeto de IHC?
 
-[F] Pecuarista (usuário direto)
+[H] Pecuarista (usuário direto)
 
 **Por que esse perfil foi escolhido?** 
 [F] Porque é quem de fato maneja o app no curral/pasto, no smartphone pessoal, no momento da pesagem. O técnico agropecuário é perfil secundário, pois ele consulta e orienta, mas não é quem fotografa o animal no dia a dia.
 
 ## 7.3 Qual objetivo desse usuário será priorizado?
 
-[H] Obter o peso estimado de um bovino específico de forma rápida e confiável, sem precisar de balança, garantindo que o peso seja corretamente associado ao animal certo no histórico.
+[H] Obter o peso estimado de um bovino específico de forma rápida, sem balança, com o resultado corretamente associado ao animal certo no histórico e com clareza de que se trata de uma estimativa com margem de erro.
 
 ## 7.4 Que interface será explorada na disciplina?
 
@@ -378,10 +387,10 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 | Relatório/resultados | sim | Exibir o peso estimado (em kg e/ou @) depois da foto, com clareza de que é uma estimativa e não pesagem exata | [F] é a saída central do TCC, atualmente sendo MAE ~20,75 kg, acerto em ±10% em ~48% dos casos, então a interface precisa comunicar isso de forma honesta |
 | Histórico com busca/filtros | sim | Consultar o histórico de peso de um bovino específico (busca por brinco/lote) | [F] já previsto como parte da tela 4; brinco e lote são vocabulário já validado como familiar ao público |
 | Comparação de resultados | talvez | 	Visualizar evolução de peso do animal ao longo do tempo (ganho de peso entre pesagens) | H] hipótese de que o produtor quer acompanhar engorda, não só o valor pontual, sendo necessário validar com usuário |
-| Explicabilidade/detalhamento | talvez | Não faz sentido explicar a CNN, mas pode fazer sentido comunicar a margem de erro/confiança da estimativa | [H] hipótese de que mostrar incerteza (ex: "peso estimado: 180kg ± 20kg") ajuda o produtor a confiar mais no número do que um valor seco |
+| Explicabilidade/detalhamento | talvez | Não faz sentido explicar a CNN, mas pode fazer sentido comunicar a margem de erro/confiança da estimativa | [H] hipótese de que mostrar incerteza ajuda o produtor a confiar mais no número do que um valor seco |
 | Administração/configurações globais | não | 	Não há indício de necessidade de administração central (múltiplas fazendas, múltiplos operadores por conta) | [?] não foi definido se o app atende 1 produtor = 1 conta ou estrutura multi-usuário |
 | Usuários/perfis/permissões | talvez | Diferenciar visualização do pecuarista (seu próprio rebanho) da do técnico agropecuário (pode acompanhar vários produtores) | [H] hipótese, decorre do perfil secundário já definido, mas não há confirmação de que o técnico usa o mesmo app |
-| CRUD de entidade do domínio | sim | Cadastrar/editar/excluir bovino (brinco, lote) | [F] decorre diretamente da atividade mais crítica já mapeada |
+| CRUD de entidade do domínio | sim | Cadastrar/editar/excluir bovino (brinco, lote) | [H] decorre diretamente da atividade mais crítica já mapeada |
 | Auditoria/logs | não | 	Não há indício de necessidade de rastrear alterações/quem editou o quê | [?] pode ganhar relevância se peso errado gerar disputa com frigorífico, mas não foi validado |
 | Alertas/ocorrências | talvez | Avisar quando a foto capturada não está em condições boas pra estimativa (ângulo, distância, animal em movimento) | [H] hipótese ligada às condições reais de uso (sol forte, poeira, animal se mexendo) que podem prejudicar a qualidade da foto |
 | Ajuda/documentação | talvez | Orientar o pecuarista sobre como tirar a foto corretamente (distância, ângulo) | [H] hipótese, reforçada pelo contexto de baixa familiaridade digital do público e pela sensibilidade do modelo à imagem de entrada |
@@ -397,7 +406,7 @@ Marque apenas as que parecem plausíveis e explique o objetivo correspondente.
 | Benefício esperado | Problema/necessidade | Usuário | Status/evidência |
 |---|---|---|---|
 | Conseguir estimar o peso do rebanho sem precisar comprar/alugar balança de tronco | [F] balança de tronco custa R$ 30-50 mil, por isso muitos produtores pesam só 2-4 vezes por ano | Pecuarista | [F] já validado como motivação central do TCC |
-| Reduzir o risco de erro na hora de associar o peso ao animal certo | [F] Identificar o animal foi mapeada como a atividade mais crítica, pois um erro aqui compromete todo o histórico daquele animal | Pecuarista | [F] já decidido nas entregas anteriores |
+| Reduzir o risco de erro na hora de associar o peso ao animal certo | [H] Identificar o animal foi mapeada como a atividade mais crítica, pois um erro aqui compromete todo o histórico daquele animal | Pecuarista | [F] já decidido nas entregas anteriores |
 | Conseguir usar o app mesmo em condições ruins de campo (sol forte, mãos sujas, sinal instável) | [F] Contexto de uso real é curral/pasto | Pecuarista | [H] hipótese de que isso é viável — ainda não testado com interface real |
 
 ## 9.2 Que ações o usuário deverá conseguir realizar?
@@ -448,7 +457,7 @@ Registre em [`../RASTREABILIDADE.md`](../RASTREABILIDADE.md).
 | Quem é o usuário prioritário de IHC? | [F] o pecuarista |
 | O que ele precisa alcançar? | [H] obter o peso estimado de um bovino específico de forma rápida e confiável, sem balança, com o peso corretamente associado ao animal certo no histórico |
 | Qual problema/atividade será estudado? | [F] o fluxo de fotografar, receber o peso eidentificar o animal antes de salvar) |
-| Como isso acontece hoje? | [F] por balança de tronco (R$ 30-50 mil), o que faz muitos produtores pesarem só 2-4 vezes por ano |
+| Como isso acontece hoje? | [H] por balança de tronco (R$ 30-50 mil), o que faz muitos produtores pesarem só 2-4 vezes por ano |
 | Qual é o contexto de uso? | [F] curral ou pasto, no smartphone pessoal do produtor/peão, com sol forte, poeira, mãos sujas, conexão instável, animal em movimento |
 | Que interface/recorte será explorado? | [F] as telas 3 (captura de fotos) e 4 (dashboard/histórico) do app previsto |
 | Como a interface se relaciona ao TCC? | [F] já fazia parte do TCC, mas [H] também é um aprofundamento — o TCC definiu as telas de forma superficial, sem trabalho de UX |
