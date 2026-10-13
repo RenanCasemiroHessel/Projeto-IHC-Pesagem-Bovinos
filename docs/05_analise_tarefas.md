@@ -45,6 +45,35 @@ Um CRUD pode gerar tarefas relevantes, mas “cadastrar usuário” só merece m
 
 ### Diagrama
 
+```mermaid
+flowchart TD
+    T0["0. Consultar o histórico de peso de um animal<br><b>1>2>3>4</b>"]
+ 
+    T1["1. Abrir o histórico<br><b>1/2</b>"]
+    T2["2. Localizar o animal<br><b>1/2</b>"]
+    T3["3. Ler as pesagens<br><b>1>2</b>"]
+    T4["4. Interpretar a evolução do peso<br><b>1>2</b>"]
+ 
+    T11["1.1 Abrir o histórico compartilhado pelo produtor<br>══════════"]
+    T12["1.2 Abrir o app no celular do produtor<br>══════════"]
+    T21["2.1 Buscar pelo número do brinco<br>══════════"]
+    T22["2.2 Procurar na lista do lote<br>══════════"]
+    T31["3.1 Ver o peso mais recente e sua data<br>══════════"]
+    T32["3.2 Ver as pesagens anteriores<br>══════════"]
+    T41["4.1 Calcular o ganho desde a última pesagem<br>══════════"]
+    T42["4.2 Comparar com o peso mínimo do comprador<br>══════════"]
+ 
+    T0 --> T1 & T2 & T3 & T4
+    T1 --> T11 & T12
+    T2 --> T21 & T22
+    T3 --> T31 & T32
+    T4 --> T41 & T42
+ 
+    classDef obj fill:#fff,stroke:#222,stroke-width:1.5px,color:#000
+    classDef op fill:#fff,stroke:#222,stroke-width:1px,color:#000
+    class T0,T1,T2,T3,T4 obj
+    class T11,T12,T21,T22,T31,T32,T41,T42 op
+```
 ![HTA T01](../assets/05_tarefas/hta_t01.svg)
 
 ### Decomposição e planos
