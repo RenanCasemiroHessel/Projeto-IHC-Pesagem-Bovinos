@@ -38,6 +38,13 @@ Se o integrante escolher um novo problema/situação, explique por que ele passo
 **Situação concreta da Entrega 1 relacionada:** seção 4.5 (pesagem trabalhosa e poucas vezes por ano), agora vista pela perspectiva do técnico agropecuário  
 **Hipóteses ainda presentes:** H03, H05, H08
 
+## Cenário C03 — Recomendação de venda sem dados de peso
+ 
+**Autor(a):** Renan Casemiro Hessel — 24.123.019-2 
+**Persona(s) relacionada(s):** P03 — Agnaldo 
+**Necessidade relacionada:**  
+**Situação concreta da Entrega 1 relacionada:**
+**Hipóteses ainda presentes:** 
 ### 1. Cenário inicial
 
 #### C02
@@ -46,6 +53,13 @@ Dinho é técnico agropecuário e presta assistência a várias propriedades da 
 Dinho pede os registros de peso do lote. Chico mostra um caderno com anotações de uma única pesagem feita meses atrás, quando alugou uma balança. Sem dados recentes, Dinho observa os animais e estima o peso "no olho". Ele sabe que essa estimativa tem pouca precisão.
  
 Dinho recomenda esperar mais algumas semanas. Chico fica em dúvida, porque o vizinho vendeu um lote parecido e disse que estava no ponto. No fim, Chico decide vender, e o frigorífico paga menos do que ele esperava, porque parte dos animais estava abaixo do peso ideal.
+
+#### C03
+Agnaldo é peão na fazenda do Chico. Chico pede que ele e outro funcionário levem o lote para pesar na balança do vizinho, a 12 km, porque quer saber se os animais já estão no ponto de venda.
+ 
+Agnaldo passa a manhã juntando o lote e embarcando os animais no caminhão. Na balança, os bois chegam agitados e alguns resistem a entrar no tronco. Ele anota o brinco e o peso de cada animal com as mãos sujas e com pressa, porque o vizinho precisa liberar a balança.
+ 
+Eles voltam no fim da tarde. Ao passar as anotações a limpo, Chico encontra pesos repetidos e brincos que não consegue ler. Agnaldo não lembra qual animal era qual, e parte da pesagem fica sem uso.
 
 ### 2. Questões de refinamento
 
@@ -58,6 +72,14 @@ Use os tipos de questões/taxonomia definidos na aula. As perguntas devem revela
 | Q2 | Que registros de peso o Chico tem hoje, onde ficam guardados e de quando são? | Revela de que dados o técnico realmente dispõe | Entrevista com produtores (Entrega 7) |
 | Q3 | Além da estimativa visual, que outros recursos o Dinho usa para estimar o peso sem balança? | Mostra as práticas atuais e quanto elas custam em tempo e esforço | Entrevista com técnicos (Entrega 7); literatura de pecuária |
 | Q4 | O que o Chico faz para acompanhar o lote entre uma visita do técnico e outra? | Revela o que acontece com o lote fora das visitas e que informação se perde nesse intervalo | Entrevista com produtores (Entrega 7) |
+
+#### C03
+| # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
+|---|---|---|---|
+| Q1 | Quantos animais são pesados por vez e quanto tempo leva cada um na balança? | Define o ritmo de trabalho e a pressa do peão durante a pesagem | Entrevista com peões e produtores (Entrega 7) |
+| Q2 | Como o peão identifica o animal na hora da pesagem e o que faz quando o brinco está ilegível ou faltando? | Revela onde acontece o erro ao ligar o peso ao animal | Entrevista/observação no curral (Entrega 7) |
+| Q3 | Quem anota os pesos, onde anota e quando isso é passado a limpo? | Mostra em que ponto a informação se perde | Entrevista com peões e produtores (Entrega 7) |
+| Q4 | O que deixa de ser feito na fazenda no dia da pesagem, e quantas pessoas ficam envolvidas? | Mostra o custo real da pesagem em tempo e mão de obra | Entrevista com produtores (Entrega 7) |
 
 ### 3. Cenário refinado
 
@@ -73,6 +95,13 @@ Dinho pede os registros de peso. Chico mostra um caderno com uma única pesagem 
 Sem dados recentes, Dinho estima o peso "no olho". **[NOVO: Em alguns animais usa a fita de pesagem, mas medir o lote inteiro não cabe no tempo da visita.]** **[NOVO: Ele sabe que o comprador desconta no preço dos animais abaixo de um peso mínimo, mas não consegue dizer quantos do lote já passaram dele.]**
  
 Dinho recomenda esperar mais algumas semanas. Chico fica em dúvida, porque o vizinho vendeu um lote parecido. **[NOVO: Sem números, a recomendação do técnico vale o mesmo que a opinião do vizinho, e a decisão final é do Chico.]** Ele vende, e o frigorífico paga menos, porque parte dos animais estava abaixo do peso mínimo
+
+#### C03
+Agnaldo é peão na fazenda do Chico. Chico pede que ele e outro funcionário levem o lote **[NOVO: de cerca de 30 animais]** para pesar na balança do vizinho, a 12 km, porque quer saber se os animais já estão no ponto de venda.
+ 
+Agnaldo passa a manhã juntando o lote e embarcando os animais no caminhão. Na balança, os bois chegam agitados e alguns resistem a entrar no tronco. **[NOVO: Quando o animal entra sem resistência, a pesagem leva poucos minutos; quando não entra, é preciso tocar de novo.]** Ele anota o brinco e o peso de cada animal com as mãos sujas e com pressa, porque o vizinho precisa liberar a balança. **[NOVO: Alguns brincos estão sujos ou caíram; nesses casos ele anota a pelagem, como "o pintado de cara branca".]** **[NOVO: As anotações ficam num papel no bolso, e Chico só passa para o caderno à noite.]**
+ 
+Eles voltam no fim da tarde. **[NOVO: No dia da pesagem, duas pessoas ficam ocupadas o dia inteiro, e o trato e a vacinação de outro lote ficam para o dia seguinte.]** Ao passar as anotações a limpo, Chico encontra pesos repetidos e brincos que não consegue ler. Agnaldo não lembra qual animal era qual, e parte da pesagem fica sem uso. **[NOVO: Por dar tanto trabalho, Chico só repete a pesagem dali a alguns meses.]**
 
 
 ### 4. Elementos extraídos
@@ -98,6 +127,17 @@ Dinho recomenda esperar mais algumas semanas. Chico fica em dúvida, porque o vi
 | Problemas/rupturas | Registros antigos e sem identificação do animal; nenhuma informação sobre o lote entre as visitas; medir o lote inteiro não cabe no tempo da visita; impossível saber quantos animais passaram do peso mínimo; recomendação sem números perde força na decisão |
 | Consequências | Venda com parte do lote abaixo do peso mínimo e preço menor; recomendação técnica desconsiderada |
 
+#### C03
+| Elemento | Evidência no cenário |
+|---|---|
+| Ator(es) | Agnaldo (peão, executa a pesagem); outro funcionário; Chico (produtor, pede a pesagem e usa os dados); vizinho (dono da balança) |
+| Objetivo(s) | Agnaldo: pesar o lote inteiro sem errar o animal e voltar a tempo para o resto do serviço. Chico: saber se o lote está no ponto de venda |
+| Contexto | Sem balança própria; balança do vizinho a 12 km; lote de cerca de 30 animais; pressa para liberar a balança; trabalho no curral com mãos sujas |
+| Recursos/informações | Caminhão; balança e tronco do vizinho; brinco dos animais; papel no bolso; caderno do Chico |
+| Ações | Juntar o lote; embarcar no caminhão; conduzir cada animal ao tronco; ler o brinco; anotar brinco e peso; voltar; passar as anotações a limpo |
+| Problemas/rupturas | Animais agitados resistem a entrar no tronco; brincos sujos ou caídos; anotação com pressa e mãos sujas; pesos repetidos e brincos ilegíveis; dados só passados a limpo à noite, quando ninguém lembra mais qual animal era qual |
+| Consequências | Parte da pesagem perdida; dia inteiro de duas pessoas gasto; outras tarefas adiadas; pesagem repetida só meses depois |
+
 ### 5. Implicações para as próximas entregas
 
 Quais tarefas merecem análise? Quais informações precisam ser coletadas? **Não desenhe a solução ainda.**
@@ -111,6 +151,14 @@ Quais tarefas merecem análise? Quais informações precisam ser coletadas? **N�
 - Respostas reais para Q1 a Q4, com técnicos e produtores.
 - Se o técnico teria acesso aos dados do produtor antes da visita ou só durante ela (H05).
 - Se os termos "ponto de venda" e "arroba" são os que técnicos e produtores realmente usam (H08).
+
+#### C03
+- Como o peão conduz e identifica cada animal durante a pesagem.
+- Como o peso é anotado e em que momento é passado a limpo.
+- O que acontece quando o brinco está ilegível ou faltando.
+- Respostas reais para Q1 a Q4, com peões e produtores.
+- Se é mesmo o peão quem executa a pesagem, ou se o produtor faz isso sozinho.
+- Se termos como "brinco", "lote" e "tronco" são os que os peões realmente usam.
 
 ## Checklist
 
