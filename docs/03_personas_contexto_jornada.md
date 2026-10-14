@@ -1,7 +1,7 @@
 # Entrega 3 — Personas, mapa de empatia, contexto de uso e jornada
 
 **Data:** 08/09/2026 
-**Status:** 🟨 em andamento
+**Status:** 🟩 em andamento
 **Responsabilidade:** 1 persona por integrante; 1 mapa de empatia, 1 contexto de uso consolidado e 1 jornada por equipe (salvo orientação diferente do docente).
 
 ## Objetivo da atividade
@@ -99,6 +99,36 @@ Antes de criar personas, retome os tipos de usuários, características relevant
 - Possibilidade de compartilhar histórico via WhatsApp ou PDF.
 - Interface deve funcionar também fora do campo.
  
+### Persona P03 — Agnaldo
+ 
+**Autor(a):** Renan Casemiro Hessel - 24.123.019-2
+**Tipo:** secundária
+**Base de evidências:** proto-persona a validar
+**Hipóteses da Entrega 1 relacionadas:** {{H03}} (funcionário/peão executa a captura)
+ 
+![Persona P03](../assets/03_personas/p03.png)
+ 
+| Campo | Descrição |
+|---|---|
+| Faixa etária / contexto relevante | [H] 22–40 anos — peão de campo contratado, mora na propriedade ou na região e trabalha para um ou mais patrões |
+| Ocupação/papel | [H] Peão/vaqueiro responsável pela lida diária com o gado. É quem fica com o celular na mão no momento da pesagem |
+| Conhecimento do domínio | [H] Alto na prática — sabe lidar com o animal, reconhece cada boi pelo brinco ou pela pelagem, mas não acompanha números de ganho de peso nem valores de arroba |
+| Experiência tecnológica | [H] Baixa — usa WhatsApp (principalmente áudio), câmera e vídeos; dificuldade com leitura de textos longos e com campos de formulário |
+| Objetivos | [H] Cumprir rápido a tarefa que o patrão pediu ("pesa esse lote hoje"), sem atrasar o resto do serviço e sem errar o animal |
+| Necessidades | [H] Fotografar vários animais em sequência, saber na hora se a foto "serviu", registrar o brinco sem digitar muito, e não perder o que já foi feito se o sinal cair |
+| Dores/frustrações | [H] O gado não fica parado, e repetir foto significa tocar o animal de novo; [H] a internet no curral cai e ele não sabe se a informação foi enviada |
+| Motivadores | [H] Evitar retrabalho |
+| Restrições/acessibilidade | [H] Uma das mãos muitas vezes ocupada (corda, porteira, animal); luvas ou mãos sujas e suadas; sol forte; pouca familiaridade com termos escritos e técnicos |
+| Ambiente típico de uso | [H] Curral com celular do patrão ou celular próprio simples, com pouca bateria e armazenamento; sinal fraco ou inexistente |
+| Comportamentos relevantes | [H] Aprende pelo exemplo (alguém mostra uma vez e ele repete) |
+
+**Decisões de design influenciadas por P03:**
+ 
+- Modo de captura em sequência: fotografar → confirmar brinco → próximo animal, sem voltar ao menu entre um animal e outro.
+- Retorno imediato e visual sobre a qualidade da foto (ex.: ícone verde/vermelho e indicação de enquadramento), antes de soltar o animal.
+- Registro do brinco com teclado numérico grande ou seleção na lista do lote, evitando digitação livre;
+- Funcionar offline.
+- Ícones e poucas palavras, com botões alcançáveis com uma mão.
 
 
 > Repita para P02, P03... Cada integrante deve produzir ao menos uma persona.
@@ -149,6 +179,18 @@ Documente também em texto: o que vê; ouve; diz/faz; pensa/sente; dores; ganhos
 |---|---|---|---|---|---|---|
 | 1 (antes) | Abre o app e consulta o histórico de peso do lote do Chico | Ver a evolução de peso dos últimos meses | [H] "Bom dá pra ver o ganho mensal por aqui" | [H] Histórico tem poucas entradas. Chico só registrou 2 vezes | App poderia mostrar alerta de que o histórico está muito espaçado e sugerir frequência ideal de pesagem | H |
 | 2 (durante) | Dinho e Chico analisam juntos se o lote já atingiu o peso de abate | Decidir se vale chamar o comprador agora ou esperar mais | [H] Satisfação em ter dados para embasar a conversa | [H] App não mostra claramente quantos animais já estão acima do peso mínimo de abate | Dashboard: "X de Y animais já atingiram o peso de venda" | H |
+
+### Jornada do Usuário — P03 Agnaldo
+ 
+**Persona:** P03 — Agnaldo
+**Objetivo da jornada:** pesar por foto todos os animais de um lote a pedido do Chico
+**Início e fim da jornada:** começa com o pedido do Chico e termina com as pesagens salvas e enviadas
+ 
+| Etapa | Situação/ação | Objetivo | Pensamento/emoção | Dor | Oportunidade de design | Evidência |
+|---|---|---|---|---|---|---|
+| 1 (antes) | Recebe o pedido e o celular com o app | Saber como fazer a pesagem | [H] "E se eu fizer errado?" | [H] Nunca usou o app sozinho | Tela inicial com um botão só: "Pesar lote" | H |
+| 2 (durante) | Fotografa o animal no tronco e registra o brinco | Foto válida no animal certo | [H] Pressa, "esse boi não para" | [H] Não sabe se a foto ficou boa; digitar o brinco é difícil | Aviso verde/vermelho na foto e brinco por seleção na lista | H |
+| 3 (depois) | Termina o lote com sinal fraco | Ter certeza de que salvou | [H] "Será que foi?" | [H] Sem retorno sobre o envio | Salvar offline e mostrar "enviados / pendentes" | H |
 
 > A jornada pode incluir etapas **antes, durante e depois** do uso do produto. Não transforme a jornada em lista de telas.
 
