@@ -55,6 +55,9 @@ Escolha apenas o que for coerente com tarefas e cenários. Para TCCs técnicos, 
 
 
 ![Tela1](../assets/06_prototipos/Tela1.jpeg)
+![Tela2](../assets/06_prototipos/Tela2.jpeg)
+![Tela3](../assets/06_prototipos/Tela3.jpeg)
+![Tela4](../assets/06_prototipos/Tela4.jpeg)
 
 ## 4. Simulação / walkthrough
 
