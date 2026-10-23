@@ -54,11 +54,14 @@ Escolha apenas o que for coerente com tarefas e cenários. Para TCCs técnicos, 
 | E1 — Boi não reconhecido | "Não reconhecemos o boi. Fotografe de lado, com o corpo inteiro na foto." Não mostra peso nem o botão de salvar | "Tirar outra foto" → Tela 1 |
 
 
-![Tela1](../assets/06_prototipos/Tela1.jpeg)
-![Tela2](../assets/06_prototipos/Tela2.jpeg)
-![Tela3](../assets/06_prototipos/Tela3.jpeg)
-![Tela4](../assets/06_prototipos/Tela4.jpeg)
-
+| Tela 1 — Estimar | Tela 2 — Resultado |
+|---|---|
+| ![Tela 1](../assets/06_prototipos/tela1.jpeg) | ![Tela 2](../assets/06_prototipos/tela2.jpeg) |
+ 
+| Tela 3 — Histórico de estimativas | Tela 4 — Histórico do animal |
+|---|---|
+| ![Tela 3](../assets/06_prototipos/tela3.jpeg) | ![Tela 4](../assets/06_prototipos/tela4.jpeg) |
+ 
 ## 4. Simulação / walkthrough
 
 Realize uma simulação com uma pessoa que não participou da elaboração dessas telas. Um colega pode ser usado **para essa iteração formativa**, mas isso não substitui os participantes finais da Entrega 14.
