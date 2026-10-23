@@ -56,11 +56,11 @@ Escolha apenas o que for coerente com tarefas e cenários. Para TCCs técnicos, 
 
 | Tela 1 — Estimar | Tela 2 — Resultado |
 |---|---|
-| ![Tela 1](../assets/06_prototipos/tela1.jpeg) | ![Tela 2](../assets/06_prototipos/tela2.jpeg) |
+| ![Tela 1](../assets/06_prototipos/Tela1.jpeg) | ![Tela 2](../assets/06_prototipos/Tela2.jpeg) |
  
 | Tela 3 — Histórico de estimativas | Tela 4 — Histórico do animal |
 |---|---|
-| ![Tela 3](../assets/06_prototipos/tela3.jpeg) | ![Tela 4](../assets/06_prototipos/tela4.jpeg) |
+| ![Tela 3](../assets/06_prototipos/Tela3.jpeg) | ![Tela 4](../assets/06_prototipos/Tela4.jpeg) |
  
 ## 4. Simulação / walkthrough
 
