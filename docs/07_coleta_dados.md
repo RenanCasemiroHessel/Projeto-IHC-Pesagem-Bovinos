@@ -84,7 +84,7 @@ Analise voluntariedade, consentimento, minimização de dados, privacidade, risc
 
 > Cada integrante deve preparar uma técnica/instrumento completo. As técnicas devem ser diferentes entre si e **questionário deve estar entre as técnicas escolhidas**, conforme o enunciado da disciplina.
 
-### Instrumento I01 — {{nome da técnica}}
+### Instrumento I01 — Entrevista semiestruturada
 
 **Autor(a):** Gustavo Atui - 24.123.072-1 
 **Técnica:** entrevista semiestruturada  
