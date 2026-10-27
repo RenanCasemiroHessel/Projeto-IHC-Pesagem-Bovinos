@@ -86,30 +86,47 @@ Analise voluntariedade, consentimento, minimização de dados, privacidade, risc
 
 ### Instrumento I01 — {{nome da técnica}}
 
-**Autor(a):** {{nome — matrícula}}  
-**Técnica:** questionário / entrevista semiestruturada / observação / grupo focal / outra autorizada  
-**Objetivo:** {{...}}  
-**Público:** {{...}}
+**Autor(a):** Gustavo Atui - 24.123.072-1 
+**Técnica:** entrevista semiestruturada  
+**Objetivo:** entender como o técnico acompanha o peso dos animais e decide a recomendação de venda.  
+**Público:** técnicos agropecuários
 
 #### Procedimento padronizado de aplicação
 
-1. {{preparação}}
-2. {{apresentação/consentimento}}
-3. {{aplicação}}
-4. {{encerramento}}
-5. {{armazenamento/anonimização}}
+1. **Preparação:** agendar uma reunião 30 minutos,levar roteiro para entrevista. 
+2. **Consentimento:** ler o termo e pedir autorização para gravar.
+3. **Aplicação:** seguir o roteiro sem sugerir respostas.
+4. **Encerramento:** agradecer e perguntar se quer acrescentar algo.
+5. **Anonimização:** transcrever com códigos (E1, E2). 
 
 #### Instrumento
 
 Cole aqui o questionário/roteiro completo ou forneça link **mais uma cópia textual no repositório**.
 
+**Termo:** "Sou um aluno de IHC da FEI. Deixei reservado 30 minutos para entrevista, você pode parar quando quiser e não registraremos seu nome. Podemos gravar o a entrevista ?"
+
+ **Roteiro:**
+ 
+1. Há quanto tempo trabalha como técnico de campo?
+2. Como você descobre hoje o peso de um animal?
+3. Como os animais são identificados na fazenda?
+4. Quem segura o celular ou anota durante a visita?
+5. Que informações você usa para recomendar a venda?
+6. Você compara o peso atual com pesagens anteriores? Como?
+7. Onde ficam os registros de peso e como você os acessa?
+8. Como você e o produtor falam o peso no dia a dia?
+
 #### Como os dados serão analisados
 
 {{ex.: distribuição de respostas, codificação temática, agrupamento de problemas}}
 
+Respostas agrupadas por hipótese (H01, H03, H05, H08, H09), indicando se cada uma foi sustentada, refutada ou refinada na RASTREABILIDADE.md.
+
 ## Síntese
 
 Explique quais lacunas de conhecimento sobre usuários o conjunto de técnicas pretende reduzir. Indique explicitamente quais hipóteses da Entrega 1 deverão ficar **sustentadas, refutadas ou refinadas** após a análise dos dados. Quando os dados forem coletados/analisados, atualize o histórico em `RASTREABILIDADE.md`.
+
+**Parte do Gustavo (A01 e I01):** a entrevista com técnicos busca confirmar se eles realmente acompanham a evolução do peso de cada animal (H03), como acessam os dados do produtor (H05), quem opera o celular na fazenda (H01), que vocabulário usam (H08) e como os animais são identificados (H09). Ao fim da análise, cada uma dessas hipóteses deve ficar sustentada, refutada ou refinada na RASTREABILIDADE.md.
 
 ## Checklist
 
