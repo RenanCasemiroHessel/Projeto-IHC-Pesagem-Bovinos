@@ -63,6 +63,9 @@ Escolha apenas o que for coerente com tarefas e cenários. Para TCCs técnicos, 
 | Tela 3 — Histórico de estimativas | Tela 4 — Histórico do animal |
 |---|---|
 | ![Tela 3](../assets/06_prototipos/Tela3.jpeg) | ![Tela 4](../assets/06_prototipos/Tela4.jpeg) |
+| Tela Erro — Bovino não identificado |  |
+|---|---|
+| ![Tela Erro](../assets/06_prototipos/Tela_Erro.jpeg) |  |
  
 ## 4. Simulação / walkthrough
 
