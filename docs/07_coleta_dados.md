@@ -180,7 +180,7 @@ Respostas agrupadas por hipótese (H01, H03, H05, H08, H09), indicando se cada u
 **Objetivo:** verificar com pecuaristas se o cenário de uso faz sentido (se pesam, como pesam, como identificam os animais e quem usa o celular no curral) e levantar vocabulário, condição de internet e reação à ideia de pesar por foto.  
 **Público:** pecuaristas de pequeno e médio porte (P01). Gerentes, familiares ou peões que participam do manejo também podem responder.  
 **Meta de amostra:** pelo menos 15 respostas válidas, sem pretensão estatística.  
-**Link do formulário:** {{link do Google Forms}}
+**Link do formulário:** [{{link do Google Forms}}](https://docs.google.com/forms/d/e/1FAIpQLSfcYCYJgqBqjPY_O3ObPl-dtnlb4XwQrYeu7LEh0aqc4TDK2Q/viewform?usp=publish-editor)
 
 #### Procedimento padronizado de aplicação
 
@@ -193,7 +193,7 @@ Respostas agrupadas por hipótese (H01, H03, H05, H08, H09), indicando se cada u
 
 #### Instrumento
 
-**Mensagem de convite:** "Oi! Sou aluno de Ciência da Computação da FEI e estou fazendo uma pesquisa rápida, de uns 10 minutos, sobre como o pecuarista pesa e acompanha o gado. É anônima e só participa quem quiser. Se puder ajudar, o link é este: {{link}}. Obrigado!"
+**Mensagem de convite:** "Oi! Sou aluno de Ciência da Computação da FEI e estou fazendo uma pesquisa rápida, de uns 10 minutos, sobre como o pecuarista pesa e acompanha o gado. É anônima e só participa quem quiser. Se puder ajudar, o link é este: [{{link}}](https://docs.google.com/forms/d/e/1FAIpQLSfcYCYJgqBqjPY_O3ObPl-dtnlb4XwQrYeu7LEh0aqc4TDK2Q/viewform?usp=publish-editor). Obrigado!"
 
 **Termo (seção 1 do formulário):** "Somos alunos de Ciência da Computação da FEI e estamos estudando como seria um aplicativo que estima o peso do boi por foto, sem balança. Esta pesquisa serve só para entender como o pecuarista trabalha hoje. Leva uns 10 minutos. Não pedimos nome, telefone, e-mail, nome da fazenda nem cidade. Ninguém da sua fazenda vê suas respostas. Elas são anônimas, ficam guardadas só com os três alunos do grupo, são usadas apenas no trabalho da disciplina e serão apagadas no fim do semestre. Participar é voluntário. Você pode parar quando quiser, é só fechar a página, e nada é enviado antes de clicar em Enviar. Como as respostas são anônimas, depois de enviar não conseguimos achar a sua para apagar. Dúvidas: tcc.gado.cc@gmail.com."
 
