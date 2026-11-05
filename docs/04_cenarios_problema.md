@@ -1,7 +1,7 @@
 # Entrega 4 — Cenários de análise/problema
 
 **Data:** 06/10/2026  
-**Status:** 🟩 concluído  
+**Status:** 🟦 em revisão  
 **Responsabilidade:** 1 solução completa por integrante
 
 ## Objetivo da atividade
@@ -83,11 +83,14 @@ Use os tipos de questões/taxonomia definidos na aula. As perguntas devem revela
 
 #### C02
 | # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
-|---|---|---|---|
-| Q1 | Com que frequência o Dinho visita a fazenda do Chico, e quanto tempo dura cada visita? | Define quanto tempo ele tem para analisar o lote e conversar com o produtor | Entrevista com técnicos agropecuários (Entrega 7) |
-| Q2 | Que registros de peso o Chico tem hoje, onde ficam guardados e de quando são? | Revela de que dados o técnico realmente dispõe | Entrevista com produtores (Entrega 7) |
-| Q3 | Além da estimativa visual, que outros recursos o Dinho usa para estimar o peso sem balança? | Mostra as práticas atuais e quanto elas custam em tempo e esforço | Entrevista com técnicos (Entrega 7); literatura de pecuária |
-| Q4 | O que o Chico faz para acompanhar o lote entre uma visita do técnico e outra? | Revela o que acontece com o lote fora das visitas e que informação se perde nesse intervalo | Entrevista com produtores (Entrega 7) |
+|---|---|---|---|---|
+| Q1 | Ambiente/contexto | Em que condições Dinho avalia o lote durante a visita: os animais estão no pasto ou presos, e quanto tempo ele tem para isso? | Define o que é possível observar ou medir durante a visita | Entrevista com técnicos (Entrega 7) |
+| Q2 | Atores | Além de Chico e Dinho, quem influencia a decisão de venda (comprador, peão, vizinho) e qual o peso da opinião de cada um? | Mostra de quem depende a decisão e por que a recomendação do técnico pode ser ignorada | Entrevista com técnicos e produtores (Entrega 7) |
+| Q3 | Objetivos | O que Dinho considera "ponto de venda": um peso mínimo exigido pelo comprador, o ganho de peso recente ou o preço da arroba? | Define qual informação ele precisa para recomendar | Entrevista com técnicos (Entrega 7) |
+| Q4 | Planejamento | Dinho se prepara antes da visita? Que informações ele tem do lote antes de chegar à fazenda? | Mostra se a análise só começa na fazenda ou pode ser preparada antes (H05) | Entrevista com técnicos (Entrega 7) |
+| Q5 | Ações | Além da observação visual, que recursos Dinho usa para estimar o peso sem balança, e em quantos animais consegue aplicá-los? | Revela as práticas atuais e o custo de cada uma | Entrevista com técnicos (Entrega 7)|
+| Q6 | Eventos | Que acontecimentos aceleram ou atrasam a decisão de venda (prazo da oferta, seca, falta de balança disponível)? | Mostra o que dispara a situação e quanta pressão de tempo existe | Entrevista com técnicos e produtores (Entrega 7) |
+| Q7 | Avaliação | Como Dinho e Chico ficam sabendo se a recomendação estava certa, e o que muda na relação entre eles depois disso? | Mostra como o resultado é interpretado e se o técnico perde credibilidade | Entrevista com técnicos e produtores (Entrega 7) |
 
 #### C03
 | # | Questão | Por que precisa ser respondida | Fonte/forma de obter resposta |
@@ -110,13 +113,12 @@ Sem saber quanto cada animal ganhou desde a última pesagem, Chico decide compra
 
 
 #### C02
-Dinho é técnico agropecuário e presta assistência a várias propriedades da região. **[NOVO: Ele visita a fazenda do Chico uma vez por mês, por cerca de duas horas.]** Na visita, Chico pergunta se o lote já está no ponto de venda, porque um comprador ofereceu um bom preço pela arroba.
- 
-Dinho pede os registros de peso. Chico mostra um caderno com uma única pesagem feita meses atrás, **[NOVO: sem o número do brinco em várias anotações]**. **[NOVO: Desde a última visita, Chico não acompanhou o peso do lote.]**
- 
-Sem dados recentes, Dinho estima o peso "no olho". **[NOVO: Em alguns animais usa a fita de pesagem, mas medir o lote inteiro não cabe no tempo da visita.]** **[NOVO: Ele sabe que o comprador desconta no preço dos animais abaixo de um peso mínimo, mas não consegue dizer quantos do lote já passaram dele.]**
- 
-Dinho recomenda esperar mais algumas semanas. Chico fica em dúvida, porque o vizinho vendeu um lote parecido. **[NOVO: Sem números, a recomendação do técnico vale o mesmo que a opinião do vizinho, e a decisão final é do Chico.]** Ele vende, e o frigorífico paga menos, porque parte dos animais estava abaixo do peso mínimo
+
+Dinho é técnico agropecuário e presta assistência a várias propriedades da região. Na visita mensal à fazenda do Chico, o produtor pergunta se o lote já está no ponto de venda, porque um comprador ofereceu um preço bom pela arroba. **[NOVO – Q6, hipótese: a oferta vale por poucos dias, sem tempo de alugar uma balança.]**
+
+**[NOVO – Q4, hipótese: Dinho chega à fazenda sem nenhuma informação prévia sobre o lote.]** Ele pede os registros de peso. Chico mostra um caderno com anotações de uma única pesagem feita meses atrás, quando alugou uma balança. **[NOVO – Q1, hipótese: os animais estão soltos no pasto, e juntar o lote no curral tomaria boa parte da visita.]** Sem dados recentes, Dinho observa os animais e estima o peso "no olho". **[NOVO – Q5, hipótese: em alguns animais ele usa a fita de pesagem, mas não dá tempo de medir o lote inteiro.]** Ele sabe que essa estimativa tem pouca precisão. **[NOVO – Q3, hipótese: para Dinho, o lote está no ponto quando a maioria dos animais passa do peso mínimo exigido pelo comprador, mas ele não consegue dizer quantos já passaram.]**
+
+Dinho recomenda esperar mais algumas semanas. Chico fica em dúvida, porque o vizinho vendeu um lote parecido e disse que estava no ponto. **[NOVO – Q2, hipótese: a decisão final é do Chico; sem números, a recomendação do técnico pesa tanto quanto a opinião do vizinho.]** No fim, Chico decide vender, e o frigorífico paga menos do que ele esperava, porque parte dos animais estava abaixo do peso ideal. **[NOVO – Q7, hipótese: os dois só descobrem o erro quando o frigorífico informa os pesos e o desconto; na visita seguinte, Chico confia menos na orientação de Dinho.]**
 
 #### C03
 Agnaldo é peão na fazenda do Chico. Chico pede que ele e outro funcionário levem o lote **[NOVO: de cerca de 30 animais]** para pesar na balança do vizinho, a 12 km, porque quer saber se os animais já estão no ponto de venda.
@@ -154,11 +156,14 @@ Eles voltam no fim da tarde. **[NOVO: No dia da pesagem, duas pessoas ficam ocup
 |---|---|
 | Ator(es) | Dinho (técnico agropecuário); Chico (produtor, quem decide); comprador/frigorífico; vizinho (influência indireta) |
 | Objetivo(s) | Dinho: recomendar o momento certo de venda com base em dados. Chico: vender o lote no ponto certo e pelo melhor preço |
-| Contexto | Visita técnica mensal de cerca de duas horas; oferta de compra com prazo curto; nenhum acompanhamento do peso entre as visitas |
+| Contexto |  Visita técnica mensal; animais no pasto (Q1, hipótese); oferta de compra com prazo curto (Q6, hipótese); nenhum acompanhamento do peso entre as visitas  |
 | Recursos/informações | Caderno com uma pesagem antiga e incompleta; observação visual; fita de pesagem; peso mínimo exigido pelo comprador |
-| Ações | Pedir registros; estimar o peso visualmente; medir alguns animais com fita; comparar com o peso mínimo do comprador; recomendar esperar |
+| Ações | Pedir registros; estimar o peso visualmente; medir alguns animais com fita (Q5); comparar com o peso mínimo do comprador; recomendar esperar |
 | Problemas/rupturas | Registros antigos e sem identificação do animal; nenhuma informação sobre o lote entre as visitas; medir o lote inteiro não cabe no tempo da visita; impossível saber quantos animais passaram do peso mínimo; recomendação sem números perde força na decisão |
 | Consequências | Venda com parte do lote abaixo do peso mínimo e preço menor; recomendação técnica desconsiderada |
+| Planejamento | Sem preparação prévia: a análise só começa na fazenda (Q4, hipótese) |
+| Eventos | Oferta do comprador com prazo curto (Q6); venda feita antes da reavaliação |
+| Avaliação | O erro só aparece no pagamento do frigorífico; a recomendação do técnico perde credibilidade (Q7) |
 
 #### C03
 | Elemento | Evidência no cenário |
@@ -187,12 +192,10 @@ Quais tarefas merecem análise? Quais informações precisam ser coletadas? **N�
 - Se o produtor quer mesmo acompanhar a evolução do peso ao longo do tempo, e não só o último registro (H03).
 
 #### C02
-- Como o técnico decide se um lote está no ponto de venda.
-- Como o produtor acompanha o lote entre as visitas do técnico.
-- Como o peso de cada animal é associado ao seu brinco.
-- Respostas reais para Q1 a Q4, com técnicos e produtores.
-- Se o técnico teria acesso aos dados do produtor antes da visita ou só durante ela (H05).
-- Se os termos "ponto de venda" e "arroba" são os que técnicos e produtores realmente usam (H08).
+- Verificar Q1 a Q7 com técnicos e produtores (Entrega 7, entrevista I01).
+- Como o técnico decide se um lote está no ponto de venda (Q3).
+- Se o técnico tem acesso aos dados do produtor antes da visita (Q4, H05).
+- Se "ponto de venda" e "arroba" são os termos realmente usados (H08).
 
 #### C03
 - Como o peão conduz e identifica cada animal durante a pesagem.
