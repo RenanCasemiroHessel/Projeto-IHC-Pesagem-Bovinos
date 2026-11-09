@@ -31,6 +31,7 @@ Um CRUD pode gerar tarefas relevantes, mas “cadastrar usuário” só merece m
 |---|---|---|---|---|
 | T01 | Consultar o histórico de peso de um animal | P02 / C02 | [H] várias vezes por visita técnica / criticidade alta | Gustavo |
 | T02 | Pesar um animal por foto e salvar o peso no animal certo | P01 / C01 | [H] a cada animal, em toda sessão de pesagem / criticidade alta | Rafael |
+| T03 | Conferir e fechar a pesagem do lote | P03 / C03 | [H] uma vez ao fim de cada pesagem de lote (cerca de 30 animais) / criticidade alta | Renan |
 
 > Priorize tarefas necessárias para que o usuário alcance objetivos centrais. Não desperdice a modelagem em ações triviais isoladas, como “clicar em login”, se o objetivo relevante é maior. Da mesma forma, não modele o funcionamento interno do algoritmo como se fosse uma tarefa humana.
 
@@ -187,6 +188,92 @@ flowchart TD
 - As subtarefas cobrem do enquadramento da foto até a confirmação do salvamento. O ganho de peso fica de fora de propósito, porque é a T01.
 - Os planos indicam ordem (1>2>3), alternativa (1/2/3 no objetivo 3), condição (4.2 só se houver erro) e repetição (1>5 para cada animal, e 1.1 a 1.3 se a foto ficar ruim).
 - A decomposição para onde aparecem decisões de interação: como identificar o animal e como conferir antes de salvar.
+
+---
+
+## HTA — T03 Conferir e fechar a pesagem do lote
+
+**Autor(a):** Renan Casemiro Hessel — 24.123.019-2
+
+### Descrição da tarefa
+
+**Objetivo:** [H] terminar a pesagem do lote com cada animal pesado uma vez, no animal certo, e com tudo enviado, antes de soltar o gado e voltar para o resto do serviço.
+**Início:** o Agnaldo salvou o último animal da fila (fim da T02, repetida para o lote) e o lote ainda está no curral.
+**Conclusão:** não sobrou problema no lote (ou o que sobrou ficou marcado para outro dia), nenhuma pesagem está aguardando sinal e o Chico sabe o resultado.
+**Contexto:** [H] curral da fazenda, fim da pesagem de um lote de cerca de 30 animais (cenário C03), pressa para soltar o gado, mãos sujas, pouca leitura e sinal fraco ou nenhum (persona P03 e contexto de uso da Entrega 3). Fotografar, identificar e salvar cada animal não faz parte desta tarefa: é a T02.
+
+### Diagrama
+
+```mermaid
+flowchart TD
+    T0["0. Conferir e fechar a pesagem do lote<br><b>1>2>3>4</b>"]
+
+    T1["1. Ver o resumo do lote<br><b>1>2>3</b>"]
+    T2["2. Revisar e fechar o lote<br><b>1, 2, 3 em qualquer ordem > 4</b>"]
+    T3["3. Garantir o envio das pesagens<br><b>1>2</b>"]
+    T4["4. Avisar o Chico<br><b>1>2</b>"]
+
+    T11["1.1 Tocar em terminar lote<br>══════════"]
+    T12["1.2 Ver quantos animais foram pesados do total<br>══════════"]
+    T13["1.3 Ver a lista de problemas do lote<br>══════════"]
+
+    T21["2.1 Tratar o animal que ficou sem pesar<br><b>1/2</b>"]
+    T22["2.2 Corrigir a pesagem repetida<br><b>1>2>3</b>"]
+    T23["2.3 Conferir o animal cadastrado como novo<br><b>1>2/3</b>"]
+    T24["2.4 Tocar em fechar lote<br>══════════"]
+    T211["2.1.1 Pesar o animal agora (T02)<br>══════════"]
+    T212["2.1.2 Marcar para pesar outro dia<br>══════════"]
+    T221["2.2.1 Abrir as duas pesagens do mesmo brinco<br>══════════"]
+    T222["2.2.2 Comparar as fotos com os animais do curral<br>══════════"]
+    T223["2.2.3 Manter a certa e passar a outra para o animal certo<br>══════════"]
+    T231["2.3.1 Comparar a foto do animal novo com a dos que faltaram<br>══════════"]
+    T232["2.3.2 Juntar com o animal que faltou<br>══════════"]
+    T233["2.3.3 Manter como animal novo<br>══════════"]
+
+    T31["3.1 Levar o celular a um lugar com sinal<br>══════════"]
+    T32["3.2 Conferir que nenhuma pesagem ficou aguardando<br>══════════"]
+    T41["4.1 Tocar em compartilhar resumo<br>══════════"]
+    T42["4.2 Enviar o resumo ao Chico no WhatsApp<br>══════════"]
+
+    T0 --> T1 & T2 & T3 & T4
+    T1 --> T11 & T12 & T13
+    T2 --> T21 & T22 & T23 & T24
+    T21 --> T211 & T212
+    T22 --> T221 & T222 & T223
+    T23 --> T231 & T232 & T233
+    T3 --> T31 & T32
+    T4 --> T41 & T42
+
+    classDef obj fill:#fff,stroke:#222,stroke-width:1.5px,color:#000
+    classDef op fill:#fff,stroke:#222,stroke-width:1px,color:#000
+    class T0,T1,T2,T3,T4,T21,T22,T23 obj
+    class T11,T12,T13,T24,T211,T212,T221,T222,T223,T231,T232,T233,T31,T32,T41,T42 op
+```
+
+### Decomposição e planos
+
+| ID | Objetivo/operação | Plano/ordem | Input → Feedback | Problema ou decisão de design observada | Recomendação |
+|---|---|---|---|---|---|
+| 0 | Conferir e fechar a pesagem do lote | 1>2>3>4. O 2 precisa acontecer antes de soltar o gado. O 4 só acontece se o Agnaldo usou o próprio celular | Input: último animal do lote salvo. Feedback: lote fechado e tudo enviado | [H] No C03 os erros só apareciam à noite, quando o Chico passava as anotações a limpo e ninguém lembrava mais qual animal era qual. Com o lote ainda no curral, quase tudo tem conserto. | [H] Mostrar o resumo assim que o último animal for salvo, sem o Agnaldo precisar procurar. |
+| 1 | Ver o resumo do lote | 1>2>3 | Input: toque em terminar lote. Feedback: resumo na tela | [H] O Agnaldo lê pouco (P03) e não vai ler um resumo cheio de texto no curral. | [H] Números grandes e ícones: pesados, aguardando sinal e problemas. |
+| 1.2 | Ver quantos animais foram pesados do total | — | Input: total de animais do lote. Feedback: "28 de 30" | [H] Hoje a conta de quem falta é feita de cabeça ou no papel do bolso (C03). | [H] O app faz a conta e mostra quem faltou, com a foto da última pesagem. |
+| 1.3 | Ver a lista de problemas do lote | — | Input: pesagens do dia. Feedback: lista de problemas, cada um com o animal envolvido | [H] Pesos repetidos e brincos ilegíveis eram justamente os erros que estragavam o caderno do Chico (C03). | [H] O app encontra sozinho três problemas: animal sem pesar, brinco pesado duas vezes e animal cadastrado como novo. |
+| 2 | Revisar e fechar o lote | 2.1, 2.2 e 2.3 em qualquer ordem, só os que aparecerem na lista, repetindo para cada problema > 2.4. Se a lista estiver vazia, só 2.4 | Input: lista de problemas. Feedback: lote fechado | [H] O Agnaldo está com pressa para soltar o gado (C03) e pode querer fechar o lote sem revisar. | [H] Deixar fechar com problemas, mas mostrar quantos ficaram. Travar o fechamento faria ele largar o app. |
+| 2.1 | Tratar o animal que ficou sem pesar | 1/2: 2.1.1 se o animal ainda está no curral e entra no tronco / 2.1.2 se ele não entra ou já foi solto | Input: animal da lista de quem faltou. Feedback: animal pesado ou marcado para outro dia | [H] Alguns bois resistem a entrar no tronco (C03), e insistir atrasa o resto do serviço. | [H] Botão "pesar outro dia", para o animal não virar um erro esquecido. |
+| 2.1.1 | Pesar o animal agora | — (é a T02) | Input: animal escolhido na lista. Feedback: câmera aberta para esse animal | [H] Se tiver que identificar o animal de novo, o Agnaldo repete a parte mais arriscada da T02 (A02). | [H] Abrir a câmera da T02 já com o animal escolhido. |
+| 2.2 | Corrigir a pesagem repetida | 1>2>3 | Input: duas pesagens no mesmo brinco, no mesmo dia. Feedback: uma pesagem por animal | [H] Se o mesmo brinco foi pesado duas vezes, uma das pesagens quase sempre é de outro animal: é o erro de identificação da T02 (A02) que passou pela conferência. | [H] Mostrar as duas fotos lado a lado, com o peso e a hora de cada uma. |
+| 2.3 | Conferir o animal cadastrado como novo | 1>2/3: 2.3.2 se a foto bater com um animal que faltou / senão, 2.3.3 | Input: animal novo cadastrado na T02. Feedback: animal juntado a um existente ou confirmado como novo | [H] Um boi que perdeu o brinco (C03) pode aparecer duas vezes no resumo: como "faltou" e como "novo". [?] Depende de como o animal novo entra no app, que a T02 também deixou em aberto. | [H] Quando houver um animal novo e um que faltou, perguntar "é o mesmo animal?" mostrando as duas fotos. |
+| 3 | Garantir o envio das pesagens | 1>2: 3.1 só se não houver sinal no curral | Input: pesagens salvas no celular. Feedback: "tudo enviado" | [H] Hoje o Agnaldo não sabe se os dados foram enviados (P03, etapa 3 da jornada). | [H] Enviar sozinho assim que houver sinal e mostrar quantas pesagens faltam até zerar. |
+| 3.1 | Levar o celular a um lugar com sinal | — | Input: celular com pesagens aguardando. Feedback: contador de pendentes começa a baixar | [H] Tarefa fora do app, causada pelo sinal fraco no curral (contexto de uso da Entrega 3). [?] Não sabemos onde costuma haver sinal nas fazendas. | [H] Guardar as pesagens no celular sem prazo, para ele enviar quando chegar à sede. |
+| 4 | Avisar o Chico | 1>2 | Input: lote fechado e enviado. Feedback: mensagem entregue no WhatsApp | [H] Na dúvida, o Agnaldo manda áudio para o patrão (P03), e o Chico quer saber se o lote já está no ponto de venda (C03). | [H] Resumo curto e pronto para o WhatsApp: quantos foram pesados e o que ficou para outro dia. |
+
+**Verificação do HTA:**
+
+- O objetivo 0 é uma meta do usuário: terminar a pesagem sem perder nada, e não "tocar em terminar lote".
+- As subtarefas cobrem do resumo até o aviso ao Chico, incluindo o que acontece fora do app (pesar de novo no tronco e procurar sinal). Fotografar e identificar cada animal fica de fora de propósito, porque é a T02.
+- Os planos indicam ordem (1>2>3), alternativa (1/2 em 2.1 e 2.3), condição (3.1 só sem sinal, 4 só com o celular do Agnaldo), qualquer ordem (2.1, 2.2 e 2.3) e repetição (2.1 a 2.3 para cada problema).
+- A decomposição para onde aparecem decisões de interação: como mostrar o resumo, o que fazer com cada problema e como mostrar o envio.
+
 ---
 
 ## GOMS — T01 Consultar o histórico de peso de um animal
@@ -286,6 +373,68 @@ O GOAL 3 é o único com métodos de verdade: são três jeitos de chegar ao mes
 
 ---
 
+## GOMS — T03 Conferir e fechar a pesagem do lote
+
+**Autor(a):** Renan Casemiro Hessel — 24.123.019-2
+
+### Goal
+
+`GOAL 0: conferir e fechar a pesagem do lote`
+
+### Métodos, operadores e regras de seleção
+
+```
+GOAL 0: conferir e fechar a pesagem do lote
+  GOAL 1: ver o resumo do lote
+    OP. 1.1: tocar em "terminar lote"
+    OP. 1.2: ler quantos animais foram pesados do total
+    OP. 1.3: ler a lista de problemas do lote
+  GOAL 2: revisar e fechar o lote
+  (repetir 2.1, 2.2 ou 2.3 para cada problema da lista)
+    GOAL 2.1: tratar o animal que ficou sem pesar
+      METHOD 2.1.A: pesar o animal agora
+      (SEL. RULE: o animal ainda está no curral e entra no tronco)
+        OP. 2.1.A.1: tocar no animal na lista de quem faltou
+        OP. 2.1.A.2: pesar o animal como na T02, sem identificar de novo
+      METHOD 2.1.B: deixar para outra pesagem
+      (SEL. RULE: o animal não entra no tronco ou já foi solto)
+        OP. 2.1.B.1: tocar em "pesar outro dia"
+    GOAL 2.2: corrigir a pesagem repetida
+      OP. 2.2.1: abrir as duas pesagens do mesmo brinco
+      OP. 2.2.2: comparar as duas fotos com os animais do curral
+      OP. 2.2.3: manter a pesagem certa
+      OP. 2.2.4: passar a outra para o animal certo (identificar como na T02, GOAL 3)
+    GOAL 2.3: conferir o animal cadastrado como novo [?]
+      METHOD 2.3.A: juntar com o animal que faltou
+      (SEL. RULE: a foto do animal novo bate com a de um animal que faltou, que provavelmente perdeu o brinco)
+        OP. 2.3.A.1: comparar as duas fotos com o animal no curral
+        OP. 2.3.A.2: tocar em "é o mesmo animal"
+      METHOD 2.3.B: manter como animal novo
+      (SEL. RULE: a foto não bate com nenhum animal que faltou)
+        OP. 2.3.B.1: tocar em "manter como novo"
+    OP. 2.4: tocar em "fechar lote"
+  GOAL 3: garantir o envio das pesagens
+    METHOD 3.A: esperar o envio automático
+    (SEL. RULE: há sinal no curral)
+      OP. 3.A.1: olhar o contador de pendentes chegar a zero
+    METHOD 3.B: procurar sinal
+    (SEL. RULE: não há sinal no curral e há pesagens aguardando)
+      OP. 3.B.1: levar o celular até um lugar com sinal
+      OP. 3.B.2: abrir o app
+      OP. 3.B.3: olhar o contador de pendentes chegar a zero
+  GOAL 4: avisar o Chico
+  (só se o Agnaldo usou o próprio celular; se usou o do Chico, o resumo já está com ele)
+    OP. 4.1: tocar em "compartilhar resumo"
+    OP. 4.2: escolher o Chico no WhatsApp
+    OP. 4.3: tocar em enviar
+```
+
+### Interpretação
+
+Os métodos aparecem em três lugares, sempre por causa de uma situação do campo: se o animal que faltou ainda entra no tronco (GOAL 2.1), se o animal novo é na verdade um animal que perdeu o brinco (GOAL 2.3) e se há sinal no curral (GOAL 3). Nos outros goals há uma sequência só, então não criei métodos. A carga cognitiva está nos operadores de comparação OP. 2.2.2 e OP. 2.3.A.1, em que o Agnaldo precisa reconhecer o animal pela foto; por isso as fotos precisam aparecer grandes e lado a lado. O método 3.B é o único que tira o Agnaldo do curral. O app não resolve a falta de sinal, mas pode enviar sozinho assim que o sinal aparecer, e aí ele só precisa olhar o contador. [?] O GOAL 2.3 depende de como o animal novo entra no app, decisão que a equipe ainda não tomou.
+
+---
+
 ## CTT — T01 Consultar o histórico de peso de um animal
 
 **Autor(a):** Gustavo Atui — 24.123.072-1
@@ -319,6 +468,20 @@ block-beta
   classDef t fill:#fff,stroke:#222,color:#000
   class T0,A1,A2,A3,A4,B1,B2,C1,C2,D1,D2 t
 ```
+
+### Legenda e relações temporais usadas
+
+| Operador/relação | Significado no diagrama | Exemplo no modelo |
+|---|---|---|
+| `>>` ativação | A tarefa da direita só começa após a da esquerda terminar | Abrir o histórico >> Localizar o animal |
+| `[ ]>>` ativação com passagem de informação | Além da ordem, a informação produzida passa para a próxima tarefa | Localizar o animal [ ]>> Exibir o histórico (o animal escolhido) |
+| `[ ]` escolha | Uma vez iniciada uma tarefa, a outra é desabilitada | Buscar pelo nº do brinco [ ] Escolher na lista do lote |
+| `\|\|\|` concorrência | As tarefas podem ocorrer em qualquer ordem ou ao mesmo tempo | Ver pesagens anteriores \|\|\| Calcular ganho de peso |
+
+**Tipos de tarefa:** abstrata: Consultar o histórico, Abrir o histórico, Localizar o animal, Analisar a evolução; sistema: Exibir o histórico; interativa: abrir link/app, buscar, escolher na lista, ver pesagens; usuário: Calcular ganho de peso.
+
+**Interpretação:** "Calcular ganho de peso" é a única tarefa do usuário, feita fora do sistema; é a mesma carga cognitiva vista no GOMS.
+
 ---
 
 ## CTT — T02 Pesar um animal por foto e salvar o peso no animal certo
@@ -407,19 +570,102 @@ block-beta
 | 4 Conferir se é o animal certo | A4 Conferir o animal (usuário) |
 | 5 Salvar o peso no animal | A5 Salvar o peso + A6 Confirmar o salvamento |
 
+---
+
+## CTT — T03 Conferir e fechar a pesagem do lote
+
+**Autor(a):** Renan Casemiro Hessel — 24.123.019-2
+
+### Descrição
+
+O Agnaldo toca em terminar o lote e o sistema mostra o resumo, e a lista de problemas passa para a revisão. Na revisão, ele resolve um problema de cada vez, repetindo até decidir fechar o lote, o que interrompe a repetição. Depois vem o envio: enquanto ele leva o celular até um lugar com sinal, o sistema fica tentando enviar e, quando consegue, mostra que está tudo enviado. Por fim, ele compartilha o resumo com o Chico.
+
+### Diagrama
+
+Visão geral:
+
+```mermaid
+block-beta
+  columns 14
+  space:5 T0["Conferir e fechar<br>a pesagem do lote<br><i>(abstrata)</i>"]:4 space:5
+  space:14
+  A1["Terminar<br>o lote<br><i>(interativa)</i>"]:2 o1[">>"] A2["Exibir o resumo<br>do lote<br><i>(sistema)</i>"]:2 o2["[ ]>>"] A3["Revisar<br>o lote<br><i>(abstrata)</i>"]:2 o3[">>"] A4["Garantir<br>o envio<br><i>(abstrata)</i>"]:2 o4[">>"] A5["Compartilhar o<br>resumo com o Chico<br><i>(interativa)</i>"]:2
+  T0 --- A1
+  T0 --- A2
+  T0 --- A3
+  T0 --- A4
+  T0 --- A5
+  classDef op fill:none,stroke:none,font-weight:bold
+  class o1,o2,o3,o4 op
+  classDef t fill:#fff,stroke:#222,color:#000
+  class T0,A1,A2,A3,A4,A5 t
+```
+
+Detalhe de "Revisar o lote":
+
+```mermaid
+block-beta
+  columns 11
+  space:4 A3["Revisar o lote<br><i>(abstrata)</i>"]:3 space:4
+  space:11
+  space:2 B1["Resolver um<br>problema *<br><i>(abstrata, iterativa)</i>"]:3 ob1["[>"] B2["Fechar o lote<br><i>(interativa)</i>"]:3 space:2
+  space:11
+  C1["Pesar quem<br>faltou (T02)<br><i>(interativa)</i>"]:2 oc1["[ ]"] C2["Marcar para<br>outro dia<br><i>(interativa)</i>"]:2 oc2["[ ]"] C3["Corrigir pesagem<br>repetida<br><i>(interativa)</i>"]:2 oc3["[ ]"] C4["Conferir<br>animal novo<br><i>(interativa)</i>"]:2
+  A3 --- B1
+  A3 --- B2
+  B1 --- C1
+  B1 --- C2
+  B1 --- C3
+  B1 --- C4
+  classDef op fill:none,stroke:none,font-weight:bold
+  class ob1,oc1,oc2,oc3 op
+  classDef t fill:#fff,stroke:#222,color:#000
+  class A3,B1,B2,C1,C2,C3,C4 t
+```
+
+Detalhe de "Garantir o envio":
+
+```mermaid
+block-beta
+  columns 11
+  space:4 A4["Garantir o envio<br><i>(abstrata)</i>"]:3 space:4
+  space:11
+  D1["Levar o celular<br>até ter sinal<br><i>(usuário)</i>"]:3 od1["|||"] D2["Enviar as pesagens<br>pendentes<br><i>(sistema)</i>"]:3 od2[">>"] D3["Mostrar<br>tudo enviado<br><i>(sistema)</i>"]:3
+  A4 --- D1
+  A4 --- D2
+  A4 --- D3
+  classDef op fill:none,stroke:none,font-weight:bold
+  class od1,od2 op
+  classDef t fill:#fff,stroke:#222,color:#000
+  class A4,D1,D2,D3 t
+```
+
 ### Legenda e relações temporais usadas
 
 | Operador/relação | Significado no diagrama | Exemplo no modelo |
 |---|---|---|
-| `>>` ativação | A tarefa da direita só começa após a da esquerda terminar | Abrir o histórico >> Localizar o animal |
-| `[ ]>>` ativação com passagem de informação | Além da ordem, a informação produzida passa para a próxima tarefa | Localizar o animal [ ]>> Exibir o histórico (o animal escolhido) |
-| `[ ]` escolha | Uma vez iniciada uma tarefa, a outra é desabilitada | Buscar pelo nº do brinco [ ] Escolher na lista do lote |
-| `\|\|\|` concorrência | As tarefas podem ocorrer em qualquer ordem ou ao mesmo tempo | Ver pesagens anteriores \|\|\| Calcular ganho de peso |
- 
-**Tipos de tarefa:** abstrata: Consultar o histórico, Abrir o histórico, Localizar o animal, Analisar a evolução; sistema: Exibir o histórico; interativa: abrir link/app, buscar, escolher na lista, ver pesagens; usuário: Calcular ganho de peso.
- 
-**Interpretação:** "Calcular ganho de peso" é a única tarefa do usuário, feita fora do sistema; é a mesma carga cognitiva vista no GOMS.
- 
+| `>>` ativação | A tarefa da direita só começa depois que a da esquerda termina | Terminar o lote >> Exibir o resumo do lote |
+| `[ ]>>` ativação com passagem de informação | Além da ordem, a informação produzida passa para a próxima tarefa | Exibir o resumo do lote [ ]>> Revisar o lote (a lista de problemas) |
+| `[ ]` escolha | Uma vez iniciada uma tarefa, as outras são desabilitadas | Pesar quem faltou [ ] Marcar para outro dia [ ] Corrigir pesagem repetida [ ] Conferir animal novo |
+| `\|\|\|` concorrência | As tarefas podem ocorrer em qualquer ordem ou ao mesmo tempo | Levar o celular até ter sinal \|\|\| Enviar as pesagens pendentes |
+| `*` iteração | A tarefa se repete até ser interrompida | Resolver um problema * |
+| `[>` desativação | Quando a tarefa da direita começa, a da esquerda é interrompida | Resolver um problema * [> Fechar o lote |
+
+No detalhe de "Garantir o envio", o `|||` tem prioridade sobre o `>>`: primeiro "Levar o celular" e "Enviar as pesagens" acontecem juntas, e só depois o sistema mostra que está tudo enviado.
+
+**Tipos de tarefa:** abstrata: Conferir e fechar a pesagem do lote, Revisar o lote, Resolver um problema, Garantir o envio; sistema: Exibir o resumo do lote, Enviar as pesagens pendentes, Mostrar tudo enviado; interativa: Terminar o lote, Pesar quem faltou, Marcar para outro dia, Corrigir pesagem repetida, Conferir animal novo, Fechar o lote, Compartilhar o resumo com o Chico; usuário: Levar o celular até ter sinal.
+
+**Interpretação:** a iteração com desativação (`Resolver um problema * [> Fechar o lote`) mostra que quem decide o fim da revisão é o Agnaldo, e não a lista: ele pode fechar o lote com problemas pendentes. Por isso o app deve avisar quantos problemas ficaram, sem travar o fechamento. A concorrência no envio mostra que enviar não depende de ele tocar em nada, porque o sistema tenta enquanto ele anda. "Levar o celular até ter sinal" é a única tarefa do usuário, feita fora do sistema; se já houver sinal no curral, ela termina na hora (no HTA, a 3.1 só acontece sem sinal). "Compartilhar o resumo com o Chico" só acontece quando o celular é do Agnaldo, condição que fica no plano 0 do HTA e no GOAL 4 do GOMS. Usei a iteração (`*`) e a desativação (`[>`) da notação CTT de Paternò porque o checklist pede repetição e desabilitação; com elas, a repetição da revisão aparece no próprio diagrama.
+
+**Correspondência entre as três técnicas:**
+
+| HTA e GOMS | CTT |
+|---|---|
+| 1 Ver o resumo do lote | A1 Terminar o lote + A2 Exibir o resumo do lote (sistema) |
+| 2 Revisar e fechar o lote (2.1 faltou, 2.2 repetida, 2.3 novo, 2.4 fechar) | A3 Revisar o lote: Resolver um problema * (pesar quem faltou, marcar para outro dia, corrigir repetida, conferir novo) [> Fechar o lote |
+| 3 Garantir o envio (3.1 / 3.B procurar sinal) | A4 Garantir o envio: Levar o celular até ter sinal (usuário) \|\|\| Enviar as pesagens pendentes (sistema) >> Mostrar tudo enviado |
+| 4 Avisar o Chico | A5 Compartilhar o resumo com o Chico |
+
 ---
 
 Identifique, quando aplicável, tarefas de usuário, sistema, interação e tarefas abstratas. Verifique se concorrência, escolha, habilitação, desabilitação e repetição estão representadas corretamente segundo a notação adotada em aula.
@@ -437,6 +683,11 @@ T02 — Rafael
 
 O que mais pesou nas três técnicas foi a identificação do animal (HTA 3, GOMS 3.A, 3.B e 3.C, CTT A3). [H] É o passo com mais caminhos e o único em que um erro passa batido: o peso vai para o animal errado e ninguém percebe na hora. Por isso o app precisa oferecer o brinco, a lista do lote e o cadastro de animal novo, e precisa de uma conferência antes de salvar (HTA 4, GOMS 4, CTT A4).
 Também apareceu que o peso é mostrado antes de o animal ser identificado, e que um erro médio de cerca de 20,75 kg [F] precisa chegar ao Chico como estimativa, e não como número exato (H02). Ficam em aberto como o animal novo entra no app [?], o que é uma foto boa para o modelo (H04) e o salvamento com sinal fraco (H01). A T02 vai para o protótipo em papel (Entrega 6) e para o teste de usabilidade (Entrega 14).
+
+T03 — Renan
+
+O que mais apareceu nas três técnicas é que o fim da pesagem é o último momento em que dá para corrigir erros com o lote ainda no curral (HTA 2, GOMS 2, CTT A3). [H] No C03, os pesos repetidos e os brincos ilegíveis só apareciam à noite, quando ninguém lembrava mais qual animal era qual. Por isso o app precisa mostrar o resumo do lote assim que o último animal é salvo e apontar sozinho três problemas: animal sem pesar, brinco pesado duas vezes e animal cadastrado como novo. Um animal novo junto com um que faltou provavelmente é o mesmo boi que perdeu o brinco, e o app pode perguntar "é o mesmo animal?" mostrando as duas fotos.
+Também apareceu que o envio não pode depender do Agnaldo (GOMS 3.B e a tarefa de usuário no CTT): o app deve guardar as pesagens no celular, enviar sozinho quando houver sinal e mostrar quantas faltam até zerar. A revisão não deve travar o fechamento, porque ele está com pressa para soltar o gado (desativação no CTT). Ficam em aberto como o animal novo entra no app [?], o mesmo ponto em aberto da T02, e onde costuma haver sinal nas fazendas [?]. A T03 vai para o protótipo em papel (Entrega 6), com a tela de fim do lote, e para o teste de usabilidade (Entrega 14), com uma tarefa como "termine o lote e veja se ficou alguma coisa para trás".
 
 Quais problemas de interação, oportunidades e requisitos apareceram a partir das modelagens? Quais tarefas irão para o protótipo e para o teste de usabilidade?
 
