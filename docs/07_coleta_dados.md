@@ -175,7 +175,7 @@ Respostas agrupadas por hipótese (H01, H03, H05, H08, H09), indicando se cada u
 
 ### Instrumento I02 — Questionário online (Google Forms)
 
-**Autor(a):** Rafael Takahagi Mendes — {{RA}}  
+**Autor(a):** Rafael Takahagi Mendes — 22.126.084-7 
 **Técnica:** questionário online autoaplicado  
 **Objetivo:** verificar com pecuaristas se o cenário de uso faz sentido (se pesam, como pesam, como identificam os animais e quem usa o celular no curral) e levantar vocabulário, condição de internet e reação à ideia de pesar por foto.  
 **Público:** pecuaristas de pequeno e médio porte (P01). Gerentes, familiares ou peões que participam do manejo também podem responder.  
