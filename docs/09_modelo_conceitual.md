@@ -205,7 +205,7 @@ Consolide as informações em **uma tabela única**.
 | Histórico | número de estimativas | sistema | Quantas pesagens o animal tem ("3 estimativas") | número inteiro | ≥ 1 | — | — | — |
 | Histórico | lista de pesagens | sistema | Cada estimativa do animal com data, foto e peso em kg (o @ fica só na hora da pesagem), da mais recente para a mais antiga | lista | só estimativas salvas naquele animal | — | — | — |
 | Histórico | diferença para a anterior | sistema | Peso desta estimativa menos o da anterior, com sinal ("+17 kg"). [?] As duas estimativas têm erro, então uma diferença menor que a margem pode ser só variação da foto. Decidir como avisar isso | número inteiro com sinal, em kg | só a partir da 2ª estimativa | — | — | Com 1 estimativa: "o ganho aparece a partir da segunda pesagem" |
-| Histórico | ganho total | sistema | Última estimativa menos a primeira ("ganhou 32 kg desde a primeira"). Mesma ressalva da diferença | número inteiro com sinal, em kg | só a partir da 2ª estimativa | — | — | Idem |
+| Histórico | ganho total | sistema | Última estimativa menos a primeira ("ganhou 32 kg desde a primeira"). Mesma ressalva da diferença | número inteiro com sinal, em kg | só a partir da 2ª estimativa | — | — | Com 1 estimativa: "o ganho aparece a partir da segunda pesagem" |
 | Avisos | aviso "nenhum bovino encontrado" | sistema | "Não encontrei nenhum bovino com esse número. Confira o número ou procure pelo lote." Usado no CI01 e no CI02 | texto curto | — | — | — | Mantém o número digitado para corrigir; oferece a busca pelo lote |
 
 
