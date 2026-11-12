@@ -1,5 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#f6f8fa" stroke="#8c959f" stroke-width="4"/>
-<text x="480" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#24292f">PLACEHOLDER DE ARTEFATO</text>
-<text x="480" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#57606a">Substitua este arquivo pela evidência real da equipe.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1180" width="1000" height="1180" font-family="Arial, Helvetica, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker>
+    <style>
+      .t{font-size:15px;font-weight:bold;fill:#111}
+      .d{font-size:12.5px;fill:#222}
+      .h{font-size:12.5px;fill:#fff;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+      .l{font-size:12.5px;fill:#111}
+      .n{font-size:12px;fill:#555;font-style:italic}
+      .ar{fill:none;stroke:#333;stroke-width:1.6;marker-end:url(#a)}
+      .sc{fill:#E8F1FB;stroke:#2B5C8A;stroke-width:1.8}
+      .al{fill:#FFF1D6;stroke:#B26B00;stroke-width:1.8}
+      .pill{fill:#E6F4EA;stroke:#2E7D32;stroke-width:1.8}
+      .ub{fill:#F3E8FF;stroke:#6B3FA0;stroke-width:1.8;stroke-dasharray:7 4}
+      .pr{fill:#000}
+    </style>
+  </defs>
+  <rect width="1000" height="1180" fill="#fff"/>
+
+  <path class="ar" d="M430,36 V55"/>
+  <path class="ar" d="M430,89 V125"/>
+  <path class="ar" d="M430,225 V270"/>
+  <path class="ar" d="M530,277 H730"/>
+  <path class="ar" d="M855,240 V175 H550"/>
+  <path class="ar" d="M430,284 V335"/>
+  <path class="ar" d="M430,425 V485"/>
+  <path class="ar" d="M430,585 V625"/>
+  <path class="ar" d="M530,632 H730"/>
+  <path class="ar" d="M855,595 V535 H550"/>
+  <path class="ar" d="M855,675 V720"/>
+  <path class="ar" d="M730,757 H550"/>
+  <path class="ar" d="M430,639 V700"/>
+  <path class="ar" d="M310,757 H40 V535 H310"/>
+  <path class="ar" d="M430,810 V860"/>
+  <path class="ar" d="M430,874 V930"/>
+  <path class="ar" d="M310,970 H14 V175 H310"/>
+  <path class="ar" d="M430,1010 V1055"/>
+  <path class="ar" d="M430,1089 V1118"/>
+  <path class="ar" d="M980,57 H993 V1130 H443"/>
+  <circle cx="430" cy="25" r="11" fill="#000"/>
+  <circle cx="430" cy="1130" r="12" fill="#fff" stroke="#000" stroke-width="2"/><circle cx="430" cy="1130" r="6" fill="#000"/>
+  <text class="n" x="452" y="30">abertura</text>
+  <text class="n" x="412" y="1135" text-anchor="end">encerramento</text>
+  <rect class="pill" x="310" y="55" width="240" height="34" rx="17"/><text class="d" x="430" y="77" text-anchor="middle" style="font-weight:bold">gco: Pesar um animal por foto</text>
+  <rect class="pill" x="310" y="1055" width="240" height="34" rx="17"/><text class="d" x="430" y="1077" text-anchor="middle" style="font-weight:bold">gcc: Pesar um animal por foto</text>
+  <rect class="ub" x="640" y="25" width="340" height="64" rx="12"/>
+  <text class="t" x="810" y="47" text-anchor="middle">Acesso ubíquo [H]</text>
+  <text class="d" x="810" y="67" text-anchor="middle">u: desistir da pesagem (em qualquer cena)</text>
+  <text class="d" x="810" y="82" text-anchor="middle">nada é salvo</text>
+  <rect class="sc" x="310" y="125" width="240" height="100" rx="12"/>
+  <text class="t" x="430.0" y="149" text-anchor="middle">Fotografar o animal</text>
+  <text class="d" x="430.0" y="171" text-anchor="middle">enquadrar o animal inteiro</text>
+  <text class="d" x="430.0" y="189" text-anchor="middle">escolher macho ou fêmea</text>
+  <text class="d" x="430.0" y="207" text-anchor="middle">tocar em “Estimar peso”</text>
+  <rect class="sc" x="310" y="335" width="240" height="90" rx="12"/>
+  <text class="t" x="430.0" y="359" text-anchor="middle">Ler o peso estimado</text>
+  <text class="d" x="430.0" y="381" text-anchor="middle">ver o peso em kg e em @</text>
+  <text class="d" x="430.0" y="399" text-anchor="middle">ver a margem de erro (~20 kg)</text>
+  <rect class="sc" x="310" y="485" width="240" height="100" rx="12"/>
+  <text class="t" x="430.0" y="509" text-anchor="middle">Identificar o animal</text>
+  <text class="d" x="430.0" y="531" text-anchor="middle">digitar o número do brinco</text>
+  <text class="d" x="430.0" y="549" text-anchor="middle">ou escolher o animal no lote</text>
+  <text class="d" x="430.0" y="567" text-anchor="middle">(com a foto da última pesagem)</text>
+  <rect class="sc" x="310" y="700" width="240" height="110" rx="12"/>
+  <text class="t" x="430.0" y="724" text-anchor="middle">Conferir antes de salvar</text>
+  <text class="d" x="430.0" y="746" text-anchor="middle">ver brinco e foto bem grandes</text>
+  <text class="d" x="430.0" y="764" text-anchor="middle">comparar com o animal à frente</text>
+  <text class="d" x="430.0" y="782" text-anchor="middle">decidir se salva</text>
+  <rect class="sc" x="310" y="930" width="240" height="80" rx="12"/>
+  <text class="t" x="430.0" y="954" text-anchor="middle">Peso salvo</text>
+  <text class="d" x="430.0" y="976" text-anchor="middle">ver em qual animal ficou:</text>
+  <text class="d" x="430.0" y="994" text-anchor="middle">boi, lote e data</text>
+  <rect class="sc" x="730" y="720" width="250" height="70" rx="12"/>
+  <text class="t" x="855.0" y="744" text-anchor="middle">Informar animal novo [?]</text>
+  <text class="d" x="855.0" y="766" text-anchor="middle">informar os dados do animal [?]</text>
+  <rect class="al" x="730" y="240" width="250" height="76" rx="12"/>
+  <text class="t" x="855.0" y="264" text-anchor="middle">Boi não reconhecido</text>
+  <text class="d" x="855.0" y="286" text-anchor="middle">não mostra peso nem deixa salvar;</text>
+  <text class="d" x="855.0" y="304" text-anchor="middle">pede outra foto</text>
+  <rect class="al" x="730" y="595" width="250" height="80" rx="12"/>
+  <text class="t" x="855.0" y="619" text-anchor="middle">Nenhum bovino encontrado</text>
+  <text class="d" x="855.0" y="641" text-anchor="middle">não achou esse número;</text>
+  <text class="d" x="855.0" y="659" text-anchor="middle">oferece corrigir, lote ou animal novo</text>
+  <rect class="pr" x="330" y="270" width="200" height="14"/>
+  <text class="d" x="322" y="274" text-anchor="end">mostra “calculando...”</text>
+  <text class="d" x="322" y="289" text-anchor="end">e estima o peso pela foto</text>
+  <rect class="pr" x="330" y="625" width="200" height="14"/>
+  <text class="d" x="322" y="629" text-anchor="end">procura o animal</text>
+  <text class="d" x="322" y="644" text-anchor="end">no cadastro</text>
+  <rect class="pr" x="330" y="860" width="200" height="14"/>
+  <text class="d" x="322" y="864" text-anchor="end">grava o peso</text>
+  <text class="d" x="322" y="879" text-anchor="end">no animal</text>
+  <text class="h" x="440" y="110" text-anchor="start">d: tire uma foto do boi, de lado e inteiro</text><text class="l" x="440" y="110" text-anchor="start">d: tire uma foto do boi, de lado e inteiro</text>
+  <text class="h" x="440" y="252" text-anchor="start">u: toca em “Estimar peso”</text><text class="l" x="440" y="252" text-anchor="start">u: toca em “Estimar peso”</text>
+  <text class="h" x="630" y="269" text-anchor="middle">d: não reconhecemos o boi</text><text class="l" x="630" y="269" text-anchor="middle">d: não reconhecemos o boi</text>
+  <text class="h" x="700" y="167" text-anchor="middle">u: tirar outra foto</text><text class="l" x="700" y="167" text-anchor="middle">u: tirar outra foto</text>
+  <text class="h" x="440" y="313" text-anchor="start">d: peso estimado</text><text class="l" x="440" y="313" text-anchor="start">d: peso estimado</text>
+  <text class="h" x="440" y="460" text-anchor="start">u: guardar este peso</text><text class="l" x="440" y="460" text-anchor="start">u: guardar este peso</text>
+  <text class="h" x="440" y="608" text-anchor="start">u: é o 117 (digita o número)</text><text class="l" x="440" y="608" text-anchor="start">u: é o 117 (digita o número)</text>
+  <text class="h" x="630" y="624" text-anchor="middle">d: nenhum bovino com esse nº</text><text class="l" x="630" y="624" text-anchor="middle">d: nenhum bovino com esse nº</text>
+  <text class="h" x="700" y="527" text-anchor="middle">u: corrigir o número ou procurar pelo lote</text><text class="l" x="700" y="527" text-anchor="middle">u: corrigir o número ou procurar pelo lote</text>
+  <text class="h" x="845" y="702" text-anchor="end">u: informar como animal novo</text><text class="l" x="845" y="702" text-anchor="end">u: informar como animal novo</text>
+  <text class="h" x="640" y="749" text-anchor="middle">u: confirmar os dados [?]</text><text class="l" x="640" y="749" text-anchor="middle">u: confirmar os dados [?]</text>
+  <text class="h" x="440" y="675" text-anchor="start">d: encontrei o 117, lote Pasto 2</text><text class="l" x="440" y="675" text-anchor="start">d: encontrei o 117, lote Pasto 2</text>
+  <text class="h" x="175" y="749" text-anchor="middle">u: não é esse (o peso fica guardado)</text><text class="l" x="175" y="749" text-anchor="middle">u: não é esse (o peso fica guardado)</text>
+  <text class="h" x="440" y="840" text-anchor="start">u: compara e toca em salvar</text><text class="l" x="440" y="840" text-anchor="start">u: compara e toca em salvar</text>
+  <text class="h" x="440" y="906" text-anchor="start">d: peso salvo no boi 117</text><text class="l" x="440" y="906" text-anchor="start">d: peso salvo no boi 117</text>
+  <text class="h" x="160" y="962" text-anchor="middle">u: agora o próximo (câmera pronta)</text><text class="l" x="160" y="962" text-anchor="middle">u: agora o próximo (câmera pronta)</text>
+  <text class="h" x="440" y="1038" text-anchor="start">u: terminar de pesar</text><text class="l" x="440" y="1038" text-anchor="start">u: terminar de pesar</text>
+  <rect x="740" y="830" width="240" height="218" rx="8" fill="#fff" stroke="#999"/>
+  <circle cx="758" cy="848" r="6" fill="#000"/><text class="d" x="774" y="852">ponto de abertura</text>
+  <circle cx="758" cy="869" r="7" fill="#fff" stroke="#000" stroke-width="1.5"/><circle cx="758" cy="869" r="3.5" fill="#000"/><text class="d" x="774" y="873">ponto de encerramento</text>
+  <rect class="sc" x="750" y="882" width="16" height="12" rx="3"/><text class="d" x="774" y="894">cena (tópico da conversa)</text>
+  <rect class="al" x="750" y="903" width="16" height="12" rx="3"/><text class="d" x="774" y="915">cena de alerta (ruptura)</text>
+  <rect class="pr" x="750" y="927" width="16" height="6"/><text class="d" x="774" y="936">processo do sistema</text>
+  <rect class="pill" x="748" y="945" width="20" height="12" rx="6"/><text class="d" x="774" y="957">gco / gcc (abre e fecha a meta)</text>
+  <rect class="ub" x="750" y="966" width="16" height="12" rx="3"/><text class="d" x="774" y="978">acesso ubíquo</text>
+  <text class="d" x="750" y="999">u: fala do usuário</text>
+  <text class="d" x="750" y="1018">d: fala do preposto</text>
+  <text class="d" x="750" y="1037">[?] ainda não decidido</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1NGQxMDdiNC0yYmY2LTQwMDAtODlkZi0xZTViNDI4YmYxNDYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaGe22YWofxze17P7/A8VO40AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpjZDEwZjFlNS0xMzc0LTQ0MzgtYWI2Ny1hOWM0MDZiMmExMGZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoVADUO0MN2XTU+OGaGbaU4AAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggYRSUfAoqv7zCglPGvfBz/WDWrfUvCVCRIsDkvwtJRCqkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaGs9kdWUkiyee/CxHLe6rPIAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIDVU7TuO1mx7j2FYxqDPu80rOUwntbantlj3MPkm3yxHZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GSmJZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjU0ZDEwN2I0LTJiZjYtNDAwMC04OWRmLTFlNWI0MjhiZjE0Ni9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmQwMDdjZjg5LWQ4Y2MtNGRkOC1hOGI2LTBiODQyNGMxNmE5ZnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBhFJR8Ciq/vMKCU8a98HP9YNat9S8JUJEiwOS/C0lEKqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggIRyOpFVIIfAJan+V4kyrmcayBKONLHaEIQuIqMKFoH6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg57PfgK438gdDWUN0+kQQHw6P2aTum81Kx2b/NUdNq/p0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQEZk2hmTgITkoXHIknjB52dXPpKZioPnJ7qCPpvy22iYT6Rm/G8EhYh+OZ+4zxecFLYdwQJHK96Z5dxdxkiQ8Lo=</c2pa:manifest></metadata></svg>
