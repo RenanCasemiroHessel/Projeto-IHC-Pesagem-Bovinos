@@ -177,6 +177,11 @@ flowchart TD
 |---|---|---|---|---|
 | O01 | Obter o peso estimado de um animal pela foto (fotografar, refazer a foto se o boi não for reconhecido, ler o peso e a margem de erro) | P01 | CI01 | Alta: é a atividade mais frequente (A01) |
 | O02 | Salvar o peso no animal certo (identificar, conferir e salvar) | P01 | CI01 | Alta: é a atividade mais crítica (A02) |
+| O03 | Localizar um bovino, pelo número (brinco ou nome) ou pelo lote | P02, P01 | CI02 (e CI01, na identificação antes de salvar) | Alta: sem achar o animal não há consulta nem salvamento. [?] Na consolidação, "identificar pelo brinco/pela lista do lote" (O02a/O02b) pode virar o mesmo O03, para não ter dois nomes para a mesma ação |
+| O04 | Acompanhar a evolução do peso de um animal (ver as pesagens com data) | P02 | CI02 | Alta: é a base da recomendação de venda (A03, T01) |
+| O05 | Entender o ganho de peso (diferença para a anterior e ganho total, sem fazer contas) | P02, P01 | CI02, CI01 | Média: depende de O04, mas é o que o técnico usa para decidir |
+| O06 | Entender a margem de erro da estimativa (o peso não é de balança) | P01, P03 | CI01 (na hora da pesagem; o histórico não repete o aviso) | Alta: tratar a estimativa como peso exato leva à decisão errada (H02) |
+
 
 ## 4. Esquema conceitual de signos
 
@@ -195,6 +200,14 @@ Consolide as informações em **uma tabela única**.
 | Salvamento | data da pesagem | sistema | Dia em que a estimativa foi feita, guardado sozinho ao salvar | data (dd/mm) | não editável [H] | dia de hoje | — | — |
 | Salvamento | situação do salvamento | sistema | Diz em qual animal o peso ficou ("salvo no boi 117"). [H] "Pendente de envio" quando faltar sinal, fica fora do protótipo (Entrega 8) | texto curto | — | — | Mostrar animal e peso na mensagem | [H] Guardar no celular e enviar quando houver sinal |
 | Avisos | aviso "boi não reconhecido" | sistema | Tela E1: "Não reconhecemos o boi. Fotografe de lado, com o corpo inteiro na foto." | texto com ícone | sem peso e sem botão de salvar | — | — | Botão "Tirar outra foto" volta à Tela 1 |
+| Animal | sexo (macho ou fêmea) | usuário | Entra no cálculo e deixa a estimativa mais perto do peso real. É escolhido junto com a foto, antes de estimar | 2 valores | obrigatório para estimar | — | O botão "Estimar peso" só é liberado depois de escolher | Trocar o sexo apaga o resultado anterior e pede nova estimativa |
+| Busca | busca por número ou lote | usuário | O que o usuário digita para achar o animal na lista (O03) | texto curto | — | vazio | Aceita parte do número; lote escolhido numa lista, sem digitar [H] | Aviso "nenhum bovino encontrado" com os caminhos de saída |
+| Histórico | número de estimativas | sistema | Quantas pesagens o animal tem ("3 estimativas") | número inteiro | ≥ 1 | — | — | — |
+| Histórico | lista de pesagens | sistema | Cada estimativa do animal com data, foto e peso em kg (o @ fica só na hora da pesagem), da mais recente para a mais antiga | lista | só estimativas salvas naquele animal | — | — | — |
+| Histórico | diferença para a anterior | sistema | Peso desta estimativa menos o da anterior, com sinal ("+17 kg"). [?] As duas estimativas têm erro, então uma diferença menor que a margem pode ser só variação da foto. Decidir como avisar isso | número inteiro com sinal, em kg | só a partir da 2ª estimativa | — | — | Com 1 estimativa: "o ganho aparece a partir da segunda pesagem" |
+| Histórico | ganho total | sistema | Última estimativa menos a primeira ("ganhou 32 kg desde a primeira"). Mesma ressalva da diferença | número inteiro com sinal, em kg | só a partir da 2ª estimativa | — | — | Idem |
+| Avisos | aviso "nenhum bovino encontrado" | sistema | "Não encontrei nenhum bovino com esse número. Confira o número ou procure pelo lote." Usado no CI01 e no CI02 | texto curto | — | — | — | Mantém o número digitado para corrigir; oferece a busca pelo lote |
+
 
 > Origem: **usuário** = informado por quem usa o app; **sistema** = produzido pelo app; **domínio** = vem do vocabulário ou da regra da pecuária.
 
