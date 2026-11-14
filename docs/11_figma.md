@@ -109,7 +109,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F01 — Capturar foto
 
-![F01](../assets/11_figma/f01.png)
+![F01](../assets/11_figma/F01%20%E2%80%94%20Capturar%20foto.png)
 
 **Objetivo do usuário:** escolher ou tirar a foto do animal que está à frente.  
 **Signos principais:** área "Escolher ou tirar foto de bovino", dica de enquadramento, "Sexo do animal" (Macho / Fêmea), "Estimar Peso" desabilitado, barra Pesar/Histórico.  
@@ -117,7 +117,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F01B — Foto escolhida
 
-![F01B](../assets/11_figma/f01b.png)
+![F01B](../assets/11_figma/F01B%20%E2%80%94%20Foto%20escolhida.png)
 
 **Objetivo do usuário:** conferir a foto, informar o sexo e pedir a estimativa.  
 **Signos principais:** foto do animal, "Trocar foto", Macho selecionado, "Estimar Peso" habilitado, "Desistir".  
@@ -125,7 +125,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F01L — Calculando o peso
 
-![F01L](../assets/11_figma/f01l.png)
+![F01L](../assets/11_figma/F01L%20%E2%80%94%20Estimando.png)
 
 **Objetivo do usuário:** saber que o app está trabalhando e esperar.  
 **Signos principais:** ícone de carregando, "Calculando o peso…", "Pode levar alguns segundos.", botão "Estimando…" desabilitado.  
@@ -133,7 +133,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F01C — Foto sem bovino
 
-![F01C](../assets/11_figma/f01c.png)
+![F01C](../assets/11_figma/F01C%20%E2%80%94%20Foto%20sem%20bovino.png)
 
 **Objetivo do usuário:** (demonstração) foto que vai gerar o erro de reconhecimento.  
 **Signos principais:** foto sem animal, "Trocar foto", "Estimar Peso".  
@@ -141,7 +141,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02E — Boi não reconhecido
 
-![F02E](../assets/11_figma/f02e.png)
+![F02E](../assets/11_figma/F02E%20%E2%80%94%20Boi%20n%C3%A3o%20reconhecido.png)
 
 **Objetivo do usuário:** entender que a foto não serviu e tirar outra.  
 **Signos principais:** alerta vermelho com ícone, "Boi não reconhecido", "Não reconhecemos o boi. Fotografe de lado, com o corpo inteiro na foto.", "Tirar outra foto". Sem peso e sem botão de salvar.  
@@ -149,7 +149,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02 — Resultado e identificação
 
-![F02](../assets/11_figma/f02.png)
+![F02](../assets/11_figma/F02%20%E2%80%94%20Resultado.png)
 
 **Objetivo do usuário:** ler o peso, entender a margem de erro e identificar o animal.  
 **Signos principais:** sexo e margem de erro ("± 20 kg (cerca de 9%)"), peso em kg e em @, tag de classe de peso, barra de 0 a 300 kg com a faixa da margem, campos Lote e Nº do brinco ou nome, "Escolher o animal pelo lote", "Salvar no Histórico".  
@@ -157,7 +157,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02A — Falta identificar o animal
 
-![F02A](../assets/11_figma/f02a.png)
+![F02A](../assets/11_figma/F02A%20%E2%80%94%20Falta%20identificar%20o%20animal.png)
 
 **Objetivo do usuário:** perceber que não dá para salvar sem identificar o animal.  
 **Signos principais:** campos com borda vermelha, "Identifique o animal antes de salvar."  
@@ -165,7 +165,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02P — Animal identificado
 
-![F02P](../assets/11_figma/f02p.png)
+![F02P](../assets/11_figma/F02P%20%E2%80%94%20Animal%20identificado.png)
 
 **Objetivo do usuário:** pedir para salvar o peso no animal digitado.  
 **Signos principais:** Lote "Pasto 2" e brinco "117" preenchidos, "Salvar no Histórico".  
@@ -173,7 +173,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02L — Escolher pelo lote
 
-![F02L](../assets/11_figma/f02l.png)
+![F02L](../assets/11_figma/F02L%20%E2%80%94%20Escolher%20pelo%20lote.png)
 
 **Objetivo do usuário:** achar o animal quando o brinco está sujo, caído ou ilegível.  
 **Signos principais:** "Lote Pasto 2 · 4 animais", lista com foto da última pesagem, número, nome ("Pintado", "Malhado", "Mocho") e data, "Voltar e digitar o número".  
@@ -181,7 +181,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02U — Número não cadastrado
 
-![F02U](../assets/11_figma/f02u.png)
+![F02U](../assets/11_figma/F02U%20%E2%80%94%20N%C2%BA%20n%C3%A3o%20cadastrado.png)
 
 **Objetivo do usuário:** (demonstração) número digitado que não existe no cadastro.  
 **Signos principais:** brinco "999" preenchido, "Salvar no Histórico".  
@@ -189,7 +189,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02N — Nenhum bovino encontrado
 
-![F02N](../assets/11_figma/f02n.png)
+![F02N](../assets/11_figma/F02N%20%E2%80%94%20Nenhum%20bovino%20encontrado.png)
 
 **Objetivo do usuário:** entender que o número não existe e escolher como seguir sem perder o peso.  
 **Signos principais:** peso guardado (214 kg · 14,3 @ ± 20 kg), alerta "Nenhum bovino encontrado", "Corrigir o número", "Procurar pelo lote", "Informar como animal novo".  
@@ -197,7 +197,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02X — Informar animal novo [?]
 
-![F02X](../assets/11_figma/f02x.png)
+![F02X](../assets/11_figma/F02X%20%E2%80%94%20Informar%20animal%20novo%20%5B_%5D.png)
 
 **Objetivo do usuário:** cadastrar na hora um animal que ainda não existe.  
 **Signos principais:** aviso de tela provisória, peso a salvar, campos Nº do brinco ou nome e Lote, sexo vindo da foto, "Confirmar os dados", "Voltar".  
@@ -205,7 +205,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02C — Conferir antes de salvar
 
-![F02C](../assets/11_figma/f02c.png)
+![F02C](../assets/11_figma/F02C%20%E2%80%94%20Conferir%20antes%20de%20salvar.png)
 
 **Objetivo do usuário:** confirmar que o peso vai para o animal que está à frente.  
 **Signos principais:** foto da última pesagem em destaque, "Boi 117" em 40 px, "Lote Pasto 2 · Macho · Pintado", "Salvar 214 kg no boi 117, lote Pasto 2?", "Salvar", "Não é esse".  
@@ -213,7 +213,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F02S — Peso salvo
 
-![F02S](../assets/11_figma/f02s.png)
+![F02S](../assets/11_figma/F02S%20%E2%80%94%20Peso%20salvo.png)
 
 **Objetivo do usuário:** ter certeza de que o peso foi gravado no animal certo e seguir.  
 **Signos principais:** selo verde, "Peso salvo!", "Boi 117 · Lote Pasto 2", "214 kg (estimativa)", data, "Pesar o próximo animal", "Terminar de pesar".  
@@ -221,7 +221,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F05 — Pesagem encerrada
 
-![F05](../assets/11_figma/f05.png)
+![F05](../assets/11_figma/F05%20%E2%80%94%20Pesagem%20encerrada.png)
 
 **Objetivo do usuário:** fechar a pesagem e saber o que foi feito.  
 **Signos principais:** "Pesagem encerrada", "Pesagens salvas hoje: 1 animal", data, "Começar nova pesagem", "Ver histórico".  
@@ -229,7 +229,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F05D — Pesagem cancelada
 
-![F05D](../assets/11_figma/f05d.png)
+![F05D](../assets/11_figma/F05D%20%E2%80%94%20Pesagem%20cancelada.png)
 
 **Objetivo do usuário:** saber que desistiu e que nada foi gravado.  
 **Signos principais:** ícone cinza, "Pesagem cancelada", "Nada foi salvo.", "Peso descartado", "Começar nova pesagem", "Ver histórico".  
@@ -237,7 +237,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F03 — Histórico de estimativas
 
-![F03](../assets/11_figma/f03.png)
+![F03](../assets/11_figma/F03%20%E2%80%94%20Hist%C3%B3rico%20de%20estimativas.png)
 
 **Objetivo do usuário:** achar um animal pelo número ou pelo lote.  
 **Signos principais:** busca "Pesquise por número ou lote", cards com foto, brinco, lote, peso, data da última estimativa e seta.  
@@ -245,7 +245,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F03V — Histórico vazio
 
-![F03V](../assets/11_figma/f03v.png)
+![F03V](../assets/11_figma/F03V%20%E2%80%94%20Hist%C3%B3rico%20vazio.png)
 
 **Objetivo do usuário:** entender por que a lista está vazia e o que fazer.  
 **Signos principais:** "Nenhuma pesagem salva ainda", "Pesar primeiro bovino".  
@@ -253,7 +253,7 @@ Do repertório da disciplina, o protótipo usa:
 
 ### F04 — Histórico do bovino
 
-![F04](../assets/11_figma/f04.png)
+![F04](../assets/11_figma/F04%20%E2%80%94%20Hist%C3%B3rico%20do%20bovino.png)
 
 **Objetivo do usuário:** ver a evolução de peso de um animal.  
 **Signos principais:** "Todos os bovinos" (voltar), número de estimativas, ganho total, lista de pesagens com peso, diferença para a anterior e data (marcadas como estimativa).  
@@ -305,7 +305,7 @@ Do repertório da disciplina, o protótipo usa:
 ## Checklist
 
 - [ ] Link do Figma está acessível. *(falta liberar em Share → "Anyone with the link" e testar em janela anônima)*
-- [ ] Há screenshots representativos no repositório. *(falta exportar as 19 telas para `docs/assets/11_figma/`)*
+- [ ] Há screenshots representativos no repositório. *(falta subir os 19 PNGs exportados do Figma para `assets/11_figma/`)*
 - [ ] Todos os MoLIC relevantes estão cobertos. *(o M01 está coberto por inteiro. Os outros integrantes ainda não fizeram o MoLIC deles)*
 - [x] Estados de erro, feedback e recuperação foram prototipados.
 - [x] Terminologia/signos são consistentes com Entrega 9.
