@@ -108,6 +108,59 @@ Ao justificar, considere **frequência, impacto e persistência** do problema no
 | H6 | Lista do lote com a foto da última pesagem e o apelido do animal ("Pintado", "Malhado", "Mocho") em F02L, e conferência com foto e brinco grandes em F02C ("Compare o brinco e a foto com o animal à sua frente") | ![F02L](../assets/11_figma/F02L%20%E2%80%94%20Escolher%20pelo%20lote.png) ![F02C](../assets/11_figma/F02C%20%E2%80%94%20Conferir%20antes%20de%20salvar.png) | Quando o brinco está ilegível, o usuário reconhece o animal pela foto e pelo nome, em vez de lembrar o número. Na conferência ele compara com o animal à frente, em vez de confiar na memória do que digitou. A F02N também mostra o peso guardado, para ninguém precisar lembrar |
 | H10 | Ajuda contextual onde a dúvida aparece: dica de foto em F01, instrução de como refotografar em F02E, instrução de comparar em F02C, "Toque no animal que está à sua frente" em F02L, e "Estime o peso de um bovino e salve para ver aqui" no histórico vazio (F03V) | ![F02E](../assets/11_figma/F02E%20%E2%80%94%20Boi%20n%C3%A3o%20reconhecido.png) ![F03V](../assets/11_figma/F03V%20%E2%80%94%20Hist%C3%B3rico%20vazio.png) | O app é curto e não precisa de manual. Cada tela que pode gerar dúvida diz o que fazer em uma frase, no momento certo, que é o que P03 (que não lê instruções) precisa. A visibilidade da dica de foto é tratada em V12 (H8), não como falta de ajuda |
 
+## Avaliador A02 — Gustavo Atui (24.123.072-1)
+
+**Como a inspeção foi feita:** primeiro percorri os 4 fluxos de partida do protótipo (principal, boi não reconhecido, nenhum bovino encontrado e histórico vazio). Depois passei tela por tela aplicando H1 a H10, com atenção maior ao histórico (F03, F03V e F04), que é o objetivo do meu MoLIC (M02, CI02). Usei como contexto a visita técnica do P02 Dinho, que consulta o lote inteiro para recomendar a venda, e o curral do P01 Chico, com sol forte e mãos sujas.
+
+**Limitação:** eu montei o M02, então conheço o caminho esperado no histórico e posso deixar passar problemas que um avaliador de fora veria. Também não montei as telas do Figma, então alguns detalhes de comportamento (o que a busca faz com um número que não existe, se a busca continua preenchida ao voltar) foram avaliados pelo que o protótipo mostra, sem saber o que estava planejado. Os prints são das telas exportadas em `assets/11_figma/`, com as marcações deste avaliador.
+
+### 4. Matriz de cobertura das 10 heurísticas
+
+| Heurística | Telas/fluxos examinados | Houve violação? | IDs dos achados | Exemplo de boa prática se não violada |
+|---|---|---|---|---|
+| H1 | Todas, com atenção a F01L, F02S, F05, F05D, F03 e F04 | não | — | "Calculando o peso…" com o botão "Estimando…" desabilitado (F01L) e selo de sucesso com boi, peso e data (F02S) |
+| H2 | F04, F03, F02, F02C | sim | V02 | — |
+| H3 | F04, F03, F02C, F05D | sim | V06 | — |
+| H4 | Todas (nomes dos animais e dos lotes, títulos, botões) | sim | V07 | — |
+| H5 | F02, F02C, F03 (busca), barra de navegação | não | — | Conferência antes de salvar, com brinco e foto grandes e "Não é esse" (F02C) |
+| H6 | F03, F04, F02L, F02C | sim | V01 | — |
+| H7 | F04 → pesagem, F02S → histórico, F05 → histórico | sim | V03, V04 | — |
+| H8 | Todas, com atenção a F03, F04 e F03V | não | — | Resumo da F04 com só dois números (nº de estimativas e ganho total) antes da lista de pesagens |
+| H9 | F03 (busca), F02E, F02N | sim | V05 | — |
+| H10 | F03V, F02L, F02C, F02E | não | — | Histórico vazio (F03V) explica por que não há nada e oferece "Pesar primeiro bovino" |
+
+### 5. Declaração de violações
+
+| ID | Heurística | Tela/estado | Problema observado | Evidência | Severidade | Justificativa da severidade | Recomendação |
+|---|---|---|---|---|---:|---|---|
+| V01 | H6 | F03 | A lista mostra só o último peso e a data de cada animal. Para saber quem ganhou mais no lote, o técnico precisa abrir cada animal na F04, guardar o ganho de cabeça e voltar para o próximo. No CI02, o Dinho avalia o lote inteiro para recomendar a venda | ![V01](../assets/13_heuristica/a02_v01.png) | 2 | Acontece em toda visita técnica e cresce com o tamanho do lote. Não impede a tarefa (UT04 consulta um animal só), mas deixa a comparação lenta e sujeita a erro de memória | Mostrar no card da F03 o ganho desde a pesagem anterior ou o ganho total, ao lado do último peso |
+| V02 | H2 | F04 | O resumo mostra "Ganho total", mas não diz em quanto tempo. As 5 pesagens vão de 15/08 a 12/11/2026, e o usuário precisa olhar a primeira e a última data para saber o período. [H] Quem acompanha gado costuma falar em ganho por dia (kg/dia) ou por mês, e o app não mostra essa medida | ![V02](../assets/13_heuristica/a02_v02.png) | 2 | O número aparece sozinho em toda consulta, e o técnico usa esse dado para decidir a venda. Um ganho total sem período não permite comparar animais pesados em datas diferentes | Escrever o período junto ("+X kg em 89 dias") e mostrar o ganho por dia. Confirmar com usuários qual medida eles usam (Entrega 14) |
+| V03 | H7 | F04 | Na tela do animal não há como pesar esse mesmo animal. Para registrar uma nova pesagem, o usuário volta para "Pesar", tira a foto e digita de novo o lote e o brinco, que o app já conhece | ![V03](../assets/13_heuristica/a02_v03.png) | 2 | Acontece sempre que o técnico consulta um animal e decide pesá-lo de novo. Repetir o brinco também abre espaço para digitar errado (A02) | Botão "Pesar este animal" na F04, que abre a pesagem com lote e brinco já preenchidos |
+| V04 | H7 | F02S, F05 e F05D | Depois de salvar, "Ver histórico" (F05) leva para a lista geral (F03), e a F02S não tem ligação com o histórico do animal que acabou de ser pesado. Para conferir a pesagem, o usuário precisa buscar o brinco de novo | ![V04](../assets/13_heuristica/a02_v04.png) | 1 | Não impede nenhuma tarefa e só incomoda quem quer conferir na hora. Mas é um passo a mais logo depois da pesagem | Na F02S, um link "Ver histórico do boi 117" que abre direto a F04 desse animal |
+| V05 | H9 | F03 (busca) | A busca "Pesquise por número ou lote" não tem estado para quando nada é encontrado. O M02 define essa ruptura ("Não encontrei nenhum bovino com esse número. Confira o número ou procure pelo lote."), mas ela não foi prototipada. Na pesagem o mesmo caso tem a F02N | ![V05](../assets/13_heuristica/a02_v05.png) | 2 | Acontece sempre que o brinco é digitado errado ou o animal nunca foi pesado. Sem mensagem, o técnico não sabe se errou o número ou se o animal não tem pesagem | Criar o estado "Nenhum bovino encontrado" na F03, com a busca ainda preenchida e as saídas "Corrigir o número" e "Procurar pelo lote", no mesmo estilo da F02N |
+| V06 | H3 | F04, "Todos os bovinos" | A volta para a lista fica num link pequeno no canto de cima, com cerca de 28 px de altura, abaixo dos 48 px recomendados para toque. Com a mão suja ou com luva, é fácil errar o toque | ![V06](../assets/13_heuristica/a02_v06.png) | 1 | A aba "Histórico" da barra de baixo também volta para a lista, então existe outra saída. O incômodo é repetido a cada animal consultado | Aumentar a área de toque do "Todos os bovinos" para pelo menos 48 px de altura |
+| V07 | H4 | F03 e F04 (comparadas com F02L e F02C) | O histórico chama os animais de "Brinco 1234 · Lote 7", enquanto a pesagem usa "Boi 117" e lotes com nome ("Pasto 2"). Quem pesa o Boi 117 do Pasto 2 e depois abre o histórico vê outro formato de nome e de lote. Além disso, a F04 não mostra o lote do animal, que o M02 previa junto do número | ![V07](../assets/13_heuristica/a02_v07.png) | 2 | Aparece em toda consulta. Não impede a tarefa, mas faz parecer que a pesagem e o histórico são cadastros diferentes, e contradiz o signo da Entrega 9 | Usar o mesmo formato nas duas partes ("Boi 117", "Lote Pasto 2") e dados de exemplo com o mesmo padrão |
+
+### 6. Boas práticas — heurísticas não violadas (atividade didática)
+
+| Heurística sem violação | Exemplo no sistema | Evidência | Por que atende |
+|---|---|---|---|
+| H1 | "Calculando o peso…" e "Pode levar alguns segundos." com o botão "Estimando…" desabilitado (F01L). Selo verde com boi, peso e data depois de salvar (F02S) | ![F02S](../assets/13_heuristica/a02_bp_h1.png) | O usuário sabe que o app está trabalhando e sabe quando o peso foi gravado, sem precisar adivinhar |
+| H5 | Conferência antes de salvar (F02C), com o brinco em destaque, a foto da última pesagem e "Salvar 214 kg no boi 117, lote Pasto 2?" | ![F02C](../assets/13_heuristica/a02_bp_h5.png) | Evita o erro mais caro do app, que é gravar o peso no animal errado, antes que ele aconteça |
+| H8 | Resumo da F04 com só o nº de estimativas e o ganho total, e a lista de pesagens logo abaixo | ![F04](../assets/13_heuristica/a02_bp_h8.png) | O que o técnico procura aparece primeiro, sem informação extra competindo com o ganho |
+| H10 | Histórico vazio (F03V): "Nenhuma pesagem salva ainda", explicação curta e o botão "Pesar primeiro bovino" | ![F03V](../assets/11_figma/F03V%20%E2%80%94%20Hist%C3%B3rico%20vazio.png) | No primeiro uso, a tela diz por que está vazia e qual é o próximo passo, sem manual |
+
+### Síntese do avaliador A02 (parcial até a consolidação)
+
+- **Quantidade:** 7 violações em 6 das 10 heurísticas. Por severidade: 5 de severidade 2 (V01, V02, V03, V05, V07) e 2 de severidade 1 (V04, V06). Nenhuma de severidade 3 ou 4. Por heurística: H2 (1), H3 (1), H4 (1), H6 (1), H7 (2), H9 (1). H1, H5, H8 e H10 sem violação.
+- **Foco:** a inspeção olhou com mais atenção o histórico (F03, F03V e F04), que é o objetivo do M02. Seis das sete violações estão nessas telas.
+- **Padrões recorrentes:**
+  - o histórico mostra os dados de um animal por vez, mas a tarefa do técnico é avaliar o lote inteiro (V01, V02);
+  - a pesagem e o histórico funcionam como partes separadas: não se vai do animal para uma nova pesagem nem da pesagem salva para o histórico do animal (V03, V04), e os nomes mudam de uma parte para a outra (V07);
+  - a ruptura da busca, definida no M02, não foi prototipada (V05).
+- **Correções antes da avaliação com usuários (Entrega 14):** V07, junto com a V02 do Rafael, para que o Boi 117 apareça no histórico com o mesmo nome da pesagem e a UT04 funcione. V05 só se der tempo de criar o estado na F03. V01, V02 e V03 mudam o desenho do histórico e ficam para a consolidação.
+
+
 > Repita a seção para A01 e A02, um avaliador por integrante.
 
 ## 7. Consolidação da equipe
@@ -133,6 +186,16 @@ Problemas iguais ou muito semelhantes encontrados por avaliadores diferentes dev
   - as saídas de um fluxo com peso não salvo não pedem confirmação (V06, V07) e, depois de salvar, não há volta (V05);
   - os dados de exemplo e os nomes não seguem um padrão entre a pesagem e o histórico (V02, V08).
 - **Correções antes da avaliação com usuários (Entrega 14):** V02 (obrigatória), V11 e V13 (rápidas e influenciam as tarefas UT01 e UT05) e V01. V03, V05, V07, V08 e V14 devem ser discutidas na consolidação, porque mudam telas que o MoLIC do histórico (Gustavo) ainda vai definir.
+
+**Avaliador A02 (Gustavo), parcial até a consolidação:**
+
+- **Quantidade:** 7 violações em 6 das 10 heurísticas. Por severidade: 5 de severidade 2 (V01, V02, V03, V05, V07) e 2 de severidade 1 (V04, V06). Nenhuma de severidade 3 ou 4. Por heurística: H2 (1), H3 (1), H4 (1), H6 (1), H7 (2), H9 (1). H1, H5, H8 e H10 sem violação.
+- **Foco:** a inspeção olhou com mais atenção o histórico (F03, F03V e F04), que é o objetivo do M02. Seis das sete violações estão nessas telas.
+- **Padrões recorrentes:**
+  - o histórico mostra os dados de um animal por vez, mas a tarefa do técnico é avaliar o lote inteiro (V01, V02);
+  - a pesagem e o histórico funcionam como partes separadas: não se vai do animal para uma nova pesagem nem da pesagem salva para o histórico do animal (V03, V04), e os nomes mudam de uma parte para a outra (V07);
+  - a ruptura da busca, definida no M02, não foi prototipada (V05).
+- **Correções antes da avaliação com usuários (Entrega 14):** V07, junto com a V02 do Rafael, para que o Boi 117 apareça no histórico com o mesmo nome da pesagem e a UT04 funcione. V05 só se der tempo de criar o estado na F03. V01, V02 e V03 mudam o desenho do histórico e ficam para a consolidação.
 
 ## Checklist
 
