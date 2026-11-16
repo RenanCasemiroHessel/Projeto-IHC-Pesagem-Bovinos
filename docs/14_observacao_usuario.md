@@ -20,7 +20,7 @@ Observar usuários representativos realizando tarefas reais ou realisticamente s
 
 ## A. Fluxograma do processo — equipe
 
-![Fluxograma](../assets/14_testes/fluxograma_avaliacao.svg)
+![`fluxograma_avaliacao.svg`](../assets/14_testes/fluxograma_avaliacao.svg)
 
 **Fonte editável:** [`fluxograma_avaliacao.svg`](../assets/14_testes/fluxograma_avaliacao.svg) (SVG em texto).
 
