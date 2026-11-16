@@ -62,7 +62,7 @@ O processo segue: planejamento (Entrega 12) → recrutamento → preparação, c
 ### Passo 3 — Consentimento e privacidade
 
 
-- Termo/registro de consentimento: [termo do teste](../instrumentos/termo_consentimento_teste.md), adaptado do [modelo da disciplina](../instrumentos/termo_consentimento_modelo.md) com o objetivo ("ver se o aplicativo é fácil de usar"), a duração (~25 min), o aviso de que o peso mostrado é simulado, a autorização separada para gravar e o direito de parar a qualquer momento.
+- Termo/registro de consentimento:  [Termo de teste](../instrumentos/termo_consentimento_modelo.md) com o objetivo ("ver se o aplicativo é fácil de usar"), a duração (~25 min), o aviso de que o peso mostrado é simulado, a autorização separada para gravar e o direito de parar a qualquer momento.
 - Gravação de tela/áudio/vídeo: sim, só com autorização separada no termo. Finalidade: conferir tempos, erros e falas na análise. [H] Sem gravar o rosto do participante.
 - Forma de anonimização: IDs `U01`, `U02` e `U03`. Não coletamos nome da fazenda, endereço, número exato de cabeças nem fotos do participante (mesmos cuidados da Entrega 7).
 - Local e período de armazenamento: pasta restrita aos 3 integrantes, apagada no fim da disciplina.
