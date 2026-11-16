@@ -2,7 +2,7 @@
 
 **Data:** 14/11/2026  
 **Status:** 🟨 em andamento (falta liberar o link e subir os prints)  
-**Responsabilidade:** 1 protótipo integrado por equipe. Nesta versão o protótipo cobre o fluxo do M01 (Rafael Takahagi Mendes) e as telas de histórico da prototipação em papel. [?] Os outros integrantes ainda não fizeram o MoLIC deles. Quando fizerem, a cobertura será conferida e as telas que faltarem serão acrescentadas.
+**Responsabilidade:** 1 protótipo integrado por equipe. Nesta versão o protótipo cobre o fluxo do M01 (Rafael Takahagi Mendes) e o do M02 (Gustavo Mendes Franco Lapin Atui), as telas de histórico da prototipação em papel. [?] Os outros integrantes ainda não fizeram o MoLIC deles. Quando fizerem, a cobertura será conferida e as telas que faltarem serão acrescentadas.
 
 ## Objetivo da atividade
 
@@ -20,8 +20,13 @@ Do repertório da disciplina, o protótipo usa:
 | Explicabilidade | F02 | Margem de erro (± 20 kg), faixa na barra e o aviso "Estimativa por foto, não substitui a balança" (H02) |
 | Alertas/ocorrências | F02E, F02N, F02A | Dizem o que deu errado e o que fazer em seguida |
 | Histórico | F03, F03V, F04 | Lista de pesagens, busca por número ou lote e detalhe do animal (Telas 3 e 4 do papel) |
+| Histórico | F03, F03L, F04, F04U | Lista dos bovinos já pesados e evolução do peso de cada um (O03, O04) |
+| Entrada de dados | F03, F03L, F03N | Busca por número ou lote, para achar o animal no curral (O03) |
+| Relatório/resultados | F04, F04U | Pesagens com data, diferença para a anterior e ganho total, sem o técnico fazer contas (O05) |
+| Alertas/ocorrências | F03N, F04U | Dizem que o número não existe e o que fazer, ou por que ainda não há ganho |
 
 [F] Dashboard, configuração, comparação, administração, CRUDs, auditoria e ajuda ficaram fora. Múltiplos usuários, permissões e auditoria estão fora do escopo desde a Entrega 1.
+[F] Dashboard, comparação entre animais e exportação ficaram fora. A visão geral do rebanho (dashboard) era "talvez" no levantamento e não foi modelada no M02.
 
 ### Estados que não podem ser esquecidos
 
@@ -38,6 +43,7 @@ Do repertório da disciplina, o protótipo usa:
 | Confirmação de ação destrutiva | — | Não se aplica (o escopo não tem exclusão) |
 | Cancelamento/desfazer/recuperação | F01B, F02C, F02E, F02N, F05D | ✅ "Trocar foto", "Não é esse", "Tirar outra foto", "Corrigir o número" e "Desistir" |
 | Dados desatualizados/conflito | — | Fora do escopo (falta de sinal e "pendente de envio" ficaram fora na Entrega 9) |
+| Histórico com 1 estimativa | F04U | ❌ Falta fazer (condição `[1 estimativa]` do M02) |
 
 ## Link do Figma
 
@@ -60,7 +66,8 @@ Do repertório da disciplina, o protótipo usa:
 |---|---|---|---|---|
 | M01 | O01 (peso estimado pela foto) | `F01 → F01B → F01L → F02` | `F01C → F02E → F01` | Rafael |
 | M01 | O02 (salvar no animal certo) | `F02 → F02P → F02C → F02S → F05` (ou `F02L → F02C`) | `F02A → F02P`, `F02U → F02N → F02 / F02L / F02X`, `F02C → F02` ("Não é esse"), `qualquer tela → F05D` (desistir) | Rafael |
-| [?] MoLIC ainda não feito | O06 (histórico) | `F03 → F04`, `F03V` | — | [?] a definir |
+| M02 | O03 (localizar um bovino) | `F03 → F04` (busca pelo número ou toque no card), `F03 → F03L → F04` (busca pelo lote) | `F03 → F03N → F03` ("Corrigir o número" ou "Procurar pelo lote") | Gustavo |
+| M02 | O04 (acompanhar a evolução do peso) e O05 (entender o ganho) | `F04 → F03` ("Todos os bovinos", com a busca mantida) | `F04U` (1 estimativa, sem ganho para mostrar; não é erro) | Gustavo |
 
 ### Cena por cena: M01 × Figma
 
@@ -80,6 +87,7 @@ Do repertório da disciplina, o protótipo usa:
 | Ponto de encerramento (`gcc`) | F05 | ✅ | "Pesagem encerrada", com resumo das pesagens do dia |
 | Desistir da pesagem [H] | "Desistir" no cabeçalho de F01B a F02X → F05D | ✅ | [H] Fica no canto superior direito, em vermelho. Leva a "Pesagem cancelada. Nada foi salvo." Não aparece na F01 (ainda não há pesagem) nem na F01L (o cálculo leva só alguns segundos) |
 
+
 ### O que está no Figma e não está no M01
 
 [F] **F02A** (aviso "Identifique o animal antes de salvar") e **F02P** (animal identificado) vêm do papel, em que o resultado e a identificação ficam numa tela só. O aviso impede salvar com os campos vazios. A troca de animal continua protegida pela F02C.
@@ -90,6 +98,10 @@ Do repertório da disciplina, o protótipo usa:
 
 [?] **F03, F03V e F04** (histórico) vêm das Telas 3 e 4 do papel. Nenhum MoLIC cobre o histórico ainda, porque os outros integrantes não fizeram o deles.
 
+### O que está no Figma e não está no M02
+
+[F] **F03V** (histórico vazio) é um estado pedido pela disciplina. O M02 começa com bovinos já pesados, então não modela a lista vazia. "Pesar primeiro bovino" leva ao M01 (F01).
+
 ### Papel × Figma
 
 | Rascunho | Tela no Figma | O que mudou |
@@ -99,7 +111,8 @@ Do repertório da disciplina, o protótipo usa:
 | Tela 3 | F03 | [H] Lote numa linha separada no card e seta indicando que o card abre |
 | Tela 4 | F04 | Igual ao papel |
 | Tela erro | F02E | [F] Texto trocado de "Bovino não reconhecido" / "Tirar ou escolher outra foto" para "Boi não reconhecido" / "Tirar outra foto", para seguir o signo do M01 e da Entrega 9. O botão "Estimar Peso" fica desabilitado |
-| — (não havia no papel) | F01L, F01C, F02U, F02N, F02L, F02X, F02C, F02S, F05, F05D, F03V | [F] Telas que saem do M01 ou dos estados que a disciplina pede |
+| — (não havia no papel) | F01L, F01C, F02U, F02N, F02L, F02X, F02C, F02S, F05, F05D, F03V | [F] Telas que saem do M01, do M02 (F03N) ou dos estados que a disciplina pede |
+
 
 [H] **Barra de navegação** (Pesar / Histórico) em todas as telas. O papel não mostrava como ir da Tela 1 para a Tela 3.
 
@@ -241,7 +254,7 @@ Do repertório da disciplina, o protótipo usa:
 
 **Objetivo do usuário:** achar um animal pelo número ou pelo lote.  
 **Signos principais:** busca "Pesquise por número ou lote", cards com foto, brinco, lote, peso, data da última estimativa e seta.  
-**Origem no MoLIC:** [?] ainda sem MoLIC (Tela 3 do papel).
+**Origem no MoLIC:**  M02 / ponto de abertura e cena Localizar um bovino (`u: buscar {número}`).
 
 ### F03V — Histórico vazio
 
@@ -249,7 +262,8 @@ Do repertório da disciplina, o protótipo usa:
 
 **Objetivo do usuário:** entender por que a lista está vazia e o que fazer.  
 **Signos principais:** "Nenhuma pesagem salva ainda", "Pesar primeiro bovino".  
-**Origem no MoLIC:** [?] ainda sem MoLIC. Estado de vazio pedido pela disciplina.
+**Origem no MoLIC:** M02 / ruptura da busca, com fala de recuperação para Localizar um bovino.
+
 
 ### F04 — Histórico do bovino
 
@@ -257,7 +271,7 @@ Do repertório da disciplina, o protótipo usa:
 
 **Objetivo do usuário:** ver a evolução de peso de um animal.  
 **Signos principais:** "Todos os bovinos" (voltar), número de estimativas, ganho total, lista de pesagens com peso, diferença para a anterior e data (marcadas como estimativa).  
-**Origem no MoLIC:** [?] ainda sem MoLIC (Tela 4 do papel).
+**Origem no MoLIC:**M02 / cena Acompanhar a evolução do peso (`d: [número] bovino encontrado`).
 
 ## Sistema visual e consistência
 
