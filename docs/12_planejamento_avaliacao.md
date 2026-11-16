@@ -23,7 +23,8 @@ Planejar a avaliação antes de executá-la, ligando perguntas de avaliação a 
 | Animais, lotes e histórico | Dados fictícios: boi 117, lote Pasto 2, lista do lote com "Pintado", "Malhado" e "Mocho", pesagens anteriores | As tarefas usam esses dados, para todos os participantes iguais |
 | Digitação do brinco | [?] No Figma, tocar no campo pode preencher o número sozinho (F02 → F02P). Confirmar no piloto | Se não dá para digitar, um erro de digitação não acontece naturalmente. A identificação errada é observada na tela de conferência (F02C) |
 
-**O que fica fora da avaliação com usuários:** fechar a pesagem do lote (T03), envio sem sinal (offline) e cadastro de animal novo (F02X, provisória desde a Entrega 10). Nenhum deles está prototipado de forma completa. A F02X e as demais telas entram só na inspeção heurística (Entrega 13).
+**O que fica fora da avaliação com usuários:** fechar a pesagem do lote (T03), envio sem sinal (offline) e cadastro de animal novo (F02X, provisória desde a Entrega 10). Nenhum deles está prototipado de forma completa. A F02X e as demais telas entram só na inspeção heurística (Entrega 13). As alternativas do M02 no histórico (busca pelo lote, nenhum bovino encontrado e animal com 1 estimativa) não foram prototipadas na Entrega 11 e também ficam fora.
+
 
 ## A. Método DECIDE
 
