@@ -1,5 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#f6f8fa" stroke="#8c959f" stroke-width="4"/>
-<text x="480" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#24292f">PLACEHOLDER DE ARTEFATO</text>
-<text x="480" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#57606a">Substitua este arquivo pela evidência real da equipe.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="330" viewBox="0 0 980 330" font-family="Inter, Arial, sans-serif" font-size="13">
+  <rect width="980" height="330" fill="#ffffff"/>
+  <defs>
+    <marker id="seta" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1b1b1b">Avaliação de usabilidade por observação (Entrega 14)</text>
+
+  <!-- linha 1 -->
+  <g fill="#e8f2ea" stroke="#1B6E33" stroke-width="1.5">
+    <rect x="20" y="55" width="210" height="80" rx="8"/>
+    <rect x="260" y="55" width="210" height="80" rx="8"/>
+    <rect x="500" y="55" width="210" height="80" rx="8"/>
+    <rect x="740" y="55" width="220" height="80" rx="8"/>
+  </g>
+  <g fill="#1b1b1b" text-anchor="middle">
+    <text x="125" y="82" font-weight="bold">1. Planejamento</text>
+    <text x="125" y="102">DECIDE, tarefas UT01–UT05</text>
+    <text x="125" y="120">e metas (Entrega 12)</text>
+    <text x="365" y="82" font-weight="bold">2. Recrutamento</text>
+    <text x="365" y="102">U01, U02 e U03, um por</text>
+    <text x="365" y="120">integrante (proxy se preciso)</text>
+    <text x="605" y="82" font-weight="bold">3. Preparação</text>
+    <text x="605" y="102">correções da Entrega 13,</text>
+    <text x="605" y="120">teste piloto e ajustes</text>
+    <text x="850" y="82" font-weight="bold">4. Consentimento</text>
+    <text x="850" y="102">termo lido, autorização</text>
+    <text x="850" y="120">para gravar, perfil pré-teste</text>
+  </g>
+  <g stroke="#333" stroke-width="1.5" marker-end="url(#seta)">
+    <line x1="230" y1="95" x2="258" y2="95"/>
+    <line x1="470" y1="95" x2="498" y2="95"/>
+    <line x1="710" y1="95" x2="738" y2="95"/>
+    <path d="M850,135 L850,165 L125,165 L125,193" fill="none"/>
+  </g>
+
+  <!-- linha 2 -->
+  <g fill="#e8f2ea" stroke="#1B6E33" stroke-width="1.5">
+    <rect x="20" y="195" width="210" height="80" rx="8"/>
+    <rect x="260" y="195" width="210" height="80" rx="8"/>
+    <rect x="500" y="195" width="210" height="80" rx="8"/>
+    <rect x="740" y="195" width="220" height="80" rx="8"/>
+  </g>
+  <g fill="#1b1b1b" text-anchor="middle">
+    <text x="125" y="222" font-weight="bold">5. Execução e observação</text>
+    <text x="125" y="242">tarefas com think aloud;</text>
+    <text x="125" y="260">sucesso, tempo, erros, ajudas</text>
+    <text x="365" y="222" font-weight="bold">6. Pós-teste</text>
+    <text x="365" y="242">nota de 1 a 5 por tarefa e</text>
+    <text x="365" y="260">"o que você mudaria?"</text>
+    <text x="605" y="222" font-weight="bold">7. Consolidação e análise</text>
+    <text x="605" y="242">por tarefa, metas MU/MQ,</text>
+    <text x="605" y="260">severidade, cruzamento E13</text>
+    <text x="850" y="222" font-weight="bold">8. Recomendações</text>
+    <text x="850" y="242">mudanças no Figma e no MoLIC;</text>
+    <text x="850" y="260">RASTREABILIDADE.md</text>
+  </g>
+  <g stroke="#333" stroke-width="1.5" marker-end="url(#seta)">
+    <line x1="230" y1="235" x2="258" y2="235"/>
+    <line x1="470" y1="235" x2="498" y2="235"/>
+    <line x1="710" y1="235" x2="738" y2="235"/>
+  </g>
+  <text x="125" y="300" text-anchor="middle" font-size="11" fill="#555">repete para cada tarefa e cada participante</text>
 </svg>
