@@ -64,6 +64,44 @@
 
 [?] Falta de sinal e "pendente de envio" ficam fora deste MoLIC. A Entrega 9 deixou essa situação fora do protótipo (Entrega 8), então não foi modelada como cena. Se entrar numa versão futura, precisa de uma cena de alerta própria.
 
+## M02 — Acompanhar a evolução do peso de um animal
+
+**Autor(a):** Gustavo Mendes Franco Lapin Atui — 24.123.072-1  
+**Cenário de interação de origem:** CI02 — Recomendação de venda com o histórico de peso  
+**Objetivo(s):** O03 Localizar um bovino (pelo número ou pelo lote) · O04 Acompanhar a evolução do peso de um animal · O05 Entender o ganho de peso  
+**Tarefa(s) relacionada(s):** T01 Consultar o histórico de peso de um animal (HTA, GOMS e CTT da Entrega 5)  
+**Signos relevantes:** número (brinco ou nome), lote, foto, peso estimado (kg), data, nº de estimativas, diferença para a anterior, ganho total
+
+### Diagrama
+
+![MoLIC M02](../assets/10_molic/molic_m02.svg)
+
+**Fonte editável:** [`molic_m02.svg`](../assets/10_molic/molic_m02.svg) ( texto editável em qualquer editor de código ou no draw.io )
+
+### Leitura do diagrama
+
+O diagrama tem duas cenas, uma para cada tópico da conversa: **localizar um bovino** (O03) e **acompanhar a evolução do peso** (O04 e O05). A busca é o processamento do sistema e tem uma fala de recuperação para quando não encontra o animal. O histórico fica guardado no próprio aparelho, então abrir um animal não depende de sinal e não tem falha de carregamento. O peso em @ e o aviso de margem de erro (O06) ficam só na hora da pesagem (M01), e o histórico não os repete.
+
+
+#### Caminho principal
+
+1. **Ponto de abertura → Localizar um bovino.** O usuário abre o histórico de estimativas, e o sistema mostra os bovinos já pesados, cada um com foto, número, lote, último peso e data.
+2. **Localizar um bovino → busca.** Dinho informa o número do brinco (`u: buscar {número}`).
+3. **Busca → Acompanhar a evolução do peso.** O sistema encontra o bovino (`d: [número] bovino encontrado`) e mostra o número, o lote e quantas estimativas existem. Em seguida mostra as pesagens com data, foto e peso em kg, a diferença para a pesagem anterior e o ganho total. Assim o técnico não precisa fazer contas (achado da Entrega 5).
+4. **Acompanhar a evolução do peso → Localizar um bovino.** Dinho passa ao próximo animal (`u: consultar o próximo animal`). A busca anterior continua na tela, o que permite avaliar o lote inteiro sem recomeçar (CI02).
+5. **Acompanhar a evolução do peso → encerramento.** Com os números de todo o lote, Dinho encerra a consulta e conversa com o Chico sobre a venda, que acontece fora do sistema.
+
+- **Busca pelo lote.** Quando o brinco está sujo, Dinho busca pelo lote (`d: [lote] mostrar bovinos do lote`). A conversa volta para a mesma cena com a lista filtrada, e ele reconhece o animal pela foto (`d+u`).
+- **Escolha direta na lista.** O usuário pode tocar num bovino da lista sem buscar.
+
+#### Alternativas e rupturas
+
+| Situação | Onde ocorre | Como o usuário percebe | Caminho de recuperação/saída |
+|---|---|---|---|
+| Nenhum bovino com o número digitado (brinco lido errado ou animal nunca pesado) | Processamento *busca*, a partir de *Localizar um bovino* | `d: Não encontrei nenhum bovino com esse número. Confira o número ou procure pelo lote.` | Fala de recuperação de volta a *Localizar um bovino*, com a busca ainda preenchida para corrigir. Outra saída é buscar pelo lote. |
+| Brinco ilegível no curral | *Localizar um bovino* | O próprio usuário percebe que não consegue ler o número | Busca pelo lote e reconhecimento pela foto (`d+u: reconhecer o animal pela {foto}`) |
+| Animal com uma só estimativa | *Acompanhar a evolução do peso* | `d: Este animal tem 1 estimativa. O ganho de peso aparece a partir da segunda pesagem.` | Não é um erro. A cena mostra o peso e a data, e o usuário passa para o próximo animal. |
+
 ### Checklist específico de modelagem
 
 - [] Existe **ponto de abertura** coerente com o início do objetivo.
@@ -89,6 +127,9 @@
 | O02 | M01 | [?] O caminho do animal novo continua em aberto | Coberto no M01: identificar, conferir e salvar, com a fala "nenhum bovino encontrado" |
 | O03 | M01 (só a identificação antes de salvar) | [?] "Identificar pelo brinco ou pelo lote" (O02a e O02b) pode virar o mesmo O03, para não ter dois nomes para a mesma ação (Entrega 9) | Definir na consolidação da equipe |
 | O06 | M01 (na hora da pesagem) | O histórico não repete o aviso de margem de erro (Entrega 9) | Coberto no M01 pela cena Ler o peso estimado |
+| O07 Localizar um bovino | M02 | O M01 chama a mesma ação de "Identificar o animal", com a mesma ruptura "Nenhum bovino encontrado". O aviso de nenhum bovino encontrado não existe nas telas da Entrega 6 | Manter um único nome: "Localizar um bovino" |
+| O08 Acompanhar a evolução do peso | M02 | O encerramento da consulta não tem tela própria na Entrega 6 | Decidir no Figma como mostrar o encerramento |
+| O09 Entender o ganho de peso | M02 (dentro da cena O04) | Animal com uma só estimativa não tem ganho para mostrar, e a Tela 4 não previa esse caso | Não virou cena própria, porque o ganho aparece junto das pesagens |
 
 ### Preparação para o Figma
 
@@ -104,3 +145,12 @@ Estados/telas que saem da conversa do M01:
 - **Conferir antes de salvar**: brinco e foto grandes, com "Salvar 214 kg no boi 117, lote Pasto 2?" e as opções de salvar ou "Não é esse".
 - **Peso salvo**: confirmação com boi, lote e data, com os botões para o próximo animal e para terminar.
 - **Desistir da pesagem [H]**: ação disponível em qualquer tela. A forma de mostrar fica para o Figma.
+
+Estados/telas que saem da conversa do M02:
+
+- **Localizar um bovino**: lista dos bovinos já pesados, cada um com foto, número do brinco, lote, último peso e data, e campo de busca por número ou lote. Tocar num bovino da lista abre o histórico dele sem buscar (Tela 3 da Entrega 6).
+- **Lista filtrada pelo lote**: a mesma lista, só com os animais do lote buscado, para reconhecer o animal pela foto quando o brinco está sujo ou ilegível (Tela 3, filtrada).
+- **Nenhum bovino encontrado**: aviso "Não encontrei nenhum bovino com esse número. Confira o número ou procure pelo lote.", com a busca ainda preenchida para corrigir o número e o caminho para procurar pelo lote (nova).
+- **Acompanhar a evolução do peso**: número, lote e quantidade de estimativas do animal; pesagens com data, foto e peso em kg; diferença para a pesagem anterior e ganho total já calculados, para o técnico não fazer contas. Botão "← Todos os bovinos" para o próximo animal, com a busca anterior mantida (Tela 4 da Entrega 6).
+- **Histórico com 1 estimativa**: peso e data da única pesagem, com o aviso "Este animal tem 1 estimativa. O ganho de peso aparece a partir da segunda pesagem." Não é tela de erro (nova, variação da Tela 4).
+- **Encerrar a consulta**: o usuário termina depois de ver o lote inteiro. A forma de mostrar fica para o Figma.
