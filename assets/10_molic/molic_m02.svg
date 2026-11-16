@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="700" viewBox="0 0 1020 700" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <title>MoLIC M02 — CI02: acompanhar a evolução do peso de um animal</title>
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+    </marker>
+    <marker id="setaR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b00020"/>
+    </marker>
+    <style>
+      .cena { fill: #fff; stroke: #000; stroke-width: 1.6; }
+      .titulo { font-weight: bold; font-size: 14px; }
+      .signo { fill: #1a4f9c; }
+      .fala { fill: none; stroke: #000; stroke-width: 1.5; }
+      .ruptura { fill: none; stroke: #b00020; stroke-width: 1.5; stroke-dasharray: 7 5; }
+      .rotuloR { fill: #b00020; }
+      .nota { fill: #555; font-size: 11px; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="1020" height="700" fill="#fff"/>
+
+  <!-- Ponto de abertura -->
+  <circle cx="100" cy="40" r="10" fill="#000"/>
+  <path class="fala" d="M100,50 L100,98" marker-end="url(#seta)"/>
+  <text x="112" y="76">u: abrir histórico de estimativas</text>
+
+  <!-- Cena S1 -->
+  <rect class="cena" x="40" y="100" width="400" height="180" rx="18"/>
+  <text x="240" y="124" text-anchor="middle" class="titulo">Localizar um bovino (O03)</text>
+  <line x1="40" y1="134" x2="440" y2="134" stroke="#000"/>
+  <text x="56" y="156">d: mostrar bovinos já pesados</text>
+  <text x="76" y="177" class="signo">{foto, número, lote, último peso, data}</text>
+  <text x="56" y="198">u: informar <tspan class="signo">{número}</tspan> ou <tspan class="signo">{lote}</tspan></text>
+  <text x="56" y="219">d: mostrar bovinos encontrados</text>
+  <text x="56" y="240">d+u: reconhecer o animal pela <tspan class="signo">{foto}</tspan></text>
+  <text x="56" y="261">u: escolher um bovino</text>
+
+  <!-- Processamento: busca -->
+  <rect x="640" y="160" width="40" height="26" fill="#000"/>
+  <text x="690" y="178" class="nota">busca</text>
+  <path class="fala" d="M440,173 L638,173" marker-end="url(#seta)"/>
+  <text x="452" y="165">u: buscar <tspan class="signo">{número}</tspan> ou <tspan class="signo">{lote}</tspan></text>
+  <path class="fala" d="M650,186 L650,230 L442,230" marker-end="url(#seta)"/>
+  <text x="452" y="222">d: [lote] mostrar bovinos do lote</text>
+  <path class="ruptura" d="M660,160 L660,80 L400,80 L400,98" marker-end="url(#setaR)"/>
+  <text x="412" y="72" class="rotuloR">d: nenhum bovino encontrado; confira o número ou procure pelo lote</text>
+  <path class="fala" d="M670,186 L670,450 L502,450" marker-end="url(#seta)"/>
+  <text x="512" y="442">d: [número] bovino encontrado</text>
+
+  <!-- S1 -> S2 -->
+  <path class="fala" d="M220,280 L220,398" marker-end="url(#seta)"/>
+  <text x="230" y="344">u: escolher bovino</text>
+
+  <!-- Cena S2 -->
+  <rect class="cena" x="40" y="400" width="460" height="180" rx="18"/>
+  <text x="270" y="424" text-anchor="middle" class="titulo">Acompanhar a evolução do peso (O04, O05)</text>
+  <line x1="40" y1="434" x2="500" y2="434" stroke="#000"/>
+  <text x="56" y="456">d: mostrar <tspan class="signo">{número, lote, nº de estimativas}</tspan></text>
+  <text x="56" y="477">d: mostrar pesagens <tspan class="signo">{data, foto, peso em kg}</tspan></text>
+  <text x="56" y="498">d: mostrar <tspan class="signo">{diferença para a anterior}</tspan></text>
+  <text x="56" y="519">d: mostrar <tspan class="signo">{ganho total}</tspan></text>
+  <text x="56" y="540">d: [1 estimativa] o ganho aparece a partir</text>
+  <text x="76" y="561">da segunda pesagem</text>
+
+  <!-- S2 -> S1: próximo animal -->
+  <path class="fala" d="M40,500 L16,500 L16,190 L38,190" marker-end="url(#seta)"/>
+  <text x="11" y="345" transform="rotate(-90 11 345)" text-anchor="middle">u: consultar o próximo animal (mantém a busca)</text>
+
+  <!-- Ponto de encerramento -->
+  <path class="fala" d="M270,580 L270,646" marker-end="url(#seta)"/>
+  <text x="280" y="618">u: encerrar consulta</text>
+  <circle cx="270" cy="660" r="12" fill="#fff" stroke="#000" stroke-width="1.6"/>
+  <circle cx="270" cy="660" r="7" fill="#000"/>
+
+  <!-- Legenda -->
+  <rect x="640" y="476" width="370" height="214" fill="#fafafa" stroke="#999" rx="6"/>
+  <text x="656" y="500" class="titulo">Legenda</text>
+  <circle cx="668" cy="522" r="8" fill="#000"/>
+  <text x="692" y="527">ponto de abertura</text>
+  <rect x="656" y="538" width="26" height="18" rx="6" fill="#fff" stroke="#000"/>
+  <text x="692" y="552">cena (tópico + diálogos)</text>
+  <rect x="658" y="566" width="22" height="14" fill="#000"/>
+  <text x="692" y="578">processamento do sistema</text>
+  <path class="fala" d="M656,598 L684,598" marker-end="url(#seta)"/>
+  <text x="692" y="603">fala de transição (u: usuário; d: designer)</text>
+  <path class="ruptura" d="M656,622 L684,622" marker-end="url(#setaR)"/>
+  <text x="692" y="627">fala de recuperação de ruptura</text>
+  <circle cx="668" cy="648" r="9" fill="#fff" stroke="#000" stroke-width="1.4"/>
+  <circle cx="668" cy="648" r="5" fill="#000"/>
+  <text x="692" y="653">ponto de encerramento</text>
+  <text x="656" y="678"><tspan class="signo">{ }</tspan> signos · [ ] condição da fala</text>
+</svg>
