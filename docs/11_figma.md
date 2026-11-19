@@ -1,8 +1,8 @@
 # Entrega 11 — Protótipo no Figma
 
 **Data:** 14/11/2026  
-**Status:** 🟨 em andamento (falta liberar o link e subir os prints)  
-**Responsabilidade:** 1 protótipo integrado por equipe. Nesta versão o protótipo cobre o fluxo do M01 (Rafael Takahagi Mendes) e o do M02 (Gustavo Mendes Franco Lapin Atui), as telas de histórico da prototipação em papel. [?] Os outros integrantes ainda não fizeram o MoLIC deles. Quando fizerem, a cobertura será conferida e as telas que faltarem serão acrescentadas.
+**Status:** 🟨 em andamento 
+**Responsabilidade:** 1 protótipo integrado por equipe. Nesta versão o protótipo cobre o fluxo do M01 (Rafael Takahagi Mendes) e o do M02 (Gustavo Mendes Franco Lapin Atui), as telas de histórico da prototipação em papel. [?] O outro integrante ainda não fez o MoLIC dele. Quando fizer, a cobertura será conferida e as telas que faltarem serão acrescentadas.
 
 ## Objetivo da atividade
 
